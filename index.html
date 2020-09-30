@@ -1,26 +1,104 @@
-<html>
+<html lang="en">
   <head>
+    <title>simplex chat</title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <script src="./index.js" defer></script>
-    <style>
-      textarea {
-        width: 480px;
-        height: 120px;
-      }
-    </style>
+    <link href="index.css" rel="stylesheet" />
   </head>
   <body>
-    <div>
-      <div>Alice</div>
-      <textarea id="alice"></textarea>
-    </div>
-    <div>
-      <div>Bob</div>
-      <textarea id="bob"></textarea>
-    </div>
-    <div>
-      <div>Tom</div>
-      <textarea id="tom"></textarea>
-    </div>
+    <nav id="top">
+      <img class="logo" src="img/simplex.svg" />
+    </nav>
+    <section id="introduction">
+      <h2>Distributed chat</h2>
+      <h3>Private, secure, de-centralised, convenient</h3>
+      <p>
+        To help privacy-conscious software engineers and technology enthusiasts
+        to be in full control of who can talk to them and their chat data by
+        offering free open-source protocol and software of simple to deploy chat
+        servers and simple to use chat clients providing ultimate privacy,
+        security and ownership of their chat and contacts.
+      </p>
+    </section>
+    <section id="problem">
+      <h2>Comms security problem</h2>
+      <h3>End-to-end encryption?</h3>
+      <section class="problem-intro">
+        <p>
+          Alice sends the key to Bob (e.g. via p2p network or via chat server)
+        </p>
+        <p>
+          Now Bob sends encrypted message to Alice - he believes it is secure!
+        </p>
+      </section>
+      <section class="problem-explained">
+        <p>TODO But the key is intercepted</p>
+        <p>TODO and the attacked can read messages</p>
+      </section>
+    </section>
+    <section id="solution">
+      <h2>What is the solution?</h2>
+      <p>
+        To create secure encrypted comms channel you need an existing secure
+        comms channel where you can pass encryption key.
+      </p>
+      <p>Any alternative solution can be compromised.</p>
+    </section>
+    <section id="example">
+      <h3>Chat example</h3>
+      <p>
+        A chat example: it allows you to see all the messages in one place and
+        engage with them very quickly without "point and click" and switching
+        between conversations…
+      </p>
+    </section>
+    <section id="connection">
+      <h2>How Simplex Chat works</h2>
+      <h3>To add contact and to start chat</h3>
+      <figure class="connection">
+        <figure class="conn-stage">
+          <figure class="device"></figure>
+          <figure class="party alice">Alice</figure>
+        </figure>
+        <img src="img/arrow.svg" class="arrow" />
+        <figure class="conn-stage">
+          <figure class="device"></figure>
+          <figure class="party bob">Bob</figure>
+        </figure>
+        <img src="img/arrow.svg" class="arrow" />
+        <figure class="conn-stage">
+          <figure class="device"></figure>
+          <figure class="party alice">Alice</figure>
+        </figure>
+        <img src="img/arrow.svg" class="arrow" />
+        <figure class="conn-stage">
+          <figure class="device"></figure>
+          <figure class="party bob">Bob</figure>
+        </figure>
+      </figure>
+    </section>
+    <section id="messaging">
+      <h2>Simplex Messaging</h2>
+    </section>
+    <section id="chat">
+      <h2>Chat</h2>
+      <h3>Two message blockchain sequences</h3>
+    </section>
+    <section id="simplex">
+      <section id="use-simplex" class="half">
+        <h3>Use simplex chat</h3>
+        <p>
+          Simplex chat is in development. Sign up to be notified when it is
+          ready.
+        </p>
+      </section>
+      <section id="join-simplex" class="half">
+        <h3>Join simplex chat</h3>
+        <p>
+          Open-source project will move faster with your help - we develop it in
+          Haskell.
+        </p>
+      </section>
+    </section>
+    <footer></footer>
   </body>
 </html>

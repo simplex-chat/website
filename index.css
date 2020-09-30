@@ -1,0 +1,195 @@
+body,
+figure {
+  margin: 0;
+}
+
+nav,
+section,
+footer,
+figure,
+figcaption {
+  display: block;
+}
+
+nav {
+  background-color: #fbd561;
+  height: 91px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.logo {
+  padding: 22px 38px;
+}
+
+#introduction {
+  background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
+  height: 767px;
+}
+
+#problem {
+  background-color: #f8f8f6;
+  height: 767px;
+}
+
+#problem .problem-explained {
+  visibility: hidden;
+}
+
+#solution {
+  background-color: #062d56;
+  height: 382px;
+}
+
+#example {
+  background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
+  height: 987px;
+}
+
+#connection {
+  background-color: #f8f8f6;
+  height: 924px;
+}
+
+#messaging {
+  background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
+  height: 625px;
+}
+
+#chat {
+  background-color: #f8f8f6;
+  height: 683px;
+}
+
+#simplex {
+  background-color: #ffffff;
+  height: 435px;
+}
+
+section.half {
+  width: 50%;
+  float: left;
+}
+
+footer {
+  background-color: #f8f8f6;
+  height: 197px;
+}
+
+h2,
+h3,
+p,
+figure,
+figcaption {
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+h2 {
+  color: #ff6347;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+  padding-top: 46px;
+}
+
+#problem h2 {
+  padding-top: 70px;
+}
+
+h3 {
+  color: #062d56;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  padding-top: 42px;
+}
+
+#solution h3 {
+  padding-top: 72px;
+}
+
+#simplex h3 {
+  padding-top: 63px;
+}
+
+p {
+  color: #062d56;
+  font-size: 17px;
+  letter-spacing: 0.53px;
+  line-height: 25px;
+  padding-top: 12px;
+  width: 742px;
+  margin: 0 auto;
+}
+
+#solution p {
+  color: #ffffff;
+}
+
+#solution p:first-of-type {
+  padding-top: 53px;
+}
+
+#simplex p {
+  width: 409px;
+}
+
+figure.connection {
+  width: 924px;
+  margin: 111px auto;
+}
+
+figure.connection .arrow {
+  display: block;
+  float: left;
+  width: 50px;
+  margin: 167px 4px;
+}
+
+figure.conn-stage {
+  float: left;
+}
+
+figure.device {
+  background-image: url(img/iphone.png);
+  width: 185px;
+  height: 370px;
+}
+
+/* Alice and Bob figures */
+
+figure.party {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 90px;
+  height: 118px;
+  margin: 60px auto;
+  background: no-repeat center top;
+}
+
+figure.party.alice {
+  background-image: url(img/alice.svg);
+}
+
+figure.party.bob {
+  background-image: url(img/bob.svg);
+}
+
+figure.party img {
+  display: block;
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(Raleway-Regular.ttf);
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(Raleway-Bold.ttf);
+  font-weight: bold;
+}

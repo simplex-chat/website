@@ -11,13 +11,47 @@ figcaption {
   display: block;
 }
 
+h2,
+h3,
+p,
+figure,
+figcaption {
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #ff6347;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+  padding-top: 46px;
+}
+
+h3 {
+  color: #062d56;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  padding-top: 42px;
+}
+
+p {
+  color: #062d56;
+  font-size: 17px;
+  letter-spacing: 0.53px;
+  line-height: 25px;
+  padding-top: 12px;
+  width: 742px;
+}
+
 nav {
   background-color: #fbd561;
   height: 91px;
   border-bottom: 1px solid #ffffff;
 }
-
-.logo {
+nav .logo {
   padding: 22px 38px;
 }
 
@@ -30,14 +64,25 @@ nav {
   background-color: #f8f8f6;
   height: 767px;
 }
-
 #problem .problem-explained {
   visibility: hidden;
+}
+#problem h2 {
+  padding-top: 70px;
 }
 
 #solution {
   background-color: #062d56;
   height: 382px;
+}
+#solution h3 {
+  padding-top: 72px;
+}
+#solution p {
+  color: #ffffff;
+}
+#solution p:first-of-type {
+  padding-top: 53px;
 }
 
 #example {
@@ -48,6 +93,24 @@ nav {
 #connection {
   background-color: #f8f8f6;
   height: 924px;
+}
+#connection figure.section {
+  width: 924px;
+  margin: 111px auto;
+}
+#connection figure.section .arrow {
+  display: block;
+  float: left;
+  width: 50px;
+  margin: 167px 4px;
+}
+#connection figure.conn-stage {
+  float: left;
+}
+#connection figure.device {
+  background-image: url(../img/iphone.png);
+  width: 185px;
+  height: 370px;
 }
 
 #messaging {
@@ -64,8 +127,13 @@ nav {
   background-color: #ffffff;
   height: 435px;
 }
-
-section.half {
+#simplex h3 {
+  padding-top: 63px;
+}
+#simplex p {
+  width: 409px;
+}
+#simplex section.half {
   width: 50%;
   float: left;
 }
@@ -75,90 +143,7 @@ footer {
   height: 197px;
 }
 
-h2,
-h3,
-p,
-figure,
-figcaption {
-  font-family: Raleway, Arial, Helvetica, sans-serif;
-  text-align: center;
-  margin: 0;
-}
-
-h2 {
-  color: #ff6347;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 43px;
-  padding-top: 46px;
-}
-
-#problem h2 {
-  padding-top: 70px;
-}
-
-h3 {
-  color: #062d56;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
-  padding-top: 42px;
-}
-
-#solution h3 {
-  padding-top: 72px;
-}
-
-#simplex h3 {
-  padding-top: 63px;
-}
-
-p {
-  color: #062d56;
-  font-size: 17px;
-  letter-spacing: 0.53px;
-  line-height: 25px;
-  padding-top: 12px;
-  width: 742px;
-  margin: 0 auto;
-}
-
-#solution p {
-  color: #ffffff;
-}
-
-#solution p:first-of-type {
-  padding-top: 53px;
-}
-
-#simplex p {
-  width: 409px;
-}
-
-figure.connection {
-  width: 924px;
-  margin: 111px auto;
-}
-
-figure.connection .arrow {
-  display: block;
-  float: left;
-  width: 50px;
-  margin: 167px 4px;
-}
-
-figure.conn-stage {
-  float: left;
-}
-
-figure.device {
-  background-image: url(img/iphone.png);
-  width: 185px;
-  height: 370px;
-}
-
 /* Alice and Bob figures */
-
 figure.party {
   display: flex;
   align-items: flex-end;
@@ -168,28 +153,22 @@ figure.party {
   margin: 60px auto;
   background: no-repeat center top;
 }
-
 figure.party.alice {
-  background-image: url(img/alice.svg);
+  background-image: url(../img/alice.svg);
 }
-
 figure.party.bob {
-  background-image: url(img/bob.svg);
-}
-
-figure.party img {
-  display: block;
-  margin: 0 auto;
+  background-image: url(../img/bob.svg);
 }
 
 @font-face {
   font-family: Raleway;
-  src: url(Raleway-Regular.ttf);
+  src: url(../Raleway-Regular.ttf);
   font-weight: regular;
 }
-
 @font-face {
   font-family: Raleway;
-  src: url(Raleway-Bold.ttf);
+  src: url(../Raleway-Bold.ttf);
   font-weight: bold;
 }
+
+/*# sourceMappingURL=index.css.map */

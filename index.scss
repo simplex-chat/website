@@ -1,0 +1,188 @@
+body,
+figure {
+  margin: 0;
+}
+
+nav,
+section,
+footer,
+figure,
+figcaption {
+  display: block;
+}
+
+h2,
+h3,
+p,
+figure,
+figcaption {
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #ff6347;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+  padding-top: 46px;
+}
+
+h3 {
+  color: #062d56;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  padding-top: 42px;
+}
+
+p {
+  color: #062d56;
+  font-size: 17px;
+  letter-spacing: 0.53px;
+  line-height: 25px;
+  padding-top: 12px;
+  width: 742px;
+}
+
+nav {
+  background-color: #fbd561;
+  height: 91px;
+  border-bottom: 1px solid #ffffff;
+
+  .logo {
+    padding: 22px 38px;
+  }
+}
+
+#introduction {
+  background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
+  height: 767px;
+}
+
+#problem {
+  background-color: #f8f8f6;
+  height: 767px;
+
+  .problem-explained {
+    visibility: hidden;
+  }
+
+  h2 {
+    padding-top: 70px;
+  }
+}
+
+#solution {
+  background-color: #062d56;
+  height: 382px;
+
+  h3 {
+    padding-top: 72px;
+  }
+
+  p {
+    color: #ffffff;
+    &:first-of-type {
+      padding-top: 53px;
+    }
+  }
+}
+
+#example {
+  background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
+  height: 987px;
+}
+
+#connection {
+  background-color: #f8f8f6;
+  height: 924px;
+
+  figure.section {
+    width: 924px;
+    margin: 111px auto;
+
+    .arrow {
+      display: block;
+      float: left;
+      width: 50px;
+      margin: 167px 4px;
+    }
+  }
+
+  figure.conn-stage {
+    float: left;
+  }
+
+  figure.device {
+    background-image: url(../img/iphone.png);
+    width: 185px;
+    height: 370px;
+  }
+}
+
+#messaging {
+  background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
+  height: 625px;
+}
+
+#chat {
+  background-color: #f8f8f6;
+  height: 683px;
+}
+
+#simplex {
+  background-color: #ffffff;
+  height: 435px;
+
+  h3 {
+    padding-top: 63px;
+  }
+
+  p {
+    width: 409px;
+  }
+
+  section.half {
+    width: 50%;
+    float: left;
+  }
+}
+
+footer {
+  background-color: #f8f8f6;
+  height: 197px;
+}
+
+/* Alice and Bob figures */
+
+figure.party {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 90px;
+  height: 118px;
+  margin: 60px auto;
+  background: no-repeat center top;
+
+  &.alice {
+    background-image: url(../img/alice.svg);
+  }
+
+  &.bob {
+    background-image: url(../img/bob.svg);
+  }
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(../Raleway-Regular.ttf);
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(../Raleway-Bold.ttf);
+  font-weight: bold;
+}

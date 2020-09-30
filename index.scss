@@ -15,8 +15,8 @@ h2,
 h3,
 p,
 a,
-figure,
-figcaption {
+span,
+figure {
   font-family: Raleway, Arial, Helvetica, sans-serif;
   text-align: center;
   margin: 0 auto;
@@ -123,11 +123,11 @@ nav {
     width: 90px;
     height: 30px;
     margin: 33px 32px;
-
-    .github-button {
-      visibility: hidden;
-    }
   }
+}
+
+.github-button {
+  visibility: hidden;
 }
 
 #introduction {
@@ -379,6 +379,23 @@ nav {
 footer {
   background-color: #f8f8f6;
   height: 197px;
+  position: relative;
+
+  .logo {
+    position: absolute;
+    top: 18px;
+    left: 38px;
+  }
+
+  .copyright {
+    padding-top: 25px;
+  }
+
+  .github {
+    position: absolute;
+    top: 25px;
+    right: 38px;
+  }
 }
 
 /* Alice and Bob figures */

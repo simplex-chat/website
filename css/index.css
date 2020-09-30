@@ -67,6 +67,56 @@ nav .logo {
 #problem .problem-explained {
   visibility: hidden;
 }
+#problem .communication {
+  width: 642px;
+  height: 148px;
+  margin: 40px auto;
+}
+#problem .communication figure {
+  float: left;
+}
+#problem .communication img {
+  display: block;
+  float: left;
+}
+#problem .communication figure.party {
+  position: relative;
+  z-index: 2;
+}
+#problem .communication figure.encrypt {
+  width: 54px;
+  height: 54px;
+  background: no-repeat center center;
+  margin-top: 23px;
+}
+#problem .communication figure.encrypt.circle {
+  background-color: #ffffff;
+  border: 1px solid #cdcdcd;
+  border-radius: 100%;
+  position: relative;
+  z-index: 1;
+}
+#problem .communication figure.encrypt.circle.key {
+  background-image: url(../img/key.svg);
+}
+#problem .communication figure.encrypt.msg.key {
+  background-image: url(../img/key.svg), url(../img/msg1.svg);
+}
+#problem .communication figure.encrypt.msg.lock {
+  background-image: url(../img/lock.svg), url(../img/msg1.svg);
+}
+#problem .communication figure.encrypt.left {
+  margin-left: -20px;
+}
+#problem .communication figure.encrypt.right {
+  margin-right: -20px;
+}
+#problem .communication .arrow {
+  margin: 40px 10px;
+}
+#problem .communication .server {
+  margin-top: 25px;
+}
 #problem h2 {
   padding-top: 70px;
 }
@@ -104,6 +154,9 @@ nav .logo {
   width: 50px;
   margin: 167px 4px;
 }
+#connection figure.section .party {
+  margin: 60px auto;
+}
 #connection figure.conn-stage {
   float: left;
 }
@@ -121,6 +174,34 @@ nav .logo {
 #chat {
   background-color: #f8f8f6;
   height: 683px;
+}
+#chat figure.section {
+  width: 740px;
+  margin-top: 57px;
+}
+#chat figure.section img {
+  display: block;
+  float: left;
+  margin-right: 6px;
+}
+#chat figure.section .arrow {
+  margin-top: 14px;
+}
+#chat figure.section .arrow.top {
+  margin: 55px 9px 0 9px;
+}
+#chat figure.section .arrow.bottom {
+  margin: -30px 9px 0 9px;
+}
+#chat figure.section .party {
+  float: left;
+  margin: 80px 9px;
+}
+#chat figure.section .chat {
+  float: left;
+}
+#chat figure.section .bob-alice {
+  margin-top: 200px;
 }
 
 #simplex {
@@ -148,16 +229,25 @@ figure.party {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  width: 102px;
+  height: 139px;
+  background: no-repeat center top;
+}
+figure.party.small {
   width: 90px;
   height: 118px;
-  margin: 60px auto;
-  background: no-repeat center top;
 }
 figure.party.alice {
   background-image: url(../img/alice.svg);
 }
+figure.party.alice.small {
+  background-image: url(../img/alice-small.svg);
+}
 figure.party.bob {
   background-image: url(../img/bob.svg);
+}
+figure.party.bob.small {
+  background-image: url(../img/bob-small.svg);
 }
 
 @font-face {

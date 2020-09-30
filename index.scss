@@ -69,6 +69,69 @@ nav {
     visibility: hidden;
   }
 
+  .communication {
+    width: 642px;
+    height: 148px;
+    margin: 40px auto;
+
+    figure {
+      float: left;
+    }
+
+    img {
+      display: block;
+      float: left;
+    }
+
+    figure.party {
+      position: relative;
+      z-index: 2;
+    }
+
+    figure.encrypt {
+      width: 54px;
+      height: 54px;
+      background: no-repeat center center;
+      margin-top: 23px;
+
+      &.circle {
+        background-color: #ffffff;
+        border: 1px solid #cdcdcd;
+        border-radius: 100%;
+        position: relative;
+        z-index: 1;
+
+        &.key {
+          background-image: url(../img/key.svg);
+        }
+      }
+
+      &.msg.key {
+        background-image: url(../img/key.svg), url(../img/msg1.svg);
+      }
+
+      &.msg.lock {
+        background-image: url(../img/lock.svg), url(../img/msg1.svg);
+      }
+
+      &.left {
+        margin-left: -20px;
+      }
+
+      &.right {
+        margin-right: -20px;
+      }
+    }
+
+    .arrow {
+      margin: 40px 10px;
+    }
+
+    .server {
+      margin-top: 25px;
+    }
+  }
+
   h2 {
     padding-top: 70px;
   }
@@ -109,6 +172,10 @@ nav {
       width: 50px;
       margin: 167px 4px;
     }
+
+    .party {
+      margin: 60px auto;
+    }
   }
 
   figure.conn-stage {
@@ -130,6 +197,40 @@ nav {
 #chat {
   background-color: #f8f8f6;
   height: 683px;
+
+  figure.section {
+    width: 740px;
+    margin-top: 57px;
+
+    img {
+      display: block;
+      float: left;
+      margin-right: 6px;
+    }
+
+    .arrow {
+      margin-top: 14px;
+      &.top {
+        margin: 55px 9px 0 9px;
+      }
+      &.bottom {
+        margin: -30px 9px 0 9px;
+      }
+    }
+
+    .party {
+      float: left;
+      margin: 80px 9px;
+    }
+
+    .chat {
+      float: left;
+    }
+
+    .bob-alice {
+      margin-top: 200px;
+    }
+  }
 }
 
 #simplex {
@@ -161,17 +262,27 @@ figure.party {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  width: 90px;
-  height: 118px;
-  margin: 60px auto;
+  width: 102px;
+  height: 139px;
   background: no-repeat center top;
+
+  &.small {
+    width: 90px;
+    height: 118px;
+  }
 
   &.alice {
     background-image: url(../img/alice.svg);
+    &.small {
+      background-image: url(../img/alice-small.svg);
+    }
   }
 
   &.bob {
     background-image: url(../img/bob.svg);
+    &.small {
+      background-image: url(../img/bob-small.svg);
+    }
   }
 }
 

@@ -27,9 +27,27 @@
         <p>
           Alice sends the key to Bob (e.g. via p2p network or via chat server)
         </p>
+        <figure class="communication">
+          <figure class="party alice">Alice</figure>
+          <figure class="encrypt key circle left"></figure>
+          <img class="arrow" src="img/arrow-r.svg" />
+          <img class="server" src="img/server.svg" />
+          <img class="arrow" src="img/arrow-r.svg" />
+          <figure class="encrypt key circle right"></figure>
+          <figure class="party bob">Bob</figure>
+        </figure>
         <p>
           Now Bob sends encrypted message to Alice - he believes it is secure!
         </p>
+        <figure class="communication">
+          <figure class="party alice">Alice</figure>
+          <figure class="encrypt lock msg left"></figure>
+          <img class="arrow" src="img/arrow-l.svg" />
+          <img class="server" src="img/server.svg" />
+          <img class="arrow" src="img/arrow-l.svg" />
+          <figure class="encrypt key msg right"></figure>
+          <figure class="party bob">Bob</figure>
+        </figure>
       </section>
       <section class="problem-explained">
         <p>TODO But the key is intercepted</p>
@@ -58,22 +76,22 @@
       <figure class="section">
         <figure class="conn-stage">
           <figure class="device"></figure>
-          <figure class="party alice">Alice</figure>
+          <figure class="party alice small">Alice</figure>
         </figure>
         <img src="img/arrow.svg" class="arrow" />
         <figure class="conn-stage">
           <figure class="device"></figure>
-          <figure class="party bob">Bob</figure>
+          <figure class="party bob small">Bob</figure>
         </figure>
         <img src="img/arrow.svg" class="arrow" />
         <figure class="conn-stage">
           <figure class="device"></figure>
-          <figure class="party alice">Alice</figure>
+          <figure class="party alice small">Alice</figure>
         </figure>
         <img src="img/arrow.svg" class="arrow" />
         <figure class="conn-stage">
           <figure class="device"></figure>
-          <figure class="party bob">Bob</figure>
+          <figure class="party bob small">Bob</figure>
         </figure>
       </figure>
     </section>
@@ -83,6 +101,34 @@
     <section id="chat">
       <h2>Chat</h2>
       <h3>Two message blockchain sequences</h3>
+      <figure class="section">
+        <figure class="party alice">Alice</figure>
+        <figure class="chat">
+          <figure class="alice-bob">
+            <img class="arrow top" src="img/arrow-ne.svg" />
+            <img src="img/msg.svg" />
+            <img class="arrow" src="img/arrow-e.svg" />
+            <img src="img/msg.svg" />
+            <img class="arrow" src="img/arrow-e.svg" />
+            <img src="img/msg.svg" />
+            <img class="arrow" src="img/arrow-e.svg" />
+            <img src="img/msg.svg" />
+            <img class="arrow top" src="img/arrow-se.svg" />
+          </figure>
+          <figure class="bob-alice">
+            <img class="arrow bottom" src="img/arrow-nw.svg" />
+            <img src="img/msg.svg" />
+            <img class="arrow" src="img/arrow-w.svg" />
+            <img src="img/msg.svg" />
+            <img class="arrow" src="img/arrow-w.svg" />
+            <img src="img/msg.svg" />
+            <img class="arrow" src="img/arrow-w.svg" />
+            <img src="img/msg.svg" />
+            <img class="arrow bottom" src="img/arrow-sw.svg" />
+          </figure>
+        </figure>
+        <figure class="party bob">Bob</figure>
+      </figure>
     </section>
     <section id="simplex">
       <section id="use-simplex" class="half">

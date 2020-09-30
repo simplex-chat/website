@@ -14,6 +14,7 @@ figcaption {
 h2,
 h3,
 p,
+a,
 figure,
 figcaption {
   font-family: Raleway, Arial, Helvetica, sans-serif;
@@ -46,18 +47,87 @@ p {
   width: 742px;
 }
 
+input,
+button {
+  border: 0px solid;
+  outline: none;
+}
+
+input {
+  color: #062d56;
+  font-family: Raleway;
+}
+
+button {
+  background-color: #07b4b9;
+  color: #ffffff;
+  font-family: Raleway;
+  text-align: center;
+  cursor: pointer;
+}
+
 nav {
   background-color: #fbd561;
+  width: 100%;
   height: 91px;
   border-bottom: 1px solid #ffffff;
+  position: fixed;
+  z-index: 10;
 }
 nav .logo {
+  float: left;
   padding: 22px 38px;
+}
+nav .sign-up {
+  float: right;
+  padding-top: 33px;
+}
+nav .sign-up span {
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  color: #062d56;
+  font-size: 12.75px;
+  letter-spacing: 0.4px;
+  line-height: 18.75px;
+  width: 125px;
+  text-align: center;
+  margin-right: 11px;
+}
+nav .sign-up input,
+nav .sign-up button {
+  border-radius: 15px;
+  height: 30px;
+}
+nav .sign-up input {
+  background-color: #ffffff;
+  width: 212px;
+  margin-right: 11px;
+  padding: 0 12px;
+  font-size: 12.75px;
+  letter-spacing: 0.53px;
+}
+nav .sign-up button {
+  width: 95px;
+  font-size: 12.75px;
+  letter-spacing: 0.4px;
+  line-height: 18.75px;
+}
+nav .github {
+  float: right;
+  width: 90px;
+  height: 30px;
+  margin: 33px 32px;
+}
+nav .github .github-button {
+  visibility: hidden;
 }
 
 #introduction {
   background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   height: 767px;
+  padding-top: 91px;
+  position: relative;
+  z-index: 1;
 }
 
 #problem {
@@ -212,11 +282,51 @@ nav .logo {
   padding-top: 63px;
 }
 #simplex p {
-  width: 409px;
+  width: 425px;
 }
 #simplex section.half {
   width: 50%;
   float: left;
+}
+#simplex input,
+#simplex button {
+  border-radius: 20px;
+  height: 40px;
+}
+#simplex .sign-up {
+  width: 430px;
+  margin: 22px auto;
+}
+#simplex .sign-up input {
+  background-color: #efefea;
+  width: 283px;
+  margin-right: 10px;
+  padding: 0 15px;
+  font-size: 17px;
+  letter-spacing: 0.53px;
+}
+#simplex .sign-up button {
+  width: 127px;
+  font-size: 17px;
+  letter-spacing: 0.53px;
+}
+#simplex #contacts {
+  width: 320px;
+  margin: 22px auto;
+}
+#simplex #contacts p {
+  text-align: left;
+}
+#simplex #contacts button {
+  width: 100px;
+  font-size: 17px;
+}
+#simplex #contacts a {
+  color: #062d56;
+  font-size: 17px;
+  letter-spacing: 0.53px;
+  line-height: 25px;
+  text-decoration: none;
 }
 
 footer {
@@ -253,7 +363,7 @@ figure.party.bob.small {
 @font-face {
   font-family: Raleway;
   src: url(../Raleway-Regular.ttf);
-  font-weight: regular;
+  font-weight: normal;
 }
 @font-face {
   font-family: Raleway;

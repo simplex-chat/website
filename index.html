@@ -3,11 +3,27 @@
     <title>simplex chat</title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <link href="css/index.css" rel="stylesheet" />
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
 
   <body>
     <nav id="top">
       <img class="logo" src="img/simplex.svg" />
+      <div class="github">
+        <a
+          class="github-button"
+          href="https://github.com/simplex-chat/protocol"
+          data-size="large"
+          data-show-count="true"
+          aria-label="Star simplex-chat on GitHub"
+          >Star</a
+        >
+      </div>
+      <form class="sign-up">
+        <span>Notify me</span>
+        <input />
+        <button type="submit">Submit</button>
+      </form>
     </nav>
     <section id="introduction">
       <h2>Distributed chat</h2>
@@ -134,16 +150,34 @@
       <section id="use-simplex" class="half">
         <h3>Use simplex chat</h3>
         <p>
-          Simplex chat is in development. Sign up to be notified when it is
-          ready.
+          Simplex chat is in development.<br />
+          Sign up to be notified when it is ready.
         </p>
+        <form class="sign-up">
+          <p>
+            <input />
+            <button type="submit">Submit</button>
+          </p>
+        </form>
       </section>
       <section id="join-simplex" class="half">
         <h3>Join simplex chat</h3>
         <p>
-          Open-source project will move faster with your help - we develop it in
-          Haskell.
+          Open-source project is faster with your help!<br />
+          We develop it in Haskell.
         </p>
+        <div id="contacts">
+          <p>
+            <a href="mailto:chat@simplex.chat">
+              <button type="button">Email</button> chat@simplex.chat</a
+            >
+          </p>
+          <p>
+            <a href="https://github.com/simplex-chat/protocol"
+              ><button type="button">Join</button> github.com/simplex-chat</a
+            >
+          </p>
+        </div>
       </section>
     </section>
     <footer></footer>

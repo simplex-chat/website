@@ -13,6 +13,7 @@ figcaption {
 
 h2,
 h3,
+h4,
 p,
 a,
 span,
@@ -36,6 +37,15 @@ h3 {
   font-size: 24px;
   line-height: 29px;
   padding-top: 42px;
+}
+
+h4 {
+  color: #18132c;
+  font-weight: 500;
+  font-size: 21px;
+  letter-spacing: 0.4px;
+  line-height: 30px;
+  width: 180px;
 }
 
 p {
@@ -136,6 +146,47 @@ nav {
   padding-top: 91px;
   position: relative;
   z-index: 1;
+
+  figure.section {
+    width: 900px;
+    height: 288px;
+    margin: 70px auto;
+
+    .feature {
+      float: left;
+      width: 300px;
+
+      p {
+        width: 80%;
+      }
+
+      h4 {
+        padding-top: 12px;
+      }
+    }
+
+    .doodle {
+      border-radius: 100%;
+      box-sizing: border-box;
+      width: 163px;
+      height: 163px;
+      margin: 0 auto;
+      background: no-repeat center center;
+      background-clip: content-box;
+
+      &.control {
+        background-image: url(../img/control.svg);
+      }
+
+      &.privacy {
+        background-image: url(../img/privacy.svg);
+      }
+
+      &.convenience {
+        background-image: url(../img/convenience.svg);
+      }
+    }
+  }
 }
 
 #problem {
@@ -430,12 +481,18 @@ figure.party {
 
 @font-face {
   font-family: Raleway;
-  src: url(../Raleway-Regular.ttf);
+  src: url(./Raleway-Regular.woff2);
   font-weight: normal;
 }
 
 @font-face {
   font-family: Raleway;
-  src: url(../Raleway-Bold.ttf);
+  src: url(./Raleway-Medium.woff2);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(./Raleway-Bold.woff2);
   font-weight: bold;
 }

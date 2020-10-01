@@ -285,7 +285,9 @@ nav {
 }
 
 #example {
-  background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
+  background-image: url(../img/bg.svg),
+    linear-gradient(180deg, #fbd561 0%, #efa647 100%);
+  background-size: 800px 800px, auto;
   height: 987px;
 }
 

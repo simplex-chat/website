@@ -53,7 +53,7 @@ p {
   font-size: 17px;
   letter-spacing: 0.53px;
   line-height: 25px;
-  padding-top: 12px;
+  padding-top: 24px;
   width: 742px;
 }
 
@@ -151,6 +151,7 @@ nav .github {
 }
 #introduction figure.section .feature p {
   width: 80%;
+  padding-top: 12px;
 }
 #introduction figure.section .feature h4 {
   padding-top: 12px;
@@ -244,6 +245,7 @@ nav .github {
 }
 #solution p {
   color: #ffffff;
+  padding-top: 12px;
 }
 #solution p:first-of-type {
   padding-top: 53px;

@@ -53,7 +53,7 @@ p {
   font-size: 17px;
   letter-spacing: 0.53px;
   line-height: 25px;
-  padding-top: 12px;
+  padding-top: 24px;
   width: 742px;
 }
 
@@ -158,6 +158,7 @@ nav {
 
       p {
         width: 80%;
+        padding-top: 12px;
       }
 
       h4 {
@@ -275,6 +276,8 @@ nav {
 
   p {
     color: #ffffff;
+    padding-top: 12px;
+
     &:first-of-type {
       padding-top: 53px;
     }

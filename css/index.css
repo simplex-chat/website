@@ -420,18 +420,13 @@ figure.party {
 figure.party.small {
   width: 90px;
   height: 118px;
+  background-size: 88px 88px;
 }
 figure.party.alice {
   background-image: url(../img/alice.svg);
 }
-figure.party.alice.small {
-  background-image: url(../img/alice-small.svg);
-}
 figure.party.bob {
   background-image: url(../img/bob.svg);
-}
-figure.party.bob.small {
-  background-image: url(../img/bob-small.svg);
 }
 
 @font-face {

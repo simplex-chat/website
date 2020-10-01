@@ -482,20 +482,15 @@ figure.party {
   &.small {
     width: 90px;
     height: 118px;
+    background-size: 88px 88px;
   }
 
   &.alice {
     background-image: url(../img/alice.svg);
-    &.small {
-      background-image: url(../img/alice-small.svg);
-    }
   }
 
   &.bob {
     background-image: url(../img/bob.svg);
-    &.small {
-      background-image: url(../img/bob-small.svg);
-    }
   }
 }
 

@@ -157,22 +157,35 @@ nav .github {
   padding-top: 12px;
 }
 #introduction figure.section .doodle {
+  border: 4px solid #ffffff;
   border-radius: 100%;
-  box-sizing: border-box;
   width: 163px;
   height: 163px;
+  position: relative;
   margin: 0 auto;
-  background: no-repeat center center;
+  background: url(../img/bullets.svg);
+  background-size: 400px 400px;
   background-clip: content-box;
 }
+#introduction figure.section .doodle:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border: 7px solid #f8b650;
+  border-radius: 100%;
+}
 #introduction figure.section .doodle.control {
-  background-image: url(../img/control.svg);
+  background-position: 410px 235px;
 }
 #introduction figure.section .doodle.privacy {
-  background-image: url(../img/privacy.svg);
+  background-position: 185px 350px;
 }
 #introduction figure.section .doodle.convenience {
-  background-image: url(../img/convenience.svg);
+  background-position: 305px 160px;
 }
 
 #problem {

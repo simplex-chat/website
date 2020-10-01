@@ -207,6 +207,14 @@ nav .github {
   display: block;
   float: left;
 }
+#problem .communication figure.arrow {
+  width: 134px;
+  height: 22px;
+  background: url(../img/arrow-big.svg) no-repeat center center;
+}
+#problem .communication figure.arrow.left {
+  transform: rotate(180deg);
+}
 #problem .communication figure.party {
   position: relative;
   z-index: 2;
@@ -316,12 +324,38 @@ nav .github {
 }
 #chat figure.section .arrow {
   margin-top: 14px;
+  margin-right: 6px;
+}
+#chat figure.section .arrow.right, #chat figure.section .arrow.left {
+  float: left;
+  background: url(../img/arrow-small.svg) no-repeat center center;
+  width: 28px;
+  height: 18px;
+}
+#chat figure.section .arrow.left {
+  transform: rotate(180deg);
+}
+#chat figure.section .arrow.top, #chat figure.section .arrow.bottom {
+  float: left;
+  margin-right: 6px;
+  background: url(../img/arrow-diag.svg) no-repeat center center;
+  width: 37px;
+  height: 37px;
 }
 #chat figure.section .arrow.top {
   margin: 55px 9px 0 9px;
 }
+#chat figure.section .arrow.top.down {
+  transform: rotate(90deg);
+}
 #chat figure.section .arrow.bottom {
   margin: -30px 9px 0 9px;
+}
+#chat figure.section .arrow.bottom.up {
+  transform: rotate(-90deg);
+}
+#chat figure.section .arrow.bottom.down {
+  transform: rotate(180deg);
 }
 #chat figure.section .party {
   float: left;

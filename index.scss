@@ -227,6 +227,16 @@ nav {
       float: left;
     }
 
+    figure.arrow {
+      width: 134px;
+      height: 22px;
+      background: url(../img/arrow-big.svg) no-repeat center center;
+
+      &.left {
+        transform: rotate(180deg);
+      }
+    }
+
     figure.party {
       position: relative;
       z-index: 2;
@@ -358,11 +368,47 @@ nav {
 
     .arrow {
       margin-top: 14px;
+      margin-right: 6px;
+
+      &.right,
+      &.left {
+        float: left;
+        background: url(../img/arrow-small.svg) no-repeat center center;
+        width: 28px;
+        height: 18px;
+      }
+
+      &.left {
+        transform: rotate(180deg);
+      }
+
+      &.top,
+      &.bottom {
+        float: left;
+        margin-right: 6px;
+        background: url(../img/arrow-diag.svg) no-repeat center center;
+        width: 37px;
+        height: 37px;
+      }
+
       &.top {
         margin: 55px 9px 0 9px;
+
+        &.down {
+          transform: rotate(90deg);
+        }
       }
+
       &.bottom {
         margin: -30px 9px 0 9px;
+
+        &.up {
+          transform: rotate(-90deg);
+        }
+
+        &.down {
+          transform: rotate(180deg);
+        }
       }
     }
 

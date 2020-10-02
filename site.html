@@ -65,8 +65,8 @@
             Nobody can see your contacts or messages - you control the server
           </p>
         </div>
-        <figure class="feature">
-          <div class="doodle convenience"><div></div></div>
+        <div class="feature">
+          <div class="doodle convenience"></div>
           <h4>Convenience</h4>
           <p>Easy to add contacts and to start talking</p>
         </div>
@@ -74,8 +74,9 @@
     </section>
     <section id="problem">
       <h2>Comms security problem</h2>
-      <h3>End-to-end encryption?</h3>
       <a id="problem-explained"></a>
+      <h3 class="intro">End-to-end encryption?</h3>
+      <h3 class="explained">Man-in-the-middle attack!</h3>
       <section class="problem intro">
         <p>
           Alice sends the key to Bob (e.g. via p2p network or via chat server)
@@ -90,7 +91,8 @@
           <figure class="party bob">Bob</figure>
         </figure>
         <p>
-          Now Bob sends encrypted message to Alice - he believes it is secure!
+          Now Bob can send encrypted messages to Alice - he believes it is
+          secure!
         </p>
         <figure class="communication">
           <figure class="party alice">Alice</figure>
@@ -103,10 +105,15 @@
         </figure>
       </section>
       <section class="problem explained">
-        <p>TODO But the key is intercepted</p>
-        <figure class="communication"></figure>
-        <p>TODO and the attacked can read messages</p>
-        <figure class="communication"></figure>
+        <p>
+          But the key can be intercepted and substituted by Tom (the attacker)
+        </p>
+        <img class="communication" src="./img/problem21.svg" />
+        <p>
+          Now the attacker can can read the messages without Alice or Bob
+          knowing
+        </p>
+        <img class="communication" src="./img/problem22.svg" />
       </section>
       <div class="pagination">
         <a class="page intro" href="#problem-intro"></a>
@@ -128,6 +135,18 @@
         engage with them very quickly without "point and click" and switching
         between conversations…
       </p>
+      <div class="user alice">
+        <h3>Alice</h3>
+        <div class="terminal"></div>
+      </div>
+      <div class="user bob">
+        <h3>Bob</h3>
+        <div class="terminal"></div>
+      </div>
+      <div class="user tom">
+        <h3>Tom</h3>
+        <div class="terminal"></div>
+      </div>
     </section>
     <section id="connection">
       <h2>How Simplex Chat works</h2>
@@ -156,6 +175,7 @@
     </section>
     <section id="messaging">
       <h2>Simplex Messaging</h2>
+      <img src="./img/messaging.svg" />
     </section>
     <section id="chat">
       <h2>Chat</h2>

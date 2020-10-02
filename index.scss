@@ -70,7 +70,7 @@ input {
 
 button {
   background-color: #07b4b9;
-  color: #ffffff;
+  color: white;
   font-family: Raleway;
   text-align: center;
   cursor: pointer;
@@ -80,7 +80,7 @@ nav {
   background-color: #fbd561;
   width: 100%;
   height: 91px;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid white;
   position: fixed;
   z-index: 10;
 
@@ -112,7 +112,7 @@ nav {
     }
 
     input {
-      background-color: #ffffff;
+      background-color: white;
       width: 212px;
       margin-right: 11px;
       padding: 0 12px;
@@ -167,7 +167,7 @@ nav {
     }
 
     .doodle {
-      border: 4px solid #ffffff;
+      border: 4px solid white;
       border-radius: 100%;
       width: 163px;
       height: 163px;
@@ -186,7 +186,6 @@ nav {
         right: 0px;
         bottom: 0px;
         border: 7px solid #f8b650;
-        // border-image-source: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
         border-radius: 100%;
       }
 
@@ -209,15 +208,19 @@ nav {
   background-color: #f8f8f6;
   height: 767px;
 
+  .explained {
+    display: none;
+  }
+
   a#problem-explained {
     display: none;
 
     &:target {
-      ~ .problem.intro {
+      ~ .intro {
         display: none;
       }
 
-      ~ .problem.explained {
+      ~ .explained {
         display: block;
       }
 
@@ -253,10 +256,10 @@ nav {
 
   .problem {
     height: 494px;
+  }
 
-    &.explained {
-      display: none;
-    }
+  img.communication {
+    display: block;
   }
 
   .communication {
@@ -295,7 +298,7 @@ nav {
       margin-top: 23px;
 
       &.circle {
-        background-color: #ffffff;
+        background-color: white;
         border: 1px solid #cdcdcd;
         border-radius: 100%;
         position: relative;
@@ -346,7 +349,7 @@ nav {
   }
 
   p {
-    color: #ffffff;
+    color: white;
     padding-top: 12px;
 
     &:first-of-type {
@@ -360,6 +363,70 @@ nav {
     linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   background-size: 800px 800px, auto;
   height: 987px;
+  position: relative;
+
+  .user {
+    position: absolute;
+
+    h3 {
+      text-align: left;
+      padding: 0 0 9px 12px;
+    }
+
+    .terminal {
+      position: relative;
+      background-color: black;
+      border: 1px solid white;
+      border-radius: 10px;
+      opacity: 0.8;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 20px;
+        background-color: white;
+        border-radius: 10px 10px 0 0;
+        opacity: 0.3;
+      }
+    }
+
+    &.alice {
+      left: 154px;
+      top: 251px;
+
+      .terminal {
+        width: 583px;
+        height: 352px;
+      }
+    }
+
+    &.bob {
+      left: 765px;
+      top: 221px;
+
+      .terminal {
+        width: 522px;
+        height: 264px;
+      }
+    }
+
+    &.tom {
+      left: 621px;
+      top: 526px;
+
+      h3 {
+        color: white;
+      }
+
+      .terminal {
+        width: 522px;
+        height: 264px;
+      }
+    }
+  }
 }
 
 #connection {
@@ -396,6 +463,11 @@ nav {
 #messaging {
   background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   height: 625px;
+
+  img {
+    display: block;
+    margin: 65px auto;
+  }
 }
 
 #chat {
@@ -474,7 +546,7 @@ nav {
 }
 
 #simplex {
-  background-color: #ffffff;
+  background-color: white;
   height: 435px;
 
   h3 {

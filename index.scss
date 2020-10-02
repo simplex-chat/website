@@ -68,7 +68,9 @@ input {
   font-family: Raleway;
 }
 
-button {
+button,
+span.button {
+  display: inline-block;
   background-color: #07b4b9;
   color: white;
   font-family: Raleway;
@@ -124,7 +126,7 @@ nav {
       width: 95px;
       font-size: 12.75px;
       letter-spacing: 0.4px;
-      line-height: 18.75px;
+      line-height: 30px;
     }
   }
 
@@ -212,7 +214,7 @@ nav {
     display: none;
   }
 
-  a#problem-explained {
+  #problem-explained {
     display: none;
 
     &:target {
@@ -255,17 +257,18 @@ nav {
   }
 
   .problem {
-    height: 494px;
+    height: 584px;
   }
 
   img.communication {
     display: block;
+    margin: 30px auto 25px auto;
   }
 
   .communication {
     width: 642px;
     height: 148px;
-    margin: 40px auto 20px auto;
+    margin: 40px auto 15px auto;
 
     figure {
       float: left;
@@ -563,7 +566,8 @@ nav {
   }
 
   input,
-  button {
+  button,
+  span.button {
     border-radius: 20px;
     height: 40px;
   }
@@ -596,9 +600,10 @@ nav {
       text-align: left;
     }
 
-    button {
+    span.button {
       width: 100px;
       font-size: 17px;
+      line-height: 40px;
     }
 
     a {

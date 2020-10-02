@@ -10,7 +10,7 @@
 
   <body>
     <nav id="top">
-      <img class="logo" src="img/simplex.svg" />
+      <img alt="simplex logo" class="logo" src="img/simplex.svg" />
       <div class="github">
         <a
           class="github-button"
@@ -75,9 +75,8 @@
     <section id="problem">
       <h2>Comms security problem</h2>
       <a id="problem-explained"></a>
-      <h3 class="intro">End-to-end encryption?</h3>
-      <h3 class="explained">Man-in-the-middle attack!</h3>
       <section class="problem intro">
+        <h3>End-to-end encryption?</h3>
         <p>
           Alice sends the key to Bob (e.g. via p2p network or via chat server)
         </p>
@@ -105,15 +104,24 @@
         </figure>
       </section>
       <section class="problem explained">
+        <h3>Man-in-the-middle attack!</h3>
         <p>
           But the key can be intercepted and substituted by Tom (the attacker)
         </p>
-        <img class="communication" src="./img/problem21.svg" />
+        <img
+          alt="key is intercepted"
+          class="communication"
+          src="./img/problem21.svg"
+        />
         <p>
           Now the attacker can can read the messages without Alice or Bob
           knowing
         </p>
-        <img class="communication" src="./img/problem22.svg" />
+        <img
+          alt="attacker can read messages"
+          class="communication"
+          src="./img/problem22.svg"
+        />
       </section>
       <div class="pagination">
         <a class="page intro" href="#problem-intro"></a>
@@ -175,7 +183,7 @@
     </section>
     <section id="messaging">
       <h2>Simplex Messaging</h2>
-      <img src="./img/messaging.svg" />
+      <img alt="simplex messaging protocol" src="./img/messaging.svg" />
     </section>
     <section id="chat">
       <h2>Chat</h2>
@@ -209,7 +217,7 @@
         <figure class="party bob">Bob</figure>
       </figure>
     </section>
-    <section id="simplex">
+    <div id="simplex">
       <section id="use-simplex" class="half">
         <h3>Use simplex chat</h3>
         <p>
@@ -246,20 +254,19 @@
         <div id="contacts">
           <p>
             <a href="mailto:chat@simplex.chat">
-              <button type="button">Email</button>&nbsp; chat@simplex.chat</a
+              <span class="button">Email</span>&nbsp; chat@simplex.chat</a
             >
           </p>
           <p>
             <a href="https://github.com/simplex-chat/protocol"
-              ><button type="button">Join</button>&nbsp;
-              github.com/simplex-chat</a
+              ><span class="button">Join</span>&nbsp; github.com/simplex-chat</a
             >
           </p>
         </div>
       </section>
-    </section>
+    </div>
     <footer>
-      <img class="logo" src="img/simplex.svg" />
+      <img alt="simplex logo" class="logo" src="img/simplex.svg" />
       <p class="copyright">
         &#169; 2020 Simplex | Open-Source Project | chat@simplex.chat
       </p>

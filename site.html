@@ -4,6 +4,7 @@
     <title>simplex chat</title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <link href="css/index.css" rel="stylesheet" />
+    <script async defer src="./index.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
 
@@ -74,7 +75,8 @@
     <section id="problem">
       <h2>Comms security problem</h2>
       <h3>End-to-end encryption?</h3>
-      <section class="problem-intro">
+      <a id="problem-explained"></a>
+      <section class="problem intro">
         <p>
           Alice sends the key to Bob (e.g. via p2p network or via chat server)
         </p>
@@ -100,10 +102,16 @@
           <figure class="party bob">Bob</figure>
         </figure>
       </section>
-      <section class="problem-explained">
+      <section class="problem explained">
         <p>TODO But the key is intercepted</p>
+        <figure class="communication"></figure>
         <p>TODO and the attacked can read messages</p>
+        <figure class="communication"></figure>
       </section>
+      <div class="pagination">
+        <a class="page intro" href="#problem-intro"></a>
+        <a class="page explained" href="#problem-explained"></a>
+      </div>
     </section>
     <section id="solution">
       <h2>What is the solution?</h2>
@@ -156,7 +164,6 @@
         <figure class="party alice">Alice</figure>
         <figure class="chat">
           <figure class="alice-bob">
-            <!-- <img class="arrow top up" src="img/arrow-ne.svg" /> -->
             <figure class="arrow top up"></figure>
             <img src="img/msg.svg" />
             <figure class="arrow right"></figure>

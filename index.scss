@@ -209,14 +209,60 @@ nav {
   background-color: #f8f8f6;
   height: 767px;
 
-  .problem-explained {
-    visibility: hidden;
+  a#problem-explained {
+    display: none;
+
+    &:target {
+      ~ .problem.intro {
+        display: none;
+      }
+
+      ~ .problem.explained {
+        display: block;
+      }
+
+      ~ .pagination .page.intro {
+        background-color: #cdcdcd;
+      }
+
+      ~ .pagination .page.explained {
+        background-color: #3e96fc;
+      }
+    }
+  }
+
+  .pagination {
+    width: 44px;
+    height: 12px;
+    margin: 0 auto;
+
+    .page {
+      display: block;
+      float: left;
+      background-color: #cdcdcd;
+      border-radius: 100%;
+      width: 14px;
+      height: 14px;
+
+      &.intro {
+        margin-right: 16px;
+        background-color: #3e96fc;
+      }
+    }
+  }
+
+  .problem {
+    height: 494px;
+
+    &.explained {
+      display: none;
+    }
   }
 
   .communication {
     width: 642px;
     height: 148px;
-    margin: 40px auto;
+    margin: 40px auto 20px auto;
 
     figure {
       float: left;

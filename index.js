@@ -64,8 +64,8 @@
 
     show(mode, str) {
       str = str
-        .replace(/(@[a-z]+)([^0-9])/gi, `<span class="user">$1</span>$2`)
-        .replace(/(#[a-z]+)([^0-9])/gi, `<span class="group">$1</span>$2`);
+        .replace(/(@[a-z]+)([^0-9]|$)/gi, `<span class="user">$1</span>$2`)
+        .replace(/(#[a-z]+)([^0-9]|$)/gi, `<span class="group">$1</span>$2`);
       this.display.insertAdjacentHTML(
         "beforeend",
         `<div class="${mode}">${str}</div>`

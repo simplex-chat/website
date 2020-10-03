@@ -1,6 +1,6 @@
 (async function () {
   const DELAY = 80;
-  const RANGE = 0.33;
+  const DISTR = 0.33;
 
   class User {
     constructor(name) {
@@ -25,10 +25,7 @@
       await this.type(`@${to.name} `);
       await this.type(message, paste);
       this.resetInput();
-      this.show(
-        "sent",
-        `<span class="user">@${to.name} </span><span>${message}</span>`
-      );
+      this.show("sent", `@${to.name} ${message}`);
       await to.receive(this, message);
       await delay(20);
     }
@@ -36,10 +33,7 @@
     async sendGroup(message) {
       await this.type(`#${this.groupName} ${message}`);
       this.resetInput();
-      this.show(
-        "sent",
-        `<span class="group">#${this.groupName} </span><span>${message}</span>`
-      );
+      this.show("sent", `#${this.groupName} ${message}`);
       await Promise.all(this.group.map((u) => u.receive(this, message, true)));
       await delay(10);
     }
@@ -62,15 +56,15 @@
     }
 
     async receive(from, message, group) {
-      await delay(10); // add some randomness
-      let msg = group ? `<span class="group">#${this.groupName} </span>` : "";
-      this.show(
-        "received",
-        msg + `<span class="user">@${from.name}: </span><span>${message}</span>`
-      );
+      await delay(10);
+      let msg = group ? `#${this.groupName} ` : "";
+      this.show("received", `${msg}@${from.name}: ${message}`);
     }
 
     show(mode, str) {
+      str = str
+        .replace(/(@[a-z]+)([^0-9])/gi, `<span class="user">$1</span>$2`)
+        .replace(/(#[a-z]+)([^0-9])/gi, `<span class="group">$1</span>$2`);
       this.display.insertAdjacentHTML(
         "beforeend",
         `<div class="${mode}">${str}</div>`
@@ -108,7 +102,8 @@
   }, 500);
 
   async function delay(units) {
-    const ms = units * DELAY * (1 - RANGE + 2 * RANGE * Math.random());
+    // delay is random with `1 +/- DISTR` range
+    const ms = units * DELAY * (1 - DISTR + 2 * DISTR * Math.random());
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 

@@ -1,46 +1,77 @@
 (async function () {
+  const DELAY = 80;
+  const RANGE = 0.33;
+
   class User {
     constructor(name) {
       const term = document.querySelector(`#example .user.${name} .terminal`);
       this.input = term.querySelector(".input");
+      this.resetInput();
       this.display = term.querySelector(".display");
       this.name = name;
+    }
+
+    reset() {
+      this.resetInput();
+      this.display.innerHTML = "";
     }
 
     setGroup(groupName, users) {
       this.group = users.filter((u) => u !== this);
       this.groupName = groupName;
-      this.display.innerHTML = this.group.map((u) => u.name).join(",");
     }
 
-    async send(to, message) {
-      await this.type(`@${to.name} ${message}`);
-      await this.transmit();
+    async send(to, message, paste) {
+      await this.type(`@${to.name} `);
+      await this.type(message, paste);
+      this.resetInput();
+      this.show(
+        "sent",
+        `<span class="user">@${to.name} </span><span>${message}</span>`
+      );
       await to.receive(this, message);
+      await delay(20);
     }
 
     async sendGroup(message) {
       await this.type(`#${this.groupName} ${message}`);
-      await this.transmit();
+      this.resetInput();
+      this.show(
+        "sent",
+        `<span class="group">#${this.groupName} </span><span>${message}</span>`
+      );
       await Promise.all(this.group.map((u) => u.receive(this, message, true)));
+      await delay(10);
     }
 
-    async type(str) {
-      await delay(1000); // add some randomness
-      this.input.innerHTML = str;
+    async type(str, paste) {
+      if (paste) {
+        await delay(10);
+        this.input.innerHTML += str;
+      } else {
+        for (const char of str) {
+          await delay(isAlpha(char) ? 1 : 2);
+          this.input.innerHTML += char;
+        }
+      }
+      await delay(10);
     }
 
-    async transmit() {
-      await delay(1000);
-      this.display.innerHTML = this.input.innerHTML;
-      this.input.innerHTML = "";
+    resetInput() {
+      this.input.innerHTML = ">&nbsp;";
     }
 
     async receive(from, message, group) {
-      await delay(1000); // add some randomness
-      let msg = group ? `<span class="group">#${this.groupName}</span> ` : "";
-      msg += `<span class="from">@${from.name}</span>: ${message}`;
-      this.display.innerHTML = msg;
+      await delay(10); // add some randomness
+      let msg = group ? `<span class="group">#${this.groupName} </span>` : "";
+      this.show(
+        "received",
+        msg + `<span class="user">@${from.name}: </span><span>${message}</span>`
+      );
+    }
+
+    show(mode, str) {
+      this.display.innerHTML += `<div class="${mode}">${str}</div>`;
     }
   }
 
@@ -48,19 +79,27 @@
   const bob = new User("bob");
   const tom = new User("tom");
   [alice, bob, tom].forEach((u) => u.setGroup("team", [alice, bob, tom]));
+  chatExample();
 
-  await alice.sendGroup("please review my PR company/project#72");
-  await tom.sendGroup("anybody got application key 🔑 ?");
-  await bob.sendGroup("looking at it now @alice 👀");
-  await alice.sendGroup("thanks @bob!");
-  await alice.sendGroup("will DM @tom!");
-  await alice.send(tom, "w3@o6CewoZx#%$SQETXbWnus");
-  await tom.send(alice, "you're the savior 🙏 !");
-  await alice.send(bob, "please check the tests too");
-  await bob.send(alice, "all looks good 👍");
-  await alice.send(bob, "thank you!");
+  async function chatExample() {
+    while (true) {
+      [alice, bob, tom].forEach((u) => u.reset());
+      await alice.sendGroup("please review my PR project/site#72");
+      await tom.sendGroup("anybody got application key 🔑 ?");
+      await bob.sendGroup("looking at it now @alice 👀");
+      await alice.sendGroup("thanks @bob!");
+      await alice.sendGroup("will DM @tom!");
+      await alice.send(tom, "w3@o6CewoZx#%$SQETXbWnus", true);
+      await tom.send(alice, "you're the savior 🙏 !");
+      await alice.send(bob, "please check the tests too");
+      await bob.send(alice, "all looks good 👍");
+      await alice.send(bob, "thank you!");
+      await delay(100);
+    }
+  }
 
-  async function delay(ms) {
+  async function delay(units) {
+    const ms = units * DELAY * (1 - RANGE + 2 * RANGE * Math.random());
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
@@ -85,5 +124,10 @@
   function isElementInViewport(el) {
     const r = el.getBoundingClientRect();
     return r.bottom >= 0 && r.top <= window.innerHeight;
+  }
+
+  function isAlpha(c) {
+    c = c.toUpperCase();
+    return c >= "A" && c <= "Z";
   }
 })();

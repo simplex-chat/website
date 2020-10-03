@@ -366,9 +366,14 @@ nav {
     linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   background-size: 800px 800px, auto;
   height: 987px;
-  position: relative;
 
-  .user {
+  div.all-users {
+    position: relative;
+    width: 1000px;
+    margin: 50px auto;
+  }
+
+  div.user {
     position: absolute;
 
     h3 {
@@ -404,68 +409,79 @@ nav {
         font-family: Menlo, "Lucida Console", Monaco, monospace;
         font-size: 14px;
         letter-spacing: 0.27px;
-        line-height: 30px;
+        line-height: 28px;
+        position: absolute;
+        left: 10px;
+        right: 10px;
       }
 
       .input {
-        color: white;
+        color: #efa647;
         display: block;
-        width: 100%;
-        height: 20px;
-        position: absolute;
+        height: 30px;
         bottom: 0;
       }
 
       .display {
-        color: #f5a623;
-        display: flex;
-        align-items: flex-end;
+        color: #fbd561;
         text-align: left;
-        width: 100%;
-        height: calc(100%-20px);
-        position: absolute;
+        height: calc(100%-30px);
         top: 20px;
-        bottom: 20px;
-        right: 0;
+        bottom: 30px;
+
+        div.sent {
+          color: #efa647;
+          margin-left: 120px;
+        }
 
         span {
+          font-family: Menlo, Monaco, "Lucida Console", monospace;
           text-align: left;
-          display: inline;
+          margin: 0 0;
+
+          &.user,
+          &.link {
+            color: #3e96fc;
+          }
+
+          &.group {
+            color: #07b4b9;
+          }
         }
       }
     }
 
     &.alice {
-      left: 154px;
-      top: 251px;
+      left: 0;
+      top: 30px;
 
       .terminal {
-        width: 583px;
-        height: 352px;
+        width: 503px;
+        height: 362px;
       }
     }
 
     &.bob {
-      left: 765px;
-      top: 221px;
+      left: 528px;
+      top: 0px;
 
       .terminal {
-        width: 522px;
-        height: 264px;
+        width: 492px;
+        height: 282px;
       }
     }
 
     &.tom {
-      left: 621px;
-      top: 526px;
+      left: 397px;
+      top: 320px;
 
       h3 {
         color: white;
       }
 
       .terminal {
-        width: 522px;
-        height: 264px;
+        width: 492px;
+        height: 254px;
       }
     }
   }

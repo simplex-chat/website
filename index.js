@@ -126,8 +126,7 @@
       await recipient.receive(this, message);
     }
 
-    async sendInputGroup(to, message) {
-      const name = to.slice(1);
+    async sendInputGroup(name, message) {
       if (name !== this.groupName) {
         this.show("error", `Unknown group #${name}`);
         return;

@@ -29,7 +29,6 @@
     tryDemo() {
       this.reset();
       const names = this.group.map((u) => `@${u.name}`).join(", ");
-      this.show("info", `You can send messages to ${names} or #team`);
       show(this.demoInput);
     }
 

@@ -28,7 +28,7 @@
       this.reset();
       const names = this.group.map((u) => `@${u.name}`).join(", ");
       this.show("info", `You can send messages to ${names} or #team`);
-      this.demoInput.style.display = "block";
+      show(this.demoInput);
     }
 
     async send(to, message, typeTo, paste) {
@@ -66,8 +66,7 @@
 
     resetInput() {
       this.input.innerHTML = "> ";
-      this.input.style.display = "block";
-      if (this.demoInput) this.demoInput.style.display = "none";
+      show(this.demoInput, false);
     }
 
     async receive(from, message, group) {
@@ -165,21 +164,25 @@
     await alice.send(bob, "please check the tests too", true);
     await bob.send(alice, "all looks good 👍");
     await alice.send(bob, "thank you!");
+    DELAY = 80;
   }
 
   await chatDemo();
-  DELAY = 80;
   const RUN_DEMO = "#demo .run-demo";
+  const RUN_FASTER = "#demo .run-faster";
   const TRY_IT = "#demo .try-it";
   onClick(RUN_DEMO, runChatDemo);
+  onClick(RUN_FASTER, () => (DELAY /= 2));
   onClick(TRY_IT, tryChatDemo);
 
   async function runChatDemo() {
-    onClick(RUN_DEMO, runChatDemo, false);
-    onClick(TRY_IT, tryChatDemo, false);
+    show(RUN_DEMO, false);
+    show(RUN_FASTER);
+    enable(TRY_IT, false);
     await chatDemo();
-    onClick(RUN_DEMO, runChatDemo);
-    onClick(TRY_IT, tryChatDemo);
+    show(RUN_DEMO);
+    show(RUN_FASTER, false);
+    enable(TRY_IT);
   }
 
   function tryChatDemo() {
@@ -230,11 +233,25 @@
   }
 
   function onClick(selector, handler, enable = true) {
-    on("click", document.querySelector(selector), handler, enable);
+    const el = document.querySelector(selector);
+    if (el) on("click", el, handler, enable);
   }
 
   function on(event, el, handler, enable = true) {
     const method = enable ? "addEventListener" : "removeEventListener";
     el[method](event, handler);
+  }
+
+  function show(selector, visible = true) {
+    const el =
+      typeof selector === "string"
+        ? document.querySelector(selector)
+        : selector;
+    if (el) el.style.display = visible ? "block" : "none";
+  }
+
+  function enable(selector, enabled = true) {
+    const el = document.querySelector(selector);
+    el.disabled = enabled ? "" : "true";
   }
 })();

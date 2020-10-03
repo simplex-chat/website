@@ -76,6 +76,10 @@ span.button {
   font-family: Raleway;
   text-align: center;
   cursor: pointer;
+
+  &:active {
+    filter: saturate(125%);
+  }
 }
 
 nav {
@@ -382,6 +386,7 @@ nav {
     margin: 50px auto;
 
     .run-demo,
+    .run-faster,
     .try-it {
       position: absolute;
       width: 120px;
@@ -390,10 +395,19 @@ nav {
       border-radius: 30px;
       font-size: 17px;
       letter-spacing: 0.53px;
+
+      &:disabled {
+        filter: brightness(75%);
+      }
     }
 
     .run-demo {
       left: 60px;
+    }
+
+    .run-faster {
+      left: 60px;
+      display: none;
     }
 
     .try-it {

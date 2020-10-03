@@ -21,8 +21,8 @@
       this.groupName = groupName;
     }
 
-    async send(to, message, paste) {
-      await this.type(`@${to.name} `);
+    async send(to, message, typeTo, paste) {
+      await this.type(`@${to.name} `, !typeTo, 2);
       await this.type(message, paste);
       this.resetInput();
       this.show("sent", `@${to.name} ${message}`);
@@ -30,15 +30,16 @@
       await delay(20);
     }
 
-    async sendGroup(message) {
-      await this.type(`#${this.groupName} ${message}`);
+    async sendGroup(message, typeTo, paste) {
+      await this.type(`#${this.groupName} `, !typeTo, 2);
+      await this.type(message, paste);
       this.resetInput();
       this.show("sent", `#${this.groupName} ${message}`);
       await Promise.all(this.group.map((u) => u.receive(this, message, true)));
       await delay(10);
     }
 
-    async type(str, paste) {
+    async type(str, paste, pause = 10) {
       if (paste) {
         await delay(10);
         this.input.insertAdjacentHTML("beforeend", str);
@@ -48,7 +49,7 @@
           this.input.insertAdjacentHTML("beforeend", char);
         }
       }
-      await delay(10);
+      await delay(pause);
     }
 
     resetInput() {
@@ -57,8 +58,8 @@
 
     async receive(from, message, group) {
       await delay(10);
-      let msg = group ? `#${this.groupName} ` : "";
-      this.show("received", `${msg}@${from.name}: ${message}`);
+      let g = group ? `#${this.groupName} ` : "";
+      this.show("received", `${g}@${from.name}: ${message}`);
     }
 
     show(mode, str) {
@@ -80,14 +81,14 @@
   async function chatExample() {
     while (true) {
       [alice, bob, tom].forEach((u) => u.reset());
-      await alice.sendGroup("please review my PR project/site#72");
+      await alice.sendGroup("please review my PR project/site#72", true);
       await tom.sendGroup("anybody got application key 🔑 ?");
       await bob.sendGroup("looking at it now @alice 👀");
       await alice.sendGroup("thanks @bob!");
-      await alice.sendGroup("will DM @tom!");
-      await alice.send(tom, "w3@o6CewoZx#%$SQETXbWnus", true);
+      await alice.sendGroup("will DM @tom");
+      await alice.send(tom, "w3@o6CewoZx#%$SQETXbWnus", true, true);
       await tom.send(alice, "you're the savior 🙏 !");
-      await alice.send(bob, "please check the tests too");
+      await alice.send(bob, "please check the tests too", true);
       await bob.send(alice, "all looks good 👍");
       await alice.send(bob, "thank you!");
       await delay(100);

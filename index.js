@@ -91,7 +91,7 @@
       await alice.send(bob, "please check the tests too", true);
       await bob.send(alice, "all looks good 👍");
       await alice.send(bob, "thank you!");
-      await delay(100);
+      await delay(120);
     }
   }
 

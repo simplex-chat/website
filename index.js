@@ -47,11 +47,11 @@
     async type(str, paste) {
       if (paste) {
         await delay(10);
-        this.input.innerHTML += str;
+        this.input.insertAdjacentHTML("beforeend", str);
       } else {
         for (const char of str) {
           await delay(isAlpha(char) ? 1 : 2);
-          this.input.innerHTML += char;
+          this.input.insertAdjacentHTML("beforeend", char);
         }
       }
       await delay(10);
@@ -71,7 +71,10 @@
     }
 
     show(mode, str) {
-      this.display.innerHTML += `<div class="${mode}">${str}</div>`;
+      this.display.insertAdjacentHTML(
+        "beforeend",
+        `<div class="${mode}">${str}</div>`
+      );
     }
   }
 

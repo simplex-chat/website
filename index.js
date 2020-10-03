@@ -79,7 +79,6 @@
   const bob = new User("bob");
   const tom = new User("tom");
   [alice, bob, tom].forEach((u) => u.setGroup("team", [alice, bob, tom]));
-  chatExample();
 
   async function chatExample() {
     while (true) {
@@ -97,6 +96,13 @@
       await delay(100);
     }
   }
+
+  const startChat = setInterval(() => {
+    if (isElementInViewport(document.querySelector("#example .user.tom"))) {
+      clearInterval(startChat);
+      chatExample();
+    }
+  }, 500);
 
   async function delay(units) {
     const ms = units * DELAY * (1 - RANGE + 2 * RANGE * Math.random());

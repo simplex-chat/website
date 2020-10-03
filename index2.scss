@@ -145,16 +145,9 @@ nav {
 #introduction {
   background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   height: 767px;
+  padding-top: 91px;
   position: relative;
   z-index: 1;
-
-  p {
-    padding-top: 3px;
-
-    &:first-of-type {
-      padding-top: 36px;
-    }
-  }
 
   figure.section {
     width: 900px;
@@ -368,11 +361,10 @@ nav {
   }
 }
 
-#example {
+#demo {
   background-image: url(../img/bg.svg),
     linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   background-size: 800px 800px, auto;
-  padding-top: 91px;
   height: 987px;
 
   div.all-users {

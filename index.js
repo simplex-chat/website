@@ -1,12 +1,15 @@
 (async function () {
-  const DELAY = 80;
+  let DELAY = 0;
   const DISTR = 0.33;
 
   class User {
     constructor(name) {
-      const term = document.querySelector(`#example .user.${name} .terminal`);
+      const term = document.querySelector(`#demo .user.${name} .terminal`);
       this.input = term.querySelector(".input");
+      this.demoInput = term.querySelector("input");
       this.resetInput();
+      this.setupDemo();
+      this.group = [];
       this.display = term.querySelector(".display");
       this.name = name;
     }
@@ -21,25 +24,34 @@
       this.groupName = groupName;
     }
 
+    tryDemo() {
+      this.reset();
+      const names = this.group.map((u) => `@${u.name}`).join(", ");
+      this.show("info", `You can send messages to ${names} or #team`);
+      this.demoInput.style.display = "block";
+    }
+
     async send(to, message, typeTo, paste) {
-      await this.type(`@${to.name} `, !typeTo, 2);
-      await this.type(message, paste);
-      this.resetInput();
-      this.show("sent", `@${to.name} ${message}`);
+      await this._sendMsg(`@${to.name}`, message, typeTo, paste);
       await to.receive(this, message);
       await delay(20);
     }
 
     async sendGroup(message, typeTo, paste) {
-      await this.type(`#${this.groupName} `, !typeTo, 2);
-      await this.type(message, paste);
-      this.resetInput();
-      this.show("sent", `#${this.groupName} ${message}`);
-      await Promise.all(this.group.map((u) => u.receive(this, message, true)));
+      await this._sendMsg(`#${this.groupName}`, message, typeTo, paste);
+      await this.receiveGroup(message);
       await delay(10);
     }
 
-    async type(str, paste, pause = 10) {
+    async _sendMsg(toStr, message, typeTo, paste) {
+      await this.type(`${toStr} `, !typeTo);
+      await this.type(message, paste);
+      await delay(10);
+      this.resetInput();
+      this.show("sent", `${toStr} ${message}`);
+    }
+
+    async type(str, paste) {
       if (paste) {
         await delay(10);
         this.input.insertAdjacentHTML("beforeend", str);
@@ -49,11 +61,13 @@
           this.input.insertAdjacentHTML("beforeend", char);
         }
       }
-      await delay(pause);
+      await delay(2);
     }
 
     resetInput() {
-      this.input.innerHTML = ">&nbsp;";
+      this.input.innerHTML = "> ";
+      this.input.style.display = "block";
+      if (this.demoInput) this.demoInput.style.display = "none";
     }
 
     async receive(from, message, group) {
@@ -62,45 +76,116 @@
       this.show("received", `${g}@${from.name}: ${message}`);
     }
 
+    async receiveGroup(message) {
+      await Promise.all(this.group.map((u) => u.receive(this, message, true)));
+    }
+
     show(mode, str) {
-      str = str
-        .replace(/(@[a-z]+)([^0-9]|$)/gi, `<span class="user">$1</span>$2`)
-        .replace(/(#[a-z]+)([^0-9]|$)/gi, `<span class="group">$1</span>$2`);
       this.display.insertAdjacentHTML(
         "beforeend",
-        `<div class="${mode}">${str}</div>`
+        `<div class="${mode}">${highlight(str)}</div>`
       );
     }
+
+    setupDemo() {
+      if (!this.demoInput) return;
+      on("keypress", this.demoInput, async ({ keyCode, key }) => {
+        if (keyCode === 13) {
+          const [to, ...words] = this.demoInput.value.split(" ");
+          const message = words.join(" ");
+          switch (to[0]) {
+            case undefined:
+              break;
+            case "@":
+              await this.sendInput(to.slice(1), message);
+              break;
+            case "#":
+              await this.sendInputGroup(to.slice(1), message);
+              break;
+            default:
+              this.show("error", "Message should start with @user or #group");
+          }
+        } else if (this.demoInput.value === "" && key !== "@" && key !== "#") {
+          const channel = this.currentChannel();
+          if (channel) this.demoInput.value = channel + " ";
+        }
+      });
+    }
+
+    async sendInput(name, message) {
+      if (name === this.name) {
+        this.show("error", "Can't send message to yourself");
+        return;
+      }
+      const recipient = this.group.find((u) => u.name === name);
+      if (recipient === undefined) {
+        this.show("error", `Unknown recipient @${name}`);
+        return;
+      }
+      this.show("sent", `@${name} ${message}`);
+      this.demoInput.value = "";
+      await recipient.receive(this, message);
+    }
+
+    async sendInputGroup(to, message) {
+      const name = to.slice(1);
+      if (name !== this.groupName) {
+        this.show("error", `Unknown group #${name}`);
+        return;
+      }
+      this.show("sent", `#${name} ${message}`);
+      this.demoInput.value = "";
+      await this.receiveGroup(message);
+    }
+
+    currentChannel() {
+      return lastChild(this.display).childNodes[0].innerHTML;
+    }
+  }
+
+  function setGroup(groupName, users) {
+    users.forEach((u) => u.setGroup(groupName, users));
   }
 
   const alice = new User("alice");
   const bob = new User("bob");
   const tom = new User("tom");
-  [alice, bob, tom].forEach((u) => u.setGroup("team", [alice, bob, tom]));
+  const team = [alice, bob, tom];
+  setGroup("team", team);
 
-  async function chatExample() {
-    while (true) {
-      [alice, bob, tom].forEach((u) => u.reset());
-      await alice.sendGroup("please review my PR project/site#72", true);
-      await tom.sendGroup("anybody got application key 🔑 ?");
-      await bob.sendGroup("looking at it now @alice 👀");
-      await alice.sendGroup("thanks @bob!");
-      await alice.sendGroup("will DM @tom");
-      await alice.send(tom, "w3@o6CewoZx#%$SQETXbWnus", true, true);
-      await tom.send(alice, "you're the savior 🙏 !");
-      await alice.send(bob, "please check the tests too", true);
-      await bob.send(alice, "all looks good 👍");
-      await alice.send(bob, "thank you!");
-      await delay(120);
-    }
+  async function chatDemo() {
+    team.forEach((u) => u.reset());
+    await alice.sendGroup("please review my PR project/site#72", true);
+    await tom.sendGroup("anybody got application key 🔑?");
+    await bob.sendGroup("looking at it now @alice 👀");
+    await alice.sendGroup("thanks @bob!");
+    await alice.sendGroup("will DM @tom");
+    await alice.send(tom, "w3@o6CewoZx#%$SQETXbWnus", true, true);
+    await tom.send(alice, "you're the savior 🙏!");
+    await alice.send(bob, "please check the tests too", true);
+    await bob.send(alice, "all looks good 👍");
+    await alice.send(bob, "thank you!");
   }
 
-  const startChat = setInterval(() => {
-    if (isElementInViewport(document.querySelector("#example .user.tom"))) {
-      clearInterval(startChat);
-      chatExample();
-    }
-  }, 500);
+  await chatDemo();
+  DELAY = 80;
+  const RUN_DEMO = "#demo .run-demo";
+  const TRY_IT = "#demo .try-it";
+  onClick(RUN_DEMO, runChatDemo);
+  onClick(TRY_IT, tryChatDemo);
+
+  async function runChatDemo() {
+    onClick(RUN_DEMO, runChatDemo, false);
+    onClick(TRY_IT, tryChatDemo, false);
+    await chatDemo();
+    onClick(RUN_DEMO, runChatDemo);
+    onClick(TRY_IT, tryChatDemo);
+  }
+
+  function tryChatDemo() {
+    team.forEach((u) => u.tryDemo());
+    alice.demoInput.focus();
+  }
 
   async function delay(units) {
     // delay is random with `1 +/- DISTR` range
@@ -108,14 +193,27 @@
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
+  function highlight(str) {
+    return str
+      .replace(/(@[a-z]+)([^0-9]|$)/gi, `<span class="user">$1</span>$2`)
+      .replace(/(#[a-z]+)([^0-9]|$)/gi, `<span class="group">$1</span>$2`);
+  }
+
+  function isAlpha(c) {
+    c = c.toUpperCase();
+    return c >= "A" && c <= "Z";
+  }
+
+  function lastChild(el) {
+    return el.childNodes[el.childNodes.length - 1];
+  }
+
   let flipper = setInterval(flipProblem, 5000);
 
-  document
-    .querySelector("#problem .pagination")
-    .addEventListener("click", () => {
-      clearInterval(flipper);
-      flipper = setInterval(flipProblem, 10000);
-    });
+  onClick("#problem .pagination", () => {
+    clearInterval(flipper);
+    flipper = setInterval(flipProblem, 10000);
+  });
 
   function flipProblem() {
     if (isElementInViewport(document.getElementById("problem"))) {
@@ -131,8 +229,12 @@
     return r.bottom >= 0 && r.top <= window.innerHeight;
   }
 
-  function isAlpha(c) {
-    c = c.toUpperCase();
-    return c >= "A" && c <= "Z";
+  function onClick(selector, handler, enable = true) {
+    on("click", document.querySelector(selector), handler, enable);
+  }
+
+  function on(event, el, handler, enable = true) {
+    const method = enable ? "addEventListener" : "removeEventListener";
+    el[method](event, handler);
   }
 })();

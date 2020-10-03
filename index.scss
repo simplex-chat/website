@@ -145,9 +145,16 @@ nav {
 #introduction {
   background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   height: 767px;
-  padding-top: 91px;
   position: relative;
   z-index: 1;
+
+  p {
+    padding-top: 3px;
+
+    &:first-of-type {
+      padding-top: 36px;
+    }
+  }
 
   figure.section {
     width: 900px;
@@ -361,16 +368,37 @@ nav {
   }
 }
 
-#example {
+#demo {
   background-image: url(../img/bg.svg),
     linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   background-size: 800px 800px, auto;
+  padding-top: 91px;
   height: 987px;
 
   div.all-users {
     position: relative;
-    width: 1000px;
+    height: 612px;
+    width: 1020px;
     margin: 50px auto;
+
+    .run-demo,
+    .try-it {
+      position: absolute;
+      width: 120px;
+      height: 60px;
+      bottom: 0;
+      border-radius: 30px;
+      font-size: 17px;
+      letter-spacing: 0.53px;
+    }
+
+    .run-demo {
+      left: 60px;
+    }
+
+    .try-it {
+      left: 220px;
+    }
   }
 
   div.user {
@@ -390,6 +418,7 @@ nav {
       box-sizing: border-box;
       padding: 10px 10px;
       color: white;
+      overflow-y: hidden;
 
       &:before {
         content: "";
@@ -399,11 +428,12 @@ nav {
         left: 0px;
         width: 100%;
         height: 20px;
-        background: white url(../img/circle.svg) no-repeat 8px center;
+        background: #666 url(../img/circle.svg) no-repeat 8px center;
         border-radius: 10px 10px 0 0;
-        opacity: 0.4;
+        z-index: 2;
       }
 
+      input,
       .input,
       .display {
         font-family: Menlo, "Lucida Console", Monaco, monospace;
@@ -415,6 +445,7 @@ nav {
         right: 10px;
       }
 
+      input,
       .input {
         color: #efa647;
         display: block;
@@ -422,14 +453,32 @@ nav {
         bottom: 0;
       }
 
+      input {
+        background-color: black;
+        display: none;
+        left: 25px;
+        width: calc(100% - 30px);
+      }
+
       .display {
         color: #fbd561;
         text-align: left;
         bottom: 30px;
+        z-index: 1;
+        overflow-x: hidden;
+        word-wrap: break-word;
 
         div.sent {
           color: #efa647;
           margin-left: 100px;
+        }
+
+        div.info {
+          color: white;
+        }
+
+        div.error {
+          color: #ff6347;
         }
 
         span {
@@ -437,8 +486,7 @@ nav {
           text-align: left;
           margin: 0 0;
 
-          &.user,
-          &.link {
+          &.user {
             color: #3e96fc;
           }
 

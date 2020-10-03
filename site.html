@@ -30,7 +30,7 @@
         novalidate
       >
         <span>Notify me</span>
-        <input name="EMAIL" />
+        <input name="EMAIL" placeholder="Your email" />
         <div style="position: absolute; left: -5000px" aria-hidden="true">
           <input
             type="text"
@@ -42,15 +42,58 @@
         <button type="submit">Submit</button>
       </form>
     </nav>
-    <section id="introduction">
-      <h2>Distributed chat</h2>
+    <section id="demo">
+      <h2>SimpleX chat</h2>
       <h3>Private, secure, de-centralised, convenient</h3>
+      <p>Using from the terminal, with several channels in one tab/window.</p>
+      <div class="all-users">
+        <div class="user alice">
+          <h3>Alice</h3>
+          <div class="terminal">
+            <div class="display"></div>
+            <div class="input"></div>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="user bob">
+          <h3>Bob</h3>
+          <div class="terminal">
+            <div class="display"></div>
+            <div class="input"></div>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="user tom">
+          <h3>Tom</h3>
+          <div class="terminal">
+            <div class="display"></div>
+            <div class="input"></div>
+            <input type="text" />
+          </div>
+        </div>
+        <button class="run-demo">Run demo</button>
+        <button class="try-it">Try it!</button>
+      </div>
+    </section>
+    <section id="introduction">
+      <h2>SimpleX objective</h2>
       <p>
-        To help privacy-conscious software engineers and technology enthusiasts
-        to be in full control of who can talk to them and their chat data by
-        offering free open-source protocol and software of simple to deploy chat
-        servers and simple to use chat clients providing ultimate privacy,
-        security and ownership of their chat and contacts.
+        To help <strong>privacy-conscious</strong> software engineers and
+        technology enthusiasts
+      </p>
+      <p>
+        to be in <strong>full control</strong> of who can talk to them and their
+        chat data
+      </p>
+      <p>by offering <strong>free open-source</strong> protocol and software</p>
+      <p>
+        of <strong>simple</strong> to deploy chat servers and simple to use chat
+        clients
+      </p>
+      <p>
+        providing ultimate <strong>privacy</strong>,
+        <strong>security</strong> and <strong>ownership</strong> of their chat
+        and contacts.
       </p>
       <figure class="section">
         <div class="feature">
@@ -73,7 +116,7 @@
       </figure>
     </section>
     <section id="problem">
-      <h2>Comms security problem</h2>
+      <h2>Problem: chat security</h2>
       <a id="problem-explained"></a>
       <section class="problem intro">
         <h3>End-to-end encryption?</h3>
@@ -131,44 +174,13 @@
     <section id="solution">
       <h2>What is the solution?</h2>
       <p>
-        To create secure encrypted comms channel you need an existing secure
-        comms channel where you can pass encryption key.
+        To create secure encrypted channel you need an existing secure channel
+        <br />where you can pass the encryption key (or key fingerprint).
       </p>
       <p>Any alternative solution can be compromised.</p>
     </section>
-    <section id="example">
-      <h3>Chat example</h3>
-      <p>
-        A chat example: it allows you to see all the messages in one place and
-        engage with them very quickly without "point and click" and switching
-        between conversations…
-      </p>
-      <div class="all-users">
-        <div class="user alice">
-          <h3>Alice</h3>
-          <div class="terminal">
-            <div class="display"></div>
-            <div class="input"></div>
-          </div>
-        </div>
-        <div class="user bob">
-          <h3>Bob</h3>
-          <div class="terminal">
-            <div class="display"></div>
-            <div class="input"></div>
-          </div>
-        </div>
-        <div class="user tom">
-          <h3>Tom</h3>
-          <div class="terminal">
-            <div class="display"></div>
-            <div class="input"></div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section id="connection">
-      <h2>How Simplex Chat works</h2>
+      <h2>How SimpleX chat works</h2>
       <h3>To add contact and to start chat</h3>
       <figure class="section">
         <figure class="conn-stage">
@@ -193,7 +205,7 @@
       </figure>
     </section>
     <section id="messaging">
-      <h2>Simplex Messaging</h2>
+      <h2>SimpleX messaging</h2>
       <img alt="simplex messaging protocol" src="./img/messaging.svg" />
     </section>
     <section id="chat">
@@ -230,7 +242,7 @@
     </section>
     <div id="simplex">
       <section id="use-simplex" class="half">
-        <h3>Use simplex chat</h3>
+        <h3>Use SimpleX</h3>
         <p>
           Simplex chat is in development.<br />
           Sign up to be notified when it is ready.
@@ -243,7 +255,7 @@
           novalidate
         >
           <p>
-            <input name="EMAIL" />
+            <input name="EMAIL" placeholder="Your email" />
             <span style="position: absolute; left: -5000px" aria-hidden="true">
               <input
                 type="text"
@@ -257,9 +269,9 @@
         </form>
       </section>
       <section id="join-simplex" class="half">
-        <h3>Join simplex chat</h3>
+        <h3>Join SimpleX</h3>
         <p>
-          Open-source project is faster with your help!<br />
+          The project can move faster with your help.<br />
           We develop it in Haskell.
         </p>
         <div id="contacts">

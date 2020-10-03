@@ -419,6 +419,8 @@ nav {
     position: absolute;
 
     h3 {
+      position: absolute;
+      top: -38px;
       text-align: left;
       padding: 0 0 9px 12px;
     }
@@ -513,7 +515,7 @@ nav {
 
     &.alice {
       left: 0;
-      top: 30px;
+      top: 68px;
 
       .terminal {
         width: 503px;
@@ -523,7 +525,7 @@ nav {
 
     &.bob {
       left: 528px;
-      top: 0px;
+      top: 38px;
 
       .terminal {
         width: 492px;
@@ -533,7 +535,7 @@ nav {
 
     &.tom {
       left: 397px;
-      top: 320px;
+      top: 358px;
 
       h3 {
         color: white;

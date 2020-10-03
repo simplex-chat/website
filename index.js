@@ -4,13 +4,15 @@
 
   class User {
     constructor(name) {
-      const term = document.querySelector(`#demo .user.${name} .terminal`);
-      this.input = term.querySelector(".input");
-      this.demoInput = term.querySelector("input");
+      this.userWindow = document.querySelector(`#demo .user.${name}`);
+      this.terminal = this.userWindow.querySelector(`.terminal`);
+      this.input = this.terminal.querySelector(".input");
+      this.demoInput = this.terminal.querySelector("input");
       this.resetInput();
       this.setupDemo();
       this.group = [];
-      this.display = term.querySelector(".display");
+      this.display = this.terminal.querySelector(".display");
+      this.setupMoveWindow();
       this.name = name;
     }
 
@@ -138,6 +140,29 @@
 
     currentChannel() {
       return lastChild(this.display).childNodes[0].innerHTML;
+    }
+
+    setupMoveWindow() {
+      let moving = false;
+      let startX, startY;
+
+      this.terminal.addEventListener("mousedown", (e) => {
+        moving = true;
+        this.userWindow.style.zIndex = "3";
+        this.group.forEach(({ userWindow: { style: s } }) => (s.zIndex = "1"));
+        startX = this.userWindow.offsetLeft - e.clientX;
+        startY = this.userWindow.offsetTop - e.clientY;
+      });
+
+      this.terminal.addEventListener("mouseup", () => (moving = false), true);
+      this.terminal.addEventListener("mouseleave", () => (moving = false));
+      this.terminal.addEventListener("mousemove", (e) => {
+        e.preventDefault();
+        if (moving) {
+          this.userWindow.style.left = e.clientX + startX + "px";
+          this.userWindow.style.top = e.clientY + startY + "px";
+        }
+      });
     }
   }
 

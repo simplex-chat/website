@@ -28,8 +28,8 @@
 
     tryDemo() {
       this.reset();
-      const names = this.group.map((u) => `@${u.name}`).join(", ");
       show(this.demoInput);
+      this.demoInput.value = "";
     }
 
     async send(to, message, typeTo, paste) {
@@ -70,17 +70,23 @@
       show(this.demoInput, false);
     }
 
-    async receive(from, message, group) {
+    async receive(from, message, edit, group) {
       await delay(10);
       let g = group ? `#${this.groupName} ` : "";
-      this.show("received", `${g}@${from.name}: ${message}`);
+      this.show("received", `${g}@${from.name}: ${message}`, edit);
     }
 
-    async receiveGroup(message) {
-      await Promise.all(this.group.map((u) => u.receive(this, message, true)));
+    async receiveGroup(message, edit) {
+      await Promise.all(
+        this.group.map((u) => u.receive(this, message, edit, true))
+      );
     }
 
-    show(mode, str) {
+    show(mode, str, edit) {
+      if (edit && this.lastMessage) {
+        this.lastMessage.innerHTML = highlight(str);
+        return;
+      }
       this.display.insertAdjacentHTML(
         "beforeend",
         `<div class="${mode}">${highlight(str)}</div>`
@@ -89,18 +95,25 @@
 
     setupDemo() {
       if (!this.demoInput) return;
-      on("keypress", this.demoInput, async ({ keyCode, key }) => {
-        if (keyCode === 13) {
-          const [to, ...words] = this.demoInput.value.split(" ");
+      let editMode = false;
+
+      on("keypress", this.demoInput, async ({ key }) => {
+        if (key === "Enter") {
+          const edit = editMode;
+          editMode = false;
+          const [to, ...words] = this.demoInput.value.trim().split(" ");
           const message = words.join(" ");
           switch (to[0]) {
             case undefined:
+              if (message !== "") {
+                this.show("error", "Message should start with @user or #group");
+              }
               break;
             case "@":
-              await this.sendInput(to.slice(1), message);
+              await this.sendInput(to.slice(1), message, edit);
               break;
             case "#":
-              await this.sendInputGroup(to.slice(1), message);
+              await this.sendInputGroup(to.slice(1), message, edit);
               break;
             default:
               this.show("error", "Message should start with @user or #group");
@@ -110,35 +123,54 @@
           if (channel) this.demoInput.value = channel + " ";
         }
       });
+      on("keydown", this.demoInput, async (e) => {
+        if (
+          e.key === "ArrowUp" &&
+          this.demoInput.value === "" &&
+          this.lastMessage
+        ) {
+          const str = (this.demoInput.value = this.lastMessage.innerText);
+          editMode = true;
+          await delay(0);
+          this.demoInput.selectionStart = str.length;
+        }
+      });
     }
 
-    async sendInput(name, message) {
+    async sendInput(name, message, edit) {
       if (name === this.name) {
         this.show("error", "Can't send message to yourself");
         return;
       }
       const recipient = this.group.find((u) => u.name === name);
       if (recipient === undefined) {
-        this.show("error", `Unknown recipient @${name}`);
+        const knownNames =
+          this.group.map((u) => `@${u.name}`).join(", ") + ` or @${this.name}`;
+        this.show("error", `Unknown recipient @${name} (try ${knownNames})`);
         return;
       }
-      this.show("sent", `@${name} ${message}`);
+      this.show("sent", `@${name} ${message}`, edit);
       this.demoInput.value = "";
-      await recipient.receive(this, message);
+      await recipient.receive(this, message, edit);
     }
 
-    async sendInputGroup(name, message) {
+    async sendInputGroup(name, message, edit) {
       if (name !== this.groupName) {
-        this.show("error", `Unknown group #${name}`);
+        this.show("error", `Unknown group #${name} (try #team)`);
         return;
       }
-      this.show("sent", `#${name} ${message}`);
+      this.show("sent", `#${name} ${message}`, edit);
       this.demoInput.value = "";
-      await this.receiveGroup(message);
+      await this.receiveGroup(message, edit);
+    }
+
+    get lastMessage() {
+      const messages = this.display.childNodes;
+      return messages[messages.length - 1];
     }
 
     currentChannel() {
-      return lastChild(this.display).childNodes[0].innerHTML;
+      return this.lastMessage && this.lastMessage.childNodes[0].innerHTML;
     }
 
     setupMoveWindow() {
@@ -148,6 +180,7 @@
       const parent = user.parentNode;
 
       on("mousedown", this.terminal, (e) => {
+        if (e.clientY - this.terminal.getBoundingClientRect().top > 20) return;
         moving = true;
         startX = user.offsetLeft - e.clientX;
         startY = user.offsetTop - e.clientY;
@@ -227,10 +260,6 @@
   function isAlpha(c) {
     c = c.toUpperCase();
     return c >= "A" && c <= "Z";
-  }
-
-  function lastChild(el) {
-    return el.childNodes[el.childNodes.length - 1];
   }
 
   let flipper = setInterval(flipProblem, 5000);

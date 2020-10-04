@@ -22,6 +22,7 @@
     }
 
     setGroup(groupName, users) {
+      this.users = users;
       this.group = users.filter((u) => u !== this);
       this.groupName = groupName;
     }
@@ -124,15 +125,21 @@
         }
       });
       on("keydown", this.demoInput, async (e) => {
-        if (
-          e.key === "ArrowUp" &&
-          this.demoInput.value === "" &&
-          this.lastMessage
-        ) {
-          const str = (this.demoInput.value = this.lastMessage.innerText);
-          editMode = true;
-          await delay(0);
-          this.demoInput.selectionStart = str.length;
+        switch (e.key) {
+          case "ArrowUp":
+            if (this.demoInput.value === "" && this.lastMessage) {
+              const str = (this.demoInput.value = this.lastMessage.innerText);
+              editMode = true;
+              await delay(0);
+              this.demoInput.selectionStart = str.length;
+            }
+            break;
+          case "Tab": {
+            e.preventDefault();
+            const userIndex = this.users.indexOf(this);
+            const nextIndex = (userIndex + 1) % this.users.length;
+            this.users[nextIndex].demoInput.focus();
+          }
         }
       });
     }

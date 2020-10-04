@@ -144,23 +144,22 @@
     setupMoveWindow() {
       let moving = false;
       let startX, startY;
+      const user = this.userWindow;
+      const parent = user.parentNode;
 
-      this.terminal.addEventListener("mousedown", (e) => {
+      on("mousedown", this.terminal, (e) => {
         moving = true;
-        this.userWindow.style.zIndex = "3";
-        this.group.forEach(({ userWindow: { style: s } }) => (s.zIndex = "1"));
-        startX = this.userWindow.offsetLeft - e.clientX;
-        startY = this.userWindow.offsetTop - e.clientY;
+        startX = user.offsetLeft - e.clientX;
+        startY = user.offsetTop - e.clientY;
+        parent.removeChild(user);
+        parent.appendChild(user);
       });
-
-      this.terminal.addEventListener("mouseup", () => (moving = false), true);
-      this.terminal.addEventListener("mouseleave", () => (moving = false));
-      this.terminal.addEventListener("mousemove", (e) => {
-        e.preventDefault();
-        if (moving) {
-          this.userWindow.style.left = e.clientX + startX + "px";
-          this.userWindow.style.top = e.clientY + startY + "px";
-        }
+      on("mouseup", this.terminal, () => (moving = false));
+      on("mouseleave", this.terminal, () => (moving = false));
+      on("mousemove", this.terminal, (e) => {
+        if (!moving) return;
+        user.style.left = e.clientX + startX + "px";
+        user.style.top = e.clientY + startY + "px";
       });
     }
   }

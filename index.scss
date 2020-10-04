@@ -423,6 +423,8 @@ nav {
       top: -38px;
       text-align: left;
       padding: 0 0 9px 12px;
+      color: #ffffbb;
+      mix-blend-mode: difference;
     }
 
     .terminal {
@@ -536,10 +538,6 @@ nav {
     &.tom {
       left: 397px;
       top: 358px;
-
-      h3 {
-        color: white;
-      }
 
       .terminal {
         width: 492px;

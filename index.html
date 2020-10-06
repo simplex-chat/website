@@ -188,22 +188,33 @@
       </p>
       <figure class="section">
         <figure class="conn-stage">
-          <figure class="device"><img src="./img/conn1.svg" /></figure>
+          <figure class="device">
+            <img
+              alt="mobile app: show QR code to add contact"
+              src="./img/conn1.svg"
+            />
+          </figure>
           <figure class="party alice small">Alice</figure>
         </figure>
         <img src="img/arrow.svg" class="arrow" />
         <figure class="conn-stage">
-          <figure class="device"><img src="./img/conn2.svg" /></figure>
+          <figure class="device">
+            <img alt="mobile app: scan QR code" src="./img/conn2.svg" />
+          </figure>
           <figure class="party bob small">Bob</figure>
         </figure>
         <img src="img/arrow.svg" class="arrow" />
         <figure class="conn-stage">
-          <figure class="device"><img src="./img/conn3.svg" /></figure>
+          <figure class="device">
+            <img alt="mobile app: confirm contact" src="./img/conn3.svg" />
+          </figure>
           <figure class="party alice small">Alice</figure>
         </figure>
         <img src="img/arrow.svg" class="arrow" />
         <figure class="conn-stage">
-          <figure class="device"><img src="./img/conn4.svg" /></figure>
+          <figure class="device">
+            <img alt="mobile app: start chat" src="./img/conn4.svg" />
+          </figure>
           <figure class="party bob small">Bob</figure>
         </figure>
       </figure>
@@ -216,12 +227,12 @@
         Encryption key (different for each connection) and connection details<br />
         are passed via existing secure channel - QR code or an existing simplex
         connection.
-        <figure class="section">
-          <figure class="party alice transparent">Alice</figure>
-          <img alt="simplex messaging protocol" src="./img/messaging.svg" />
-          <figure class="party bob transparent">Bob</figure>
-        </figure>
       </p>
+      <figure class="section">
+        <figure class="party alice transparent">Alice</figure>
+        <img alt="simplex messaging protocol" src="./img/messaging.svg" />
+        <figure class="party bob transparent">Bob</figure>
+      </figure>
     </section>
 
     <section id="chat">
@@ -231,12 +242,12 @@
         Chat uses two simplex connections for duplex communication. Messages in
         each connection are linked in blockchain to detect if messages are lost
         or intercepted.
-        <figure class="section">
-          <figure class="party alice">Alice</figure>
-          <img src="./img/chat.svg" />
-          <figure class="party bob">Bob</figure>
-        </figure>
       </p>
+      <figure class="section">
+        <figure class="party alice">Alice</figure>
+        <img alt="simplex chat: duplex conversation" src="./img/chat.svg" />
+        <figure class="party bob">Bob</figure>
+      </figure>
     </section>
 
     <div id="simplex">

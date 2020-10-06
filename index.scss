@@ -226,6 +226,8 @@ nav {
 #problem {
   background-color: #f8f8f6;
   height: 767px;
+  position: relative;
+  z-index: 1;
 
   .explained {
     display: none;
@@ -290,11 +292,8 @@ nav {
       display: block;
       float: left;
       margin: 20px -12px;
-    }
-
-    figure.party {
       position: relative;
-      z-index: 2;
+      z-index: -2;
     }
   }
 
@@ -546,6 +545,8 @@ nav {
 #connection {
   background-color: #f8f8f6;
   height: 924px;
+  position: relative;
+  z-index: 1;
 
   figure.section {
     width: 924px;
@@ -581,6 +582,8 @@ nav {
 #messaging {
   background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   height: 625px;
+  position: relative;
+  z-index: 1;
 
   figure.section {
     width: 750px;
@@ -602,6 +605,8 @@ nav {
 #chat {
   background-color: #f8f8f6;
   height: 683px;
+  position: relative;
+  z-index: 1;
 
   figure.section {
     width: 740px;
@@ -719,11 +724,34 @@ figure.party {
   width: 102px;
   height: 139px;
   background: no-repeat center top;
+  position: relative;
 
   &.small {
     width: 90px;
     height: 118px;
     background-size: 88px 88px;
+
+    &:before {
+      width: 88px;
+      height: 88px;
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    top: 0;
+    left: 1px;
+    width: 99px;
+    height: 99px;
+    background-color: white;
+    z-index: -1;
+  }
+
+  &.transparent:before {
+    opacity: 25%;
   }
 
   &.alice {

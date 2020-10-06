@@ -3,6 +3,10 @@ body,
 figure {
   margin: 0;
   padding: 0;
+}
+
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -377,6 +381,48 @@ nav {
   }
 }
 
+@media (max-width: 1050px) {
+  #demo {
+    div.all-users {
+      width: 849px;
+
+      div.user {
+        &.bob,
+        &.tom {
+          .terminal {
+            width: 452px;
+          }
+        }
+
+        &.bob {
+          left: 397px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1050px) {
+  #demo {
+    div.all-users {
+      width: 1020px;
+
+      div.user {
+        &.bob,
+        &.tom {
+          .terminal {
+            width: 492px;
+          }
+        }
+
+        &.bob {
+          left: 528px;
+        }
+      }
+    }
+  }
+}
+
 #demo {
   background-image: url(../img/bg.svg),
     linear-gradient(180deg, #fbd561 0%, #efa647 100%);
@@ -387,7 +433,6 @@ nav {
   div.all-users {
     position: relative;
     height: 612px;
-    width: 1020px;
     margin: 50px auto;
 
     .run-demo,
@@ -531,11 +576,9 @@ nav {
     }
 
     &.bob {
-      left: 528px;
       top: 38px;
 
       .terminal {
-        width: 492px;
         height: 282px;
       }
     }
@@ -545,7 +588,6 @@ nav {
       top: 358px;
 
       .terminal {
-        width: 492px;
         height: 254px;
       }
     }

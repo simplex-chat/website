@@ -42,10 +42,11 @@
         <button type="submit">Submit</button>
       </form>
     </nav>
+
     <section id="demo">
       <h2>SimpleX chat</h2>
       <h3>Private, secure, de-centralised, convenient</h3>
-      <p>Using from the terminal, with several channels in one tab/window.</p>
+      <p>Using from the terminal, with several chats in one window.</p>
       <div class="all-users">
         <div class="user alice">
           <h3>Alice</h3>
@@ -76,6 +77,7 @@
         <button class="try-it">Try it!</button>
       </div>
     </section>
+
     <section id="introduction">
       <h2>SimpleX objective</h2>
       <p>
@@ -116,6 +118,7 @@
         </div>
       </figure>
     </section>
+
     <section id="problem">
       <h2>Problem: chat security</h2>
       <a id="problem-explained"></a>
@@ -126,11 +129,12 @@
         </p>
         <figure class="communication">
           <figure class="party alice">Alice</figure>
-          <figure class="encrypt key circle left"></figure>
+          <img src="./img/problem11.svg" />
+          <!-- <figure class="encrypt key circle left"></figure>
           <figure class="arrow"></figure>
           <img class="server" src="img/server.svg" />
           <figure class="arrow"></figure>
-          <figure class="encrypt key circle right"></figure>
+          <figure class="encrypt key circle right"></figure> -->
           <figure class="party bob">Bob</figure>
         </figure>
         <p>
@@ -139,11 +143,12 @@
         </p>
         <figure class="communication">
           <figure class="party alice">Alice</figure>
-          <figure class="encrypt lock msg left"></figure>
+          <img src="./img/problem12.svg" />
+          <!-- <figure class="encrypt lock msg left"></figure>
           <figure class="arrow left"></figure>
           <img class="server" src="img/server.svg" />
           <figure class="arrow left"></figure>
-          <figure class="encrypt key msg right"></figure>
+          <figure class="encrypt key msg right"></figure> -->
           <figure class="party bob">Bob</figure>
         </figure>
       </section>
@@ -152,26 +157,27 @@
         <p>
           But the key can be intercepted and substituted by Tom (the attacker)
         </p>
-        <img
-          alt="key is intercepted"
-          class="communication"
-          src="./img/problem21.svg"
-        />
+        <figure class="communication">
+          <figure class="party alice">Alice</figure>
+          <img alt="key is intercepted" src="./img/problem21.svg" />
+          <figure class="party bob">Bob</figure>
+        </figure>
         <p>
           Now the attacker can can read the messages without Alice or Bob
           knowing
         </p>
-        <img
-          alt="attacker can read messages"
-          class="communication"
-          src="./img/problem22.svg"
-        />
+        <figure class="communication">
+          <figure class="party alice">Alice</figure>
+          <img alt="attacker can read messages" src="./img/problem22.svg" />
+          <figure class="party bob">Bob</figure>
+        </figure>
       </section>
       <div class="pagination">
         <a class="page intro" href="#problem-intro"></a>
         <a class="page explained" href="#problem-explained"></a>
       </div>
     </section>
+
     <section id="solution">
       <h2>What is the solution?</h2>
       <p>
@@ -180,6 +186,7 @@
       </p>
       <p>Any alternative solution can be compromised.</p>
     </section>
+
     <section id="connection">
       <h2>How SimpleX chat works</h2>
       <h3>To add contact and to start chat</h3>
@@ -189,26 +196,27 @@
       </p>
       <figure class="section">
         <figure class="conn-stage">
-          <figure class="device"></figure>
+          <figure class="device"><img src="./img/conn1.svg" /></figure>
           <figure class="party alice small">Alice</figure>
         </figure>
         <img src="img/arrow.svg" class="arrow" />
         <figure class="conn-stage">
-          <figure class="device"></figure>
+          <figure class="device"><img src="./img/conn2.svg" /></figure>
           <figure class="party bob small">Bob</figure>
         </figure>
         <img src="img/arrow.svg" class="arrow" />
         <figure class="conn-stage">
-          <figure class="device"></figure>
+          <figure class="device"><img src="./img/conn3.svg" /></figure>
           <figure class="party alice small">Alice</figure>
         </figure>
         <img src="img/arrow.svg" class="arrow" />
         <figure class="conn-stage">
-          <figure class="device"></figure>
+          <figure class="device"><img src="./img/conn4.svg" /></figure>
           <figure class="party bob small">Bob</figure>
         </figure>
       </figure>
     </section>
+
     <section id="messaging">
       <h2>SimpleX messaging</h2>
       <h3>Unidirectional (simplex) connections</h3>
@@ -216,7 +224,11 @@
         Encryption key (different for each connection) and connection details<br />
         are passed via existing secure channel - QR code or an existing simplex
         connection.
-        <img alt="simplex messaging protocol" src="./img/messaging.svg" />
+        <figure class="section">
+          <figure class="party alice">Alice</figure>
+          <img alt="simplex messaging protocol" src="./img/messaging.svg" />
+          <figure class="party bob">Bob</figure>
+        </figure>
       </p>
     </section>
 
@@ -224,35 +236,12 @@
       <h2>Chat</h2>
       <h3>Two message blockchain sequences</h3>
       <p>
-        Chat uses duplex communication - via two simplex connections. Messages
-        in each connection are linked in blockchain to detect if messages are
-        lost or removed.
+        Chat uses two simplex connections for duplex communication. Messages in
+        each connection are linked in blockchain to detect if messages are lost
+        or intercepted.
         <figure class="section">
           <figure class="party alice">Alice</figure>
-          <figure class="chat">
-            <figure class="alice-bob">
-              <figure class="arrow top up"></figure>
-              <img src="img/msg.svg" />
-              <figure class="arrow right"></figure>
-              <img src="img/msg.svg" />
-              <figure class="arrow right"></figure>
-              <img src="img/msg.svg" />
-              <figure class="arrow right"></figure>
-              <img src="img/msg.svg" />
-              <figure class="arrow top down"></figure>
-            </figure>
-            <figure class="bob-alice">
-              <figure class="arrow bottom up"></figure>
-              <img src="img/msg.svg" />
-              <figure class="arrow left"></figure>
-              <img src="img/msg.svg" />
-              <figure class="arrow left"></figure>
-              <img src="img/msg.svg" />
-              <figure class="arrow left"></figure>
-              <img src="img/msg.svg" />
-              <figure class="arrow bottom down"></figure>
-            </figure>
-          </figure>
+          <img src="./img/chat.svg" />
           <figure class="party bob">Bob</figure>
         </figure>
       </p>

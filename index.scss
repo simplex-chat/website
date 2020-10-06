@@ -192,7 +192,7 @@ nav {
       height: 163px;
       position: relative;
       margin: 0 auto;
-      background: url(../img/bullets.svg);
+      background: url(../img/doodle.svg);
       background-size: 400px 400px;
       background-clip: content-box;
 
@@ -277,13 +277,8 @@ nav {
     height: 584px;
   }
 
-  img.communication {
-    display: block;
-    margin: 30px auto 25px auto;
-  }
-
   .communication {
-    width: 642px;
+    width: 645px;
     height: 148px;
     margin: 40px auto 15px auto;
 
@@ -294,64 +289,12 @@ nav {
     img {
       display: block;
       float: left;
-    }
-
-    figure.arrow {
-      width: 134px;
-      height: 22px;
-      background: url(../img/arrow-big.svg) no-repeat center center;
-
-      &.left {
-        transform: rotate(180deg);
-      }
+      margin: 20px -12px;
     }
 
     figure.party {
       position: relative;
       z-index: 2;
-    }
-
-    figure.encrypt {
-      width: 54px;
-      height: 54px;
-      background: no-repeat center center;
-      margin-top: 23px;
-
-      &.circle {
-        background-color: white;
-        border: 1px solid #cdcdcd;
-        border-radius: 100%;
-        position: relative;
-        z-index: 1;
-
-        &.key {
-          background-image: url(../img/key.svg);
-        }
-      }
-
-      &.msg.key {
-        background-image: url(../img/key.svg), url(../img/msg1.svg);
-      }
-
-      &.msg.lock {
-        background-image: url(../img/lock.svg), url(../img/msg1.svg);
-      }
-
-      &.left {
-        margin-left: -20px;
-      }
-
-      &.right {
-        margin-right: -20px;
-      }
-    }
-
-    .arrow {
-      margin: 40px 10px;
-    }
-
-    .server {
-      margin-top: 25px;
     }
   }
 
@@ -363,7 +306,7 @@ nav {
 @supports (background-blend-mode: multiply) and
   (not (-webkit-touch-callout: none)) {
   #solution {
-    background-image: url(../img/bullets.svg);
+    background-image: url(../img/doodle.svg);
     background-blend-mode: multiply;
   }
 }
@@ -502,7 +445,7 @@ nav {
         left: 0px;
         width: 100%;
         height: 20px;
-        background: #666 url(../img/circle.svg) no-repeat 8px center;
+        background: #666 url(../img/topbar.svg) no-repeat 8px center;
         border-radius: 10px 10px 0 0;
         z-index: 2;
       }
@@ -606,7 +549,7 @@ nav {
 
   figure.section {
     width: 924px;
-    margin: 111px auto;
+    margin: 90px auto;
 
     .arrow {
       display: block;
@@ -628,6 +571,10 @@ nav {
     background-image: url(../img/iphone.png);
     width: 185px;
     height: 370px;
+
+    img {
+      padding-top: 50px;
+    }
   }
 }
 
@@ -635,9 +582,20 @@ nav {
   background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   height: 625px;
 
-  img {
-    display: block;
-    margin: 65px auto;
+  figure.section {
+    width: 750px;
+    margin: 70px auto;
+
+    figure.party {
+      float: left;
+      // mix-blend-mode: multiply;
+    }
+
+    img {
+      float: left;
+      display: block;
+      margin: 28px 17px 0 25px;
+    }
   }
 }
 
@@ -655,63 +613,9 @@ nav {
       margin-right: 6px;
     }
 
-    .arrow {
-      margin-top: 14px;
-      margin-right: 6px;
-
-      &.right,
-      &.left {
-        float: left;
-        background: url(../img/arrow-small.svg) no-repeat center center;
-        width: 28px;
-        height: 18px;
-      }
-
-      &.left {
-        transform: rotate(180deg);
-      }
-
-      &.top,
-      &.bottom {
-        float: left;
-        margin-right: 6px;
-        background: url(../img/arrow-diag.svg) no-repeat center center;
-        width: 37px;
-        height: 37px;
-      }
-
-      &.top {
-        margin: 55px 9px 0 9px;
-
-        &.down {
-          transform: rotate(90deg);
-        }
-      }
-
-      &.bottom {
-        margin: -30px 9px 0 9px;
-
-        &.up {
-          transform: rotate(-90deg);
-        }
-
-        &.down {
-          transform: rotate(180deg);
-        }
-      }
-    }
-
     .party {
       float: left;
       margin: 80px 9px;
-    }
-
-    .chat {
-      float: left;
-    }
-
-    .bob-alice {
-      margin-top: 200px;
     }
   }
 }

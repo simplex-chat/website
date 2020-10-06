@@ -310,8 +310,7 @@ nav {
   }
 }
 
-@supports (background-blend-mode: multiply) and
-  (not (-webkit-touch-callout: none)) {
+@supports (background-blend-mode: multiply) and (not (-webkit-touch-callout: none)) {
   #solution {
     background-image: url(../img/doodle.svg);
     background-blend-mode: multiply;
@@ -380,8 +379,7 @@ nav {
 }
 
 #demo {
-  background-image: url(../img/bg.svg),
-    linear-gradient(180deg, #fbd561 0%, #efa647 100%);
+  background-image: url(../img/bg.svg), linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   background-size: 800px 800px, auto;
   padding-top: 91px;
   height: 987px;

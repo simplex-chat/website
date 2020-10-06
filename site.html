@@ -93,8 +93,8 @@
       </p>
       <p>
         providing ultimate <strong>privacy</strong>,
-        <strong>security</strong> and <strong>ownership</strong> of their chat
-        and contacts.
+        <strong>security</strong> and <strong>ownership</strong> of their
+        contacts and chat.
       </p>
       <figure class="section">
         <div class="feature">
@@ -183,6 +183,10 @@
     <section id="connection">
       <h2>How SimpleX chat works</h2>
       <h3>To add contact and to start chat</h3>
+      <p>
+        Adding a contact in mobile app requires sharing your one-time connection
+        QR code.
+      </p>
       <figure class="section">
         <figure class="conn-stage">
           <figure class="device"></figure>
@@ -207,40 +211,53 @@
     </section>
     <section id="messaging">
       <h2>SimpleX messaging</h2>
-      <img alt="simplex messaging protocol" src="./img/messaging.svg" />
+      <h3>Unidirectional (simplex) connections</h3>
+      <p>
+        Encryption key (different for each connection) and connection details<br />
+        are passed via existing secure channel - QR code or an existing simplex
+        connection.
+        <img alt="simplex messaging protocol" src="./img/messaging.svg" />
+      </p>
     </section>
+
     <section id="chat">
       <h2>Chat</h2>
       <h3>Two message blockchain sequences</h3>
-      <figure class="section">
-        <figure class="party alice">Alice</figure>
-        <figure class="chat">
-          <figure class="alice-bob">
-            <figure class="arrow top up"></figure>
-            <img src="img/msg.svg" />
-            <figure class="arrow right"></figure>
-            <img src="img/msg.svg" />
-            <figure class="arrow right"></figure>
-            <img src="img/msg.svg" />
-            <figure class="arrow right"></figure>
-            <img src="img/msg.svg" />
-            <figure class="arrow top down"></figure>
+      <p>
+        Chat uses duplex communication - via two simplex connections. Messages
+        in each connection are linked in blockchain to detect if messages are
+        lost or removed.
+        <figure class="section">
+          <figure class="party alice">Alice</figure>
+          <figure class="chat">
+            <figure class="alice-bob">
+              <figure class="arrow top up"></figure>
+              <img src="img/msg.svg" />
+              <figure class="arrow right"></figure>
+              <img src="img/msg.svg" />
+              <figure class="arrow right"></figure>
+              <img src="img/msg.svg" />
+              <figure class="arrow right"></figure>
+              <img src="img/msg.svg" />
+              <figure class="arrow top down"></figure>
+            </figure>
+            <figure class="bob-alice">
+              <figure class="arrow bottom up"></figure>
+              <img src="img/msg.svg" />
+              <figure class="arrow left"></figure>
+              <img src="img/msg.svg" />
+              <figure class="arrow left"></figure>
+              <img src="img/msg.svg" />
+              <figure class="arrow left"></figure>
+              <img src="img/msg.svg" />
+              <figure class="arrow bottom down"></figure>
+            </figure>
           </figure>
-          <figure class="bob-alice">
-            <figure class="arrow bottom up"></figure>
-            <img src="img/msg.svg" />
-            <figure class="arrow left"></figure>
-            <img src="img/msg.svg" />
-            <figure class="arrow left"></figure>
-            <img src="img/msg.svg" />
-            <figure class="arrow left"></figure>
-            <img src="img/msg.svg" />
-            <figure class="arrow bottom down"></figure>
-          </figure>
+          <figure class="party bob">Bob</figure>
         </figure>
-        <figure class="party bob">Bob</figure>
-      </figure>
+      </p>
     </section>
+
     <div id="simplex">
       <section id="use-simplex" class="half">
         <h3>Use SimpleX</h3>

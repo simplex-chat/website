@@ -360,10 +360,16 @@ nav {
   }
 }
 
+@supports (background-blend-mode: multiply) and
+  (not (-webkit-touch-callout: none)) {
+  #solution {
+    background-image: url(../img/bullets.svg);
+    background-blend-mode: multiply;
+  }
+}
+
 #solution {
-  background-image: url(../img/bullets.svg);
   background-color: #062d56;
-  background-blend-mode: multiply;
   background-size: 800px 800px;
   height: 382px;
 

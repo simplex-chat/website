@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>simplex chat</title>
+    <meta charset="utf-8" />
+    <title>SimpleX chat</title>
+    <meta name="description" content="SimpleX chat: private, secure, de-centralised" />
+    <meta property="og:image" content="https:/simplex.chat/img/simplex.png" />
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <link href="css/index.css" rel="stylesheet" />
     <script async defer src="./index.js"></script>
@@ -32,12 +35,7 @@
         <span>Notify me</span>
         <input name="EMAIL" placeholder="Your email" />
         <div style="position: absolute; left: -5000px" aria-hidden="true">
-          <input
-            type="text"
-            name="b_ddd892b258ae36e5438e6d4e1_ad6037a2fe"
-            tabindex="-1"
-            value=""
-          />
+          <input type="text" name="b_ddd892b258ae36e5438e6d4e1_ad6037a2fe" tabindex="-1" value="" />
         </div>
         <button type="submit">Submit</button>
       </form>
@@ -81,22 +79,14 @@
     <section id="introduction">
       <h2>SimpleX objective</h2>
       <p>
-        To help <strong>privacy-conscious</strong> software engineers and
-        technology enthusiasts
+        To help <strong>privacy-conscious</strong> software engineers and technology enthusiasts
       </p>
-      <p>
-        to be in <strong>full control</strong> of who can talk to them and their
-        chat data
-      </p>
+      <p>to be in <strong>full control</strong> of who can talk to them and their chat data</p>
       <p>by offering <strong>free open-source</strong> protocol and software</p>
+      <p>of <strong>simple</strong> to deploy chat servers and simple to use chat clients</p>
       <p>
-        of <strong>simple</strong> to deploy chat servers and simple to use chat
-        clients
-      </p>
-      <p>
-        providing ultimate <strong>privacy</strong>,
-        <strong>security</strong> and <strong>ownership</strong> of their
-        contacts and chat.
+        providing ultimate <strong>privacy</strong>, <strong>security</strong> and
+        <strong>ownership</strong> of their contacts and chat.
       </p>
       <figure class="section">
         <div class="feature">
@@ -107,9 +97,7 @@
         <div class="feature">
           <div class="doodle privacy"></div>
           <h4>Privacy</h4>
-          <p>
-            Nobody can see your contacts or messages - you control the server
-          </p>
+          <p>Nobody can see your contacts or messages - you control the server</p>
         </div>
         <div class="feature">
           <div class="doodle convenience"></div>
@@ -124,18 +112,13 @@
       <a id="problem-explained"></a>
       <section class="problem intro">
         <h3>End-to-end encryption?</h3>
-        <p>
-          Alice sends the key to Bob (e.g. via p2p network or via chat server)
-        </p>
+        <p>Alice sends the key to Bob (e.g. via p2p network or via chat server)</p>
         <figure class="communication">
           <figure class="party alice">Alice</figure>
           <img alt="Alice sends the key to Bob" src="./img/problem11.svg" />
           <figure class="party bob">Bob</figure>
         </figure>
-        <p>
-          Now Bob can send encrypted messages to Alice - he believes it is
-          secure!
-        </p>
+        <p>Now Bob can send encrypted messages to Alice - he believes it is secure!</p>
         <figure class="communication">
           <figure class="party alice">Alice</figure>
           <img alt="They believe it is secure" src="./img/problem12.svg" />
@@ -144,19 +127,14 @@
       </section>
       <section class="problem explained">
         <h3>Man-in-the-middle attack!</h3>
-        <p>
-          But the key can be intercepted and substituted by Tom (the attacker)
-        </p>
+        <p>But the key can be intercepted and substituted by Tom (the attacker)</p>
         <figure class="communication">
           <figure class="party alice">Alice</figure>
           <img alt="key is intercepted" src="./img/problem21.svg" />
           <figure class="party bob">Bob</figure>
           <div class="tom">Tom</div>
         </figure>
-        <p>
-          Now the attacker can can read the messages without Alice or Bob
-          knowing
-        </p>
+        <p>Now the attacker can can read the messages without Alice or Bob knowing</p>
         <figure class="communication">
           <figure class="party alice">Alice</figure>
           <img alt="attacker can read messages" src="./img/problem22.svg" />
@@ -182,17 +160,11 @@
     <section id="connection">
       <h2>How SimpleX chat works</h2>
       <h3>To add contact and to start chat</h3>
-      <p>
-        Adding a contact in mobile app requires sharing your one-time connection
-        QR code.
-      </p>
+      <p>Adding a contact in mobile app requires sharing your one-time connection QR code.</p>
       <figure class="section">
         <figure class="conn-stage">
           <figure class="device">
-            <img
-              alt="mobile app: show QR code to add contact"
-              src="./img/conn1.svg"
-            />
+            <img alt="mobile app: show QR code to add contact" src="./img/conn1.svg" />
           </figure>
           <figure class="party alice small">Alice</figure>
         </figure>
@@ -225,8 +197,7 @@
       <h3>Unidirectional (simplex) connections</h3>
       <p>
         Encryption key (different for each connection) and connection details<br />
-        are passed via existing secure channel - QR code or an existing simplex
-        connection.
+        are passed via existing secure channel - QR code or an existing simplex connection.
       </p>
       <figure class="section">
         <figure class="party alice transparent">Alice</figure>
@@ -239,9 +210,8 @@
       <h2>Chat</h2>
       <h3>Two message blockchain sequences</h3>
       <p>
-        Chat uses two simplex connections for duplex communication. Messages in
-        each connection are linked in blockchain to detect if messages are lost
-        or intercepted.
+        Chat uses two simplex connections for duplex communication. Messages in each connection are
+        linked in blockchain to detect if messages are lost or intercepted.
       </p>
       <figure class="section">
         <figure class="party alice">Alice</figure>
@@ -300,9 +270,7 @@
     </div>
     <footer>
       <img alt="simplex logo" class="logo" src="img/simplex.svg" />
-      <p class="copyright">
-        &#169; 2020 Simplex | Open-Source Project | chat@simplex.chat
-      </p>
+      <p class="copyright">&#169; 2020 Simplex | Open-Source Project | chat@simplex.chat</p>
       <div class="github">
         <a
           class="github-button"

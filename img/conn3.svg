@@ -35,7 +35,7 @@
                     <g id="button" transform="translate(0.000000, 252.000000)">
                         <rect id="Rectangle" stroke="#CDCDCD" fill="#F4F1EC" x="0" y="0" width="124" height="38" rx="19"></rect>
                         <text id="confirm" font-family="Helvetica" font-size="13" font-weight="normal" fill="#062D56">
-                            <tspan x="31.6708984" y="21">CONFIRM</tspan>
+                            <tspan x="31.6708984" y="24">CONFIRM</tspan>
                         </text>
                     </g>
                 </g>

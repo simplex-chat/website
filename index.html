@@ -3,11 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <title>SimpleX chat: private, secure, de-centralised</title>
-    <meta name="description" content="Free open-source chat protocol and software for technology enthusiasts - complete privacy, security and ownership of your contacts and messages.">
+    <meta
+      name="description"
+      content="Free open-source chat protocol and software for technology enthusiasts - complete privacy, security and ownership of your contacts and messages."
+    />
     <meta name="Content-Type" content="text/html;charset=utf-8" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="SimpleX chat: private, secure, de-centralised" />
-    <meta property="og:description" content="Free open-source chat protocol and software for technology enthusiasts - complete privacy, security and ownership of your contacts and messages." />
+    <meta
+      property="og:description"
+      content="Free open-source chat protocol and software for technology enthusiasts - complete privacy, security and ownership of your contacts and messages."
+    />
     <meta property="og:url" content="https://simplex.chat/" />
     <meta property="og:image" content="https://simplex.chat/img/share_simplex.png" />
     <meta name="twitter:card" content="summary" />
@@ -163,9 +169,9 @@
     </section>
 
     <section id="connection">
-      <h2>How SimpleX chat works</h2>
+      <h2>How SimpleX chat will work</h2>
       <h3>To add contact and to start chat</h3>
-      <p>Adding a contact in mobile app requires sharing your one-time connection QR code.</p>
+      <p>Adding a contact in mobile app will require sharing your one-time QR code.</p>
       <figure class="section">
         <figure class="conn-stage">
           <figure class="device">
@@ -198,11 +204,21 @@
     </section>
 
     <section id="messaging">
-      <h2>SimpleX messaging</h2>
-      <h3>Unidirectional (simplex) connections</h3>
+      <h2>SimpleX messaging protocol</h2>
+      <h3>Unidirectional (simplex) queues</h3>
       <p>
-        Encryption key (different for each connection) and connection details<br />
-        are passed via existing secure channel - QR code or an existing simplex connection.
+        <a
+          href="https://github.com/simplex-chat/protocol/blob/master/simplex-messaging.md"
+          target="_blank"
+          >Simplex messaging protocol</a
+        >
+        (SMP) for messaging via secure persistent queues will serve as the low level protocol for
+        SimpleX chat - see
+        <a href="https://github.com/simplex-chat/simplex-messaging" target="_blank"
+          >demo server implementation</a
+        >.<br />
+        It uses different encryption keys for each message queue - the key is passed via existing
+        secure channel - e.g. QR code or another simplex queue.<br />
       </p>
       <figure class="section">
         <figure class="party alice transparent">Alice</figure>
@@ -213,10 +229,11 @@
 
     <section id="chat">
       <h2>Chat</h2>
-      <h3>Two message blockchain sequences</h3>
+      <h3>Communication integrity</h3>
       <p>
-        Chat uses two simplex connections for duplex communication. Messages in each connection are
-        linked in blockchain to detect if messages are lost or intercepted.
+        Each chat uses two (or more) simplex queues for duplex communication. A message contains
+        the hash of the previous message to detect if messages are lost or
+        changed.
       </p>
       <figure class="section">
         <figure class="party alice">Alice</figure>

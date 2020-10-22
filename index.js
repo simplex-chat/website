@@ -269,11 +269,11 @@
     return c >= "A" && c <= "Z";
   }
 
-  let flipper = setInterval(flipProblem, 5000);
+  let flipper = setInterval(flipProblem, 10000);
 
   onClick("#problem .pagination", () => {
     clearInterval(flipper);
-    flipper = setInterval(flipProblem, 10000);
+    flipper = setInterval(flipProblem, 20000);
   });
 
   function flipProblem() {

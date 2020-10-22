@@ -203,6 +203,85 @@
       </figure>
     </section>
 
+    <section id="comparison">
+      <h2>Comparison with other protocols</h2>
+      <table class="systems">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="simplex"><img alt="simplex logo" src="img/icon.svg" /> SimpleX chat</th>
+            <th>Signal, big platforms</th>
+            <th>XMPP, Matrix</th>
+            <th>P2P protocols</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Requires global identity</td>
+            <td class="highlight good">No <span class=equal>=</span> private</td>
+            <td class="highlight bad">Yes <sup>1</sup></td>
+            <td class="highlight bad">Yes <sup>2</sup></td>
+            <td class="highlight bad">Yes <sup>3</sup></td>
+          </tr>
+          <tr>
+            <td>Possibility of MITM</td>
+            <td class="highlight good">No <span class=equal>=</span> secure</td>
+            <td class="highlight bad">Yes <sup>4</sup></td>
+            <td class="highlight bad">Yes</td>
+            <td class="highlight bad">Yes</td>
+          </tr>
+          <tr>
+            <td>Dependence on DNS</td>
+            <td class="highlight good">No <span class=equal>=</span> resilient</td>
+            <td class="highlight bad">Yes</td>
+            <td class="highlight bad">Yes</td>
+            <td class="highlight good">No</td>
+          </tr>
+          <tr>
+            <td>Federation</td>
+            <td class="highlight good">Yes</td>
+            <td class="highlight bad">No</td>
+            <td class="highlight good">Yes</td>
+            <td class="highlight bad">No <sup>5</sup></td>
+          </tr>
+          <tr>
+            <td>Central component or other network-wide attack</td>
+            <td class="highlight good">No <span class=equal>=</span> resilient</td>
+            <td class="highlight bad">Yes</td>
+            <td class="highlight bad">Yes <sup>2</sup></td>
+            <td class="highlight bad">Yes <sup>6</sup></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="table-comments">
+        <ul class="legend">
+          <li class="bad">Bad</li>
+          <li class="good">Good</li>
+        </ul>
+
+        <div class="footnotes">
+          <ol>
+            <li>Usually based on a phone number, in some cases on usernames</li>
+            <li>DNS based</li>
+            <li>Public key or some other globally unique ID</li>
+            <li>If operator’s servers are compromised</li>
+            <li>
+              While P2P are distributed, they are not federated - they operate as a single network
+            </li>
+            <li>
+              P2P networks either have a central authority or the whole network can be compromised -
+              see
+              <a
+                href="https://github.com/simplex-chat/protocol#comparison-with-p2p-messaging-protocols"
+                >here</a
+              >
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
     <section id="messaging">
       <h2>SimpleX messaging protocol</h2>
       <h3>Unidirectional (simplex) queues</h3>
@@ -231,9 +310,8 @@
       <h2>Chat</h2>
       <h3>Communication integrity</h3>
       <p>
-        Each chat uses two (or more) simplex queues for duplex communication. A message contains
-        the hash of the previous message to detect if messages are lost or
-        changed.
+        Each chat uses two (or more) simplex queues for duplex communication. Each message contains the
+        hash of the previous message to detect if messages are lost or changed.
       </p>
       <figure class="section">
         <figure class="party alice">Alice</figure>

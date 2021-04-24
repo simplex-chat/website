@@ -156,9 +156,13 @@ nav {
 
 #introduction {
   background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
-  height: 767px;
+  height: 838px;
   position: relative;
   z-index: 1;
+
+  h2 {
+    padding-top: 70px;
+  }
 
   p {
     padding-top: 3px;

@@ -74,13 +74,11 @@
     async receive(from, message, edit, group) {
       await delay(10);
       let g = group ? `#${this.groupName} ` : "";
-      this.show("received", `${g}@${from.name}: ${message}`, edit);
+      this.show("received", `${g}${from.name}&gt; ${message}`, edit);
     }
 
     async receiveGroup(message, edit) {
-      await Promise.all(
-        this.group.map((u) => u.receive(this, message, edit, true))
-      );
+      await Promise.all(this.group.map((u) => u.receive(this, message, edit, true)));
     }
 
     show(mode, str, edit) {
@@ -88,17 +86,14 @@
         this.lastMessage.innerHTML = highlight(str);
         return;
       }
-      this.display.insertAdjacentHTML(
-        "beforeend",
-        `<div class="${mode}">${highlight(str)}</div>`
-      );
+      this.display.insertAdjacentHTML("beforeend", `<div class="${mode}">${highlight(str)}</div>`);
     }
 
     setupDemo() {
       if (!this.demoInput) return;
       let editMode = false;
 
-      on("keypress", this.demoInput, async ({ key }) => {
+      on("keypress", this.demoInput, async ({key}) => {
         if (key === "Enter") {
           const edit = editMode;
           editMode = false;
@@ -151,8 +146,7 @@
       }
       const recipient = this.group.find((u) => u.name === name);
       if (recipient === undefined) {
-        const knownNames =
-          this.group.map((u) => `@${u.name}`).join(", ") + ` or @${this.name}`;
+        const knownNames = this.group.map((u) => `@${u.name}`).join(", ") + ` or @${this.name}`;
         this.show("error", `Unknown recipient @${name} (try ${knownNames})`);
         return;
       }
@@ -260,7 +254,8 @@
 
   function highlight(str) {
     return str
-      .replace(/(@[a-z]+)([^0-9]|$)/gi, `<span class="user">$1</span>$2`)
+      .replace(/(@[a-z]+)([^0-9]|$)/gi, `<span class="recipient">$1</span>$2`)
+      .replace(/([a-z]+&gt;)([^0-9]|$)/gi, `<span class="sender">$1</span>$2`)
       .replace(/(#[a-z]+)([^0-9]|$)/gi, `<span class="group">$1</span>$2`);
   }
 
@@ -279,9 +274,7 @@
   function flipProblem() {
     if (isElementInViewport(document.getElementById("problem"))) {
       window.location.hash =
-        window.location.hash === "#problem-explained"
-          ? "#problem-intro"
-          : "#problem-explained";
+        window.location.hash === "#problem-explained" ? "#problem-intro" : "#problem-explained";
     }
   }
 
@@ -301,10 +294,7 @@
   }
 
   function show(selector, visible = true) {
-    const el =
-      typeof selector === "string"
-        ? document.querySelector(selector)
-        : selector;
+    const el = typeof selector === "string" ? document.querySelector(selector) : selector;
     if (el) el.style.display = visible ? "block" : "none";
   }
 

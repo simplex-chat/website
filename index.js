@@ -171,7 +171,7 @@
     }
 
     currentChannel() {
-      return this.lastMessage && this.lastMessage.childNodes[0].innerHTML;
+      return this.lastMessage && toContact(this.lastMessage.childNodes[0].innerHTML);
     }
 
     setupMoveWindow() {
@@ -196,6 +196,10 @@
         user.style.top = e.clientY + startY + "px";
       });
     }
+  }
+
+  function toContact(str) {
+    return str.endsWith("&gt;") ? "@" + str.slice(0, -4) : str;
   }
 
   function setGroup(groupName, users) {

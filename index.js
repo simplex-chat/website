@@ -33,9 +33,9 @@
       this.demoInput.value = "";
     }
 
-    async send(to, message, typeTo, paste) {
-      await this._sendMsg(`@${to.name}`, message, typeTo, paste);
-      await to.receive(this, message);
+    async send(to, message, typeTo, paste, secret) {
+      await this._sendMsg(`@${to.name}`, message, typeTo, paste, secret);
+      await to.receive(this, toSecret(secret, message));
       await delay(20);
     }
 
@@ -45,12 +45,14 @@
       await delay(10);
     }
 
-    async _sendMsg(toStr, message, typeTo, paste) {
+    async _sendMsg(toStr, message, typeTo, paste, secret) {
       await this.type(`${toStr} `, !typeTo);
+      if (secret) await this.type("#");
       await this.type(message, paste);
+      if (secret) await this.type("#");
       await delay(10);
       this.resetInput();
-      this.show("sent", `${toStr} ${message}`);
+      this.show("sent", `${toStr} ${toSecret(secret, message)}`);
     }
 
     async type(str, paste) {
@@ -219,7 +221,7 @@
     await bob.sendGroup("looking at it now @alice 👀");
     await alice.sendGroup("thanks @bob!");
     await alice.sendGroup("will DM @tom");
-    await alice.send(tom, "w3@o6CewoZx#%$SQETXbWnus", true, true);
+    await alice.send(tom, "w3@o6CewoZx#%$SQETXbWnus", true, true, true);
     await tom.send(alice, "you're the savior 🙏!");
     await alice.send(bob, "please check the tests too", true);
     await bob.send(alice, "all looks good 👍");
@@ -227,11 +229,41 @@
     DELAY = 80;
   }
 
+  const invitation =
+    "smp::example.com:5223#1XNE1m2E1m0lm92&#8203;WG&#8203;Ket9CL6+lO742Vy5&#8203;G6nsrkvgs8=::St9hPY+k6nfrbaXj::rsa:MII&#8203;BoTANBgkqhkiG9w0B&#8203;AQEFAAOCAY4AMIIBiQKCAQEA03XGpEqh3faDN&#8203;Gl06pPhaT==";
+
+  async function establishConnection() {
+    team.forEach((u) => u.reset());
+    await alice.type("/add bob");
+    await delay(10);
+    alice.resetInput();
+    // alice.show("/add bob");
+    alice.show("sent", "pass this invitation to your contact (via any channel):");
+    alice.show("sent", "&nbsp;");
+    alice.show("sent", invitation);
+    alice.show("sent", "&nbsp;");
+    alice.show("sent", "and ask them to connect:");
+    alice.show("sent", "/c name_for_you invitation_above");
+    await delay(20);
+    await bob.type("/connect alice ");
+    await bob.type(invitation, true);
+    await delay(20);
+    bob.resetInput();
+    await bob.show("received", "/connect alice " + invitation);
+    await delay(10);
+    bob.show("received", "@alice connected");
+    await delay(2);
+    alice.show("received", "@bob connected");
+    await alice.send(bob, "hello bob");
+    await bob.send(alice, "hi alice");
+  }
+
   await chatDemo();
   const RUN_DEMO = "#demo .run-demo";
   const RUN_FASTER = "#demo .run-faster";
   const TRY_IT = "#demo .try-it";
   onClick(RUN_DEMO, runChatDemo);
+  // onClick(RUN_DEMO, establishConnection);
   onClick(RUN_FASTER, () => (DELAY /= 2));
   onClick(TRY_IT, tryChatDemo);
 
@@ -260,7 +292,12 @@
     return str
       .replace(/(@[a-z]+)([^0-9]|$)/gi, `<span class="recipient">$1</span>$2`)
       .replace(/([a-z]+&gt;)([^0-9]|$)/gi, `<span class="sender">$1</span>$2`)
-      .replace(/(#[a-z]+)([^0-9]|$)/gi, `<span class="group">$1</span>$2`);
+      .replace(/(#[a-z]+)([^0-9]|$)/gi, `<span class="group">$1</span>$2`)
+      .replace(/#([^\s]+)#([\s]|$)/gi, `#<span class="secret">$1</span>#$2`);
+  }
+
+  function toSecret(secret, message) {
+    return secret ? `#${message}#` : message;
   }
 
   function isAlpha(c) {

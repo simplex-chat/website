@@ -437,10 +437,9 @@ nav {
 
     .terminal {
       position: relative;
-      background-color: black;
+      background-color: rgba(0, 0, 0, 0.8);
       border: 1px solid white;
       border-radius: 10px;
-      opacity: 0.8;
       box-sizing: border-box;
       padding: 10px 10px;
       color: white;
@@ -525,6 +524,11 @@ nav {
 
           &.sender {
             color: yellow;
+          }
+
+          &.secret {
+            color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(0, 0, 0, 0.4);
           }
         }
       }

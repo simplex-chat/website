@@ -2,7 +2,7 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>SimpleX chat: private, secure, decentralized</title>
+    <title>SimpleX chat: private, decentralized, no global identities</title>
     <meta
       name="description"
       content="Free open-source chat protocol and software for technology enthusiasts - complete privacy, security and ownership of your contacts and messages."
@@ -36,26 +36,17 @@
         >
       </div>
 
-      <form
-        class="sign-up"
-        action="https://chat.us2.list-manage.com/subscribe/post?u=ddd892b258ae36e5438e6d4e1&amp;id=ad6037a2fe"
-        method="post"
-        target="_blank"
-        novalidate
-      >
-        <span>Notify me</span>
-        <input name="EMAIL" placeholder="Your email" />
-        <div style="position: absolute; left: -5000px" aria-hidden="true">
-          <input type="text" name="b_ddd892b258ae36e5438e6d4e1_ad6037a2fe" tabindex="-1" value="" />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+      <div class="donate">
+        <a href="https://opencollective.com/simplex-chat" target="_blank">
+          <span class="button">Donate</span></a
+        >
+      </div>
     </nav>
 
     <section id="demo">
       <h1>SimpleX chat</h1>
-      <h3>Private, secure, decentralized, convenient</h3>
-      <p>You can use it from the <a href="https://github.com/simplex-chat/simplex-chat">terminal UI</a>, with several chats in one window.</p>
+      <h3>Private, decentralized, no global identities</h3>
+      <p>You can use it from the <a href="https://github.com/simplex-chat/simplex-chat">terminal UI</a>, with all contacts and groups in one window.</p>
       <div class="all-users">
         <div class="user alice">
           <h3>Alice</h3>
@@ -219,38 +210,38 @@
         <tbody>
           <tr>
             <td>Requires global identity</td>
-            <td class="highlight good">No <span class=equal>=</span> private</td>
+            <td class="highlight good">No - private</td>
             <td class="highlight bad">Yes <sup>1</sup></td>
             <td class="highlight bad">Yes <sup>2</sup></td>
             <td class="highlight bad">Yes <sup>3</sup></td>
           </tr>
           <tr>
             <td>Possibility of MITM</td>
-            <td class="highlight good">No <span class=equal>=</span> secure</td>
+            <td class="highlight good">No - secure</td>
             <td class="highlight bad">Yes <sup>4</sup></td>
             <td class="highlight bad">Yes</td>
             <td class="highlight bad">Yes</td>
           </tr>
           <tr>
             <td>Dependence on DNS</td>
-            <td class="highlight good">No <span class=equal>=</span> resilient</td>
+            <td class="highlight good">No - resilient</td>
             <td class="highlight bad">Yes</td>
             <td class="highlight bad">Yes</td>
             <td class="highlight good">No</td>
           </tr>
           <tr>
-            <td>Federation</td>
-            <td class="highlight good">Yes</td>
-            <td class="highlight bad">No</td>
-            <td class="highlight good">Yes</td>
-            <td class="highlight bad">No <sup>5</sup></td>
+            <td>Single or centralized network</td>
+            <td class="highlight good">No - decentralized</td>
+            <td class="highlight bad">Yes</td>
+            <td class="highlight good">No - federated <sup>5</sup></td>
+            <td class="highlight bad">Yes <sup>6</sup></td>
           </tr>
           <tr>
             <td>Central component or other network-wide attack</td>
-            <td class="highlight good">No <span class=equal>=</span> resilient</td>
+            <td class="highlight good">No - resilient</td>
             <td class="highlight bad">Yes</td>
             <td class="highlight bad">Yes <sup>2</sup></td>
-            <td class="highlight bad">Yes <sup>6</sup></td>
+            <td class="highlight bad">Yes <sup>7</sup></td>
           </tr>
         </tbody>
       </table>
@@ -264,9 +255,10 @@
         <div class="footnotes">
           <ol>
             <li>Usually based on a phone number, in some cases on usernames</li>
-            <li>DNS based</li>
+            <li>DNS-based addresses</li>
             <li>Public key or some other globally unique ID</li>
             <li>If operator’s servers are compromised</li>
+            <li>Does not protect users' metadata</li>
             <li>
               While P2P are distributed, they are not federated - they operate as a single network
             </li>
@@ -325,8 +317,18 @@
       <section id="use-simplex" class="half">
         <h3>Use SimpleX</h3>
         <p>
-          Simplex chat is in development.<br />
-          Sign up to be notified when it is ready.
+          SimpleX chat terminal client
+          <a href="https://github.com/simplex-chat/simplex-chat/releases/tag/v0.4.0" target="_blank">v0.4.0 is released</a>!<br />
+          It supports groups and sending files
+        </p>
+        <p>
+          You can use our servers or use 1-click deployment on
+          <a href="https://marketplace.digitalocean.com/apps/simplex-server" target="_blank">
+            DigitalOcean marketplace</a
+          >.
+        </p>
+        <p>
+          Sign up to be updated about the new releases.
         </p>
         <form
           class="sign-up"
@@ -353,7 +355,7 @@
         <h3>Join SimpleX</h3>
         <p>
           The project can move faster with your help.<br />
-          We develop it in Haskell.
+          We develop it in Haskell and Dart/Flutter.
         </p>
         <div id="contacts">
           <p>
@@ -362,8 +364,13 @@
             >
           </p>
           <p>
-            <a href="https://github.com/simplex-chat/protocol" target="_blank"
+            <a href="https://github.com/simplex-chat/simplex-chat" target="_blank"
               ><span class="button">Join</span>&nbsp; github.com/simplex-chat</a
+            >
+          </p>
+          <p>
+            <a href="https://opencollective.com/simplex-chat" target="_blank"
+              ><span class="button">Donate</span>&nbsp; opencollective.com/simplex-chat</a
             >
           </p>
         </div>
@@ -371,7 +378,7 @@
     </div>
     <footer>
       <img alt="simplex logo" class="logo" src="img/simplex.svg" />
-      <p class="copyright">&#169; 2020 Simplex | Open-Source Project | chat@simplex.chat</p>
+      <p class="copyright">&#169; 2020-21 SimpleX | Open-Source Project | <a href="mailto:chat@simplex.chat">chat@simplex.chat</a></p>
       <div class="github">
         <a
           class="github-button"

@@ -119,34 +119,48 @@ nav {
       text-align: center;
       margin-right: 11px;
     }
-
-    input,
-    button {
-      border-radius: 15px;
-      height: 30px;
-    }
-
-    input {
-      background-color: white;
-      width: 212px;
-      margin-right: 11px;
-      padding: 0 12px;
-      font-size: 12.75px;
-      letter-spacing: 0.53px;
-    }
-
-    button {
-      width: 95px;
-      font-size: 12.75px;
-      letter-spacing: 0.4px;
-    }
   }
 
-  .github {
+  input,
+  button,
+  span.button {
+    border-radius: 15px;
+    height: 30px;
+  }
+
+  input {
+    background-color: white;
+    width: 212px;
+    margin-right: 11px;
+    padding: 0 12px;
+    font-size: 12.75px;
+    letter-spacing: 0.53px;
+  }
+
+  button {
+    width: 95px;
+    font-size: 12.75px;
+    letter-spacing: 0.4px;
+  }
+
+  span.button {
+    width: 100px;
+    font-size: 12.75px;
+    line-height: 30px;
+  }
+
+  .github, .donate {
     float: right;
     width: 90px;
     height: 30px;
-    margin: 33px 32px;
+  }
+
+  .github {
+    margin: 33px 40px 0 32px;
+  }
+
+  .donate {
+    margin: 33px 5px;
   }
 }
 
@@ -878,6 +892,13 @@ nav {
     }
   }
 
+  #use-simplex {
+    a {
+      color: #f95a2c;
+      font-weight: 500;
+    }
+  }
+
   #contacts {
     width: 320px;
     margin: 22px auto;
@@ -921,6 +942,11 @@ footer {
     position: absolute;
     top: 25px;
     right: 38px;
+  }
+
+  a {
+    color: #062d56;
+    text-decoration: none;
   }
 }
 

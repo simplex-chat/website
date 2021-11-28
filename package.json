@@ -1,0 +1,23 @@
+{
+  "name": "website",
+  "version": "0.1.0",
+  "description": "SimpleX Chat website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run js:build && npm run css:build",
+    "js:build": "cp ./node_modules/qrcode/build/qrcode.js ./connect/",
+    "css:build": "sass index.scss css/index.css --style=compressed",
+    "css:dev": "sass index.scss css/index.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simplex-chat/website"
+  },
+  "author": "SimpleX Chat",
+  "license": "MIT",
+  "devDependencies": {
+    "qrcode": "^1.5.0",
+    "sass": "^1.43.5"
+  }
+}

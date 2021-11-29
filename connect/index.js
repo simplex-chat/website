@@ -1,7 +1,6 @@
 (async function () {
   const connURIel = document.getElementById("connection_request_uri");
-  connURIel.innerText = document.location;
-  const connURI = "https://simplex.chat";
+  const connURI = connURIel.innerText = document.location.toString();
 
   const connQRCode = document.getElementById("connection_request_qrcode");
   try {

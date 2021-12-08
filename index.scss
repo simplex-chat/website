@@ -923,8 +923,106 @@ nav {
   }
 }
 
-#connection_request {
-  margin-top: 200px;
+#conn_req {
+  margin-top: 100px;
+  position: relative;
+  display: block;
+
+  h1,
+  h2,
+  h3 {
+    color: #062d56;
+  }
+  
+  a {
+    color: #124d86;
+  }
+
+  .conn_req_uri {
+    width: 960px;
+    margin: 0 auto;
+
+    .content_copy_with_tooltip {
+      float: left;
+      width: 500px;
+      padding: 24px 0 0 24px;
+
+      textarea {
+        word-break: break-all;
+        width: 340px;
+        height: 340px;
+        resize: none;
+        outline: none;
+        padding: 5px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        border-color: #ccc;
+      }
+    }
+
+    canvas {
+      width: 360px;
+      height: 360px;
+      padding-top: 12px;
+    }
+  }
+
+  .content {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: black;
+  }
+
+  p.install {
+    width: 960px;
+  }
+
+  a.github {
+    vertical-align: -5px;
+  }
+
+  .content_copy:hover {
+    cursor: pointer;
+  }
+  
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #062d56 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 footer {
@@ -940,6 +1038,12 @@ footer {
 
   .copyright {
     padding-top: 25px;
+
+    img {
+      width: 22px;
+      height: 22px;
+      vertical-align: -4px;
+    }
   }
 
   .github {

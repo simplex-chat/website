@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run js:build && npm run css:build",
-    "js:build": "cp ./node_modules/qrcode/build/qrcode.js ./connect/",
+    "js:build": "cp ./node_modules/qrcode/build/qrcode.js ./contact/",
     "css:build": "sass index.scss css/index.css --style=compressed",
     "css:dev": "sass index.scss css/index.css --watch"
   },

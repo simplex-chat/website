@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>SimpleX chat: private, decentralized, no global identities</title>
+    <meta
+      name="description"
+      content="Free open-source chat protocol and software for technology enthusiasts - complete privacy, security and ownership of your contacts and messages."
+    />
+    <meta name="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="twitter:card" content="summary" />
+    <link href="../css/index.css" rel="stylesheet" />
+    <script src="../contact/qrcode.js"></script>
+    <script async defer src="../contact/index.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+
+  <body>
+    <nav id="top">
+      <a href="/">
+        <img alt="simplex logo" class="logo" src="../img/simplex.svg" />
+      </a>
+      <div class="github">
+        <a
+          class="github-button"
+          href="https://github.com/simplex-chat/simplex-chat"
+          data-size="large"
+          data-show-count="true"
+          aria-label="Star simplex-chat on GitHub"
+          >Star</a
+        >
+      </div>
+
+      <div class="donate">
+        <a href="https://opencollective.com/simplex-chat" target="_blank">
+          <span class="button">Donate</span></a
+        >
+      </div>
+    </nav>
+
+    <section id="conn_req">
+      <h3>This link is the <span class=conn_mode>invitation from</span> a SimpleX Chat user</h1>
+      <p>
+        If you already installed <a href="https://github.com/simplex-chat/simplex-chat">SimpleX Chat for the terminal</a> v0.5.0+, <br>
+        copy the command below and use it in the chat:
+      </p>
+      <div class="conn_req_uri">
+        <p class="content_copy_with_tooltip">
+          <textarea readonly class="content" id="conn_req_uri_text"></textarea>
+          <span class="tooltip">
+            <span class="tooltiptext" id="copy_conn_req_uri_tooltip">Copy to clipboard</span>
+            <img class="content_copy" id="copy_conn_req_uri" src="../img/icons/content-copy.svg">
+          </span>
+        </p>
+        <canvas id="conn_req_uri_qrcode"></canvas>
+        <p>In the mobile app - it is coming soon! - you'll be able to connect by scanning a QR code.</p>
+      </div>
+
+      <h3>To install the terminal app</h3>
+      <p>
+        use this command in the terminal:
+      </p>
+      <p class="content_copy_with_tooltip install">
+        <span class="content">curl -o- https://raw.githubusercontent.com/simplex-chat/simplex-chat/master/install.sh | bash</span>
+        <span class="tooltip">
+          <span class="tooltiptext">Copy to clipboard</span>
+          <img class="content_copy" src="../img/icons/content-copy.svg">
+        </span>
+      </p>
+      <p>
+        See SimpleX Chat
+        <a href="https://github.com/simplex-chat/simplex-chat">GitHub repository</a>
+        <a href="https://github.com/simplex-chat/simplex-chat" class="github"><img src="../img/icons/github.svg"></a>
+        for the instructions <br>
+        on how to install it manually or compile from the source code.
+      </p>
+    </section>
+  </body>
+</html>

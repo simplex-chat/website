@@ -850,10 +850,10 @@ nav {
 
 #simplex {
   background-color: white;
-  height: 435px;
+  height: 475px;
 
   h3 {
-    padding-top: 63px;
+    padding-top: 67px;
   }
 
   p {
@@ -923,62 +923,29 @@ nav {
   }
 }
 
-#conn_req {
-  margin-top: 100px;
-  position: relative;
-  display: block;
-
+#conn_req, #install_chat {
   h1,
   h2,
   h3 {
     color: #062d56;
   }
   
-  a {
-    color: #124d86;
-  }
-
-  .conn_req_uri {
-    width: 960px;
-    margin: 0 auto;
-
-    .content_copy_with_tooltip {
-      float: left;
-      width: 500px;
-      padding: 24px 0 0 24px;
-
-      textarea {
-        word-break: break-all;
-        width: 340px;
-        height: 340px;
-        resize: none;
-        outline: none;
-        padding: 5px;
-        box-sizing: border-box;
-        border-radius: 4px;
-        border-color: #ccc;
-      }
-    }
-
-    canvas {
-      width: 360px;
-      height: 360px;
-      padding-top: 12px;
-    }
-  }
-
-  .content {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    color: black;
-  }
-
   p.install {
     width: 960px;
   }
 
   a.github {
     vertical-align: -5px;
+  }
+
+  a {
+    color: #124d86;
+  }
+
+  .content {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: black;
   }
 
   .content_copy:hover {
@@ -1023,6 +990,48 @@ nav {
     visibility: visible;
     opacity: 1;
   }
+}
+
+#conn_req {
+  margin-top: 120px;
+  height: 660px;
+  position: relative;
+  display: block;
+
+  .conn_req_uri {
+    width: 960px;
+    margin: 0 auto;
+
+    .content_copy_with_tooltip {
+      float: left;
+      width: 500px;
+      padding: 24px 0 0 24px;
+  
+      textarea {
+        word-break: break-all;
+        width: 340px;
+        height: 340px;
+        resize: none;
+        outline: none;
+        padding: 5px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        border-color: #ccc;
+      }
+    }
+
+    canvas {
+      width: 360px;
+      height: 360px;
+      padding-top: 12px;
+    }
+  }
+}
+
+#install_chat {
+  padding-top: 24px;
+  height: 345px;
+  background-color: #f8f8f6;
 }
 
 footer {

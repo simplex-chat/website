@@ -705,10 +705,10 @@ nav .donate {
 
 #simplex {
   background-color: white;
-  height: 435px;
+  height: 475px;
 }
 #simplex h3 {
-  padding-top: 63px;
+  padding-top: 67px;
 }
 #simplex p {
   width: 455px;
@@ -764,18 +764,71 @@ nav .donate {
   text-decoration: none;
 }
 
-#conn_req {
-  margin-top: 100px;
-  position: relative;
-  display: block;
-}
 #conn_req h1,
 #conn_req h2,
-#conn_req h3 {
+#conn_req h3, #install_chat h1,
+#install_chat h2,
+#install_chat h3 {
   color: #062d56;
 }
-#conn_req a {
+#conn_req p.install, #install_chat p.install {
+  width: 960px;
+}
+#conn_req a.github, #install_chat a.github {
+  vertical-align: -5px;
+}
+#conn_req a, #install_chat a {
   color: #124d86;
+}
+#conn_req .content, #install_chat .content {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  color: black;
+}
+#conn_req .content_copy:hover, #install_chat .content_copy:hover {
+  cursor: pointer;
+}
+#conn_req .tooltip, #install_chat .tooltip {
+  position: relative;
+  display: inline-block;
+}
+#conn_req .tooltip .tooltiptext, #install_chat .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+}
+#conn_req .tooltip .tooltiptext::after, #install_chat .tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #062d56 transparent transparent transparent;
+}
+#conn_req .tooltip:hover .tooltiptext, #install_chat .tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#conn_req {
+  margin-top: 120px;
+  height: 660px;
+  position: relative;
+  display: block;
 }
 #conn_req .conn_req_uri {
   width: 960px;
@@ -802,54 +855,11 @@ nav .donate {
   height: 360px;
   padding-top: 12px;
 }
-#conn_req .content {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 14px;
-  color: black;
-}
-#conn_req p.install {
-  width: 960px;
-}
-#conn_req a.github {
-  vertical-align: -5px;
-}
-#conn_req .content_copy:hover {
-  cursor: pointer;
-}
-#conn_req .tooltip {
-  position: relative;
-  display: inline-block;
-}
-#conn_req .tooltip .tooltiptext {
-  visibility: hidden;
-  width: 140px;
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  font-size: 14px;
-}
-#conn_req .tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #062d56 transparent transparent transparent;
-}
-#conn_req .tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+
+#install_chat {
+  padding-top: 24px;
+  height: 345px;
+  background-color: #f8f8f6;
 }
 
 footer {

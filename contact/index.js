@@ -1,6 +1,6 @@
 (async function () {
   const connURIel = document.getElementById("conn_req_uri_text");
-  const connURI = document.location.toString();
+  const connURI = document.location.toString().replace(/\/(contact|invitation)\//, "$1");
   connURIel.innerText = "/c " + connURI;
   if (document.location.pathname.indexOf("/contact") >= 0) {
     document.querySelector("#conn_req .conn_mode").innerText = "contact address of";

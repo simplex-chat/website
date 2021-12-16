@@ -14,7 +14,10 @@
 
   const connQRCode = document.getElementById("conn_req_uri_qrcode");
   try {
-    await QRCode.toCanvas(connQRCode, connURI, {errorCorrectionLevel: 'M'});
+    await QRCode.toCanvas(connQRCode, connURI, {
+      errorCorrectionLevel: "M",
+      color: {dark: "#062D56"}
+    });
     connQRCode.style.width = "360px";
     connQRCode.style.height = "360px";
   } catch (err) {

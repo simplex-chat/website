@@ -5,7 +5,7 @@
   if (document.location.pathname.indexOf("/contact") >= 0) {
     document.querySelector("#conn_req .conn_mode").innerText = "contact address of";
   }
-  const els = document.querySelectorAll("#conn_req .content_copy_with_tooltip");
+  const els = document.querySelectorAll(".content_copy_with_tooltip");
   if (navigator.clipboard) {
     els.forEach(contentCopyWithTooltip)
   } else {

@@ -3,42 +3,48 @@
 <body>
   <script>
     if (window.WebSocket === undefined) {
-      console.log("sockets not supported")
+      console.log("sockets not supported");
     } else {
-      window.addEventListener("load", onLoad, false);
+      window.addEventListener("load", connectWS("wss://testws.simplex.im:80"), false);
+      window.addEventListener("load", connectWS("wss://188.166.8.35:80"), false);
     }
 
-    function onLoad() {
-      let wsUri = "wss://testws.simplex.im:80";
-      // let wsUri = "wss://188.166.8.35:80";
+    function connectWS(wsUri) {
       socket = new WebSocket(wsUri);
-      socket.onopen = function (evt) { onOpen(evt) };
-      socket.onclose = function (evt) { onClose(evt) };
-      socket.onmessage = function (evt) { onMessage(evt) };
-      socket.onerror = function (evt) { onError(evt) };
+      socket.onopen = function (evt) {
+        onOpen(wsUri, evt);
+      };
+      socket.onclose = function (evt) {
+        onClose(wsUri, evt);
+      };
+      socket.onmessage = function (evt) {
+        onMessage(wsUri, evt);
+      };
+      socket.onerror = function (evt) {
+        onError(wsUri, evt);
+      };
     }
 
-    function onOpen(evt) {
-      console.log("[open] Connection established");
+    function onOpen(wsUri, evt) {
+      console.log(`${wsUri} - [open] Connection established`);
     }
 
-    function onMessage(evt) {
-      console.log(`[message] Data received from server: ${evt.data}`);
+    function onMessage(wsUri, evt) {
+      console.log(`${wsUri} - [message] Data received from server: ${evt.data}`);
     }
 
-    function onClose(evt) {
+    function onClose(wsUri, evt) {
       if (evt.wasClean) {
-        console.log(`[close] Connection closed cleanly, code=${evt.code} reason=${evt.reason}`);
+        console.log(
+          `${wsUri} - [close] Connection closed cleanly, code=${evt.code} reason=${evt.reason}`
+        );
       } else {
-        // e.g. server process killed or network down
-        // evt.code is usually 1006 in this case
-        console.log(`[close] Connection died, code=${evt.code} reason=${evt.reason}`);
-        console.log(evt);
+        console.log(`${wsUri} - [close] Connection died: `, evt);
       }
     }
 
-    function onError(evt) {
-      console.log('error: ', evt);
+    function onError(wsUri, evt) {
+      console.log(`${wsUri} - [error] Event: `, evt);
     }
   </script>
 </body>

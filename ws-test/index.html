@@ -27,11 +27,11 @@
     }
 
     function onClose(evt) {
-      if (event.wasClean) {
+      if (evt.wasClean) {
         console.log(`[close] Connection closed cleanly, code=${evt.code} reason=${evt.reason}`);
       } else {
         // e.g. server process killed or network down
-        // event.code is usually 1006 in this case
+        // evt.code is usually 1006 in this case
         console.log(`[close] Connection died, code=${evt.code} reason=${evt.reason}`);
       }
     }

@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 
 <body>
-  <div id="log"></div>
-
   <script>
-    log = document.getElementById("log");
-
     if (window.WebSocket === undefined) {
-      logMsg("sockets not supported")
+      console.log("sockets not supported")
     } else {
       window.addEventListener("load", onLoad, false);
     }
 
-    function logMsg(msg) {
-      log.innerHTML = log.innerHTML + '<p>' + msg + "</p>";
-    }
-
     function onLoad() {
-      let wsUri = "ws://testws.simplex.im:80";
-      // let wsUri = "ws://188.166.8.35:80";
+      let wsUri = "wss://testws.simplex.im:80";
+      // let wsUri = "wss://188.166.8.35:80";
       socket = new WebSocket(wsUri);
       socket.onopen = function (evt) { onOpen(evt) };
       socket.onclose = function (evt) { onClose(evt) };
@@ -27,25 +19,25 @@
     }
 
     function onOpen(evt) {
-      logMsg("[open] Connection established");
+      console.log("[open] Connection established");
     }
 
     function onMessage(evt) {
-      logMsg(`[message] Data received from server: ${evt.data}`);
+      console.log(`[message] Data received from server: ${evt.data}`);
     }
 
     function onClose(evt) {
       if (event.wasClean) {
-        logMsg(`[close] Connection closed cleanly, code=${evt.code} reason=${evt.reason}`);
+        console.log(`[close] Connection closed cleanly, code=${evt.code} reason=${evt.reason}`);
       } else {
         // e.g. server process killed or network down
         // event.code is usually 1006 in this case
-        logMsg(`[close] Connection died, code=${evt.code} reason=${evt.reason}`);
+        console.log(`[close] Connection died, code=${evt.code} reason=${evt.reason}`);
       }
     }
 
     function onError(evt) {
-      logMsg(`[error] ${evt.message}`);
+      console.log(`[error] ${evt.message}`);
     }
   </script>
 </body>

@@ -343,4 +343,28 @@
     const el = document.querySelector(selector);
     el.disabled = enabled ? "" : "true";
   }
+
+  const copyEls = document.querySelectorAll(".content_copy_with_tooltip");
+  if (navigator.clipboard) {
+    copyEls.forEach(contentCopyWithTooltip)
+  } else {
+    copyEls.forEach(el => el.style.visibility = "hidden")
+  }
+
+  function contentCopyWithTooltip(parent) {
+    const content = parent.querySelector(".content");
+    const tooltip = parent.querySelector(".tooltiptext");
+    const copyButton = parent.querySelector(".content_copy");
+    copyButton.addEventListener("click", copyAddress)
+    copyButton.addEventListener("mouseout", resetTooltip)
+
+    function copyAddress() {
+      navigator.clipboard.writeText(content.innerText || content.value);
+      tooltip.innerHTML = "Copied!";
+    }
+  
+    function resetTooltip() {
+      tooltip.innerHTML = "Copy to clipboard";
+    }  
+  }
 })();

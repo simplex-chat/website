@@ -665,10 +665,10 @@ nav {
 }
 
 #comparison {
-  height: 750px;
+  height: 800px;
 
   h2 {
-    padding-top: 56px;
+    padding-top: 23px;
   }
 
   table,
@@ -739,23 +739,23 @@ nav {
   }
 
   .table-comments {
-    margin: 0 auto;
+    margin: auto;
 
     ul.legend,
     .footnotes {
-      float: left;
-      font-size: 13px;
+      float: right;
+      font-size: 9px;
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
-      margin-top: 29px;
+      vertical-align: -6px;
+      margin-left:-27px;
     }
 
     ul.legend {
       list-style: none;
       line-height: 2.31;
       letter-spacing: 0.41px;
-      padding-top: 20px;
 
       li {
         &.bad::before {
@@ -782,6 +782,7 @@ nav {
     }
 
     .footnotes {
+      float: left;
       line-height: 1.62;
       letter-spacing: 0.41px;
 
@@ -850,7 +851,7 @@ nav {
 
 #simplex {
   background-color: white;
-  height: 475px;
+  height: 550px;
 
   h3 {
     padding-top: 67px;

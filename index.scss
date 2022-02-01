@@ -1013,7 +1013,7 @@ nav {
 
 #conn_req {
   margin-top: 120px;
-  height: 660px;
+  height: 700px;
   position: relative;
   display: block;
 
@@ -1044,6 +1044,13 @@ nav {
       height: 360px;
       padding-top: 12px;
     }
+  }
+
+  span.button {
+    border-radius: 18px;
+    height: 40px;
+    line-height: 40px;
+    width: 200px;
   }
 }
 

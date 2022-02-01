@@ -2,6 +2,8 @@
   const connURIel = document.getElementById("conn_req_uri_text");
   const connURI = document.location.toString().replace(/\/(contact|invitation)\//, "/$1");
   connURIel.innerText = "/c " + connURI;
+  const mobileConnURIanchor = document.getElementById("mobile_conn_req_uri");
+  mobileConnURIanchor.href = connURI.replace("https://simplex.chat", "simplex:");
   if (document.location.pathname.indexOf("/contact") >= 0) {
     document.querySelector("#conn_req .conn_mode").innerText = "contact address of";
   }

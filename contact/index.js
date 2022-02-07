@@ -29,9 +29,9 @@
   function contentCopyWithTooltip(parent) {
     const content = parent.querySelector(".content");
     const tooltip = parent.querySelector(".tooltiptext");
-    const copyButton = parent.querySelector(".content_copy");
-    copyButton.addEventListener("click", copyAddress)
-    copyButton.addEventListener("mouseout", resetTooltip)
+    const copyButton = parent.querySelector("#install_chat .content_copy");
+    // copyButton.addEventListener("click", copyAddress)
+    // copyButton.addEventListener("mouseout", resetTooltip)
 
     function copyAddress() {
       navigator.clipboard.writeText(content.innerText || content.value);

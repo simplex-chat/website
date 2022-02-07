@@ -1,168 +1,187 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <title>SimpleX chat: private, decentralized, no global identities</title>
-    <meta
-      name="description"
-      content="Free open-source chat protocol and software for technology enthusiasts - complete privacy, security and ownership of your contacts and messages."
-    />
-    <meta name="Content-Type" content="text/html;charset=utf-8" />
-    <meta name="twitter:card" content="summary" />
-    <link href="../css/index.css" rel="stylesheet" />
-    <script src="qrcode.js"></script>
-    <script async defer src="index.js"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-  </head>
 
-  <body>
-    <nav id="top">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimpleX chat: private, decentralized, no global identities</title>
+  <meta name="description"
+    content="Free open-source chat protocol and software for technology enthusiasts - complete privacy, security and ownership of your contacts and messages." />
+  <meta name="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="twitter:card" content="summary" />
+  <link href="../css/contact.css" rel="stylesheet" />
+  <script src="qrcode.js"></script>
+  <script async defer src="index.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
       <a href="/">
         <img alt="simplex logo" class="logo" src="../img/simplex.svg" />
       </a>
-      <div class="github">
-        <a
-          class="github-button"
-          href="https://github.com/simplex-chat/simplex-chat"
-          data-size="large"
-          data-show-count="true"
-          aria-label="Star simplex-chat on GitHub"
-          >Star</a
-        >
-      </div>
 
-      <div class="donate">
-        <a href="https://opencollective.com/simplex-chat" target="_blank">
-          <span class="button">Donate</span></a
-        >
+      <div class="nav__buttons">
+        <div class="github d-none-576">
+          <a class="github-button" href="https://github.com/simplex-chat/simplex-chat" data-size="large"
+            data-show-count="true" aria-label="Star simplex-chat on GitHub">Star</a>
+        </div>
+
+        <div class="donate">
+          <a href="https://opencollective.com/simplex-chat" target="_blank">
+            <span class="button">Donate</span></a>
+        </div>
       </div>
     </nav>
+  </header>
 
-    <section id="conn_req">
+  <section id="conn_req">
+    <div class="container">
       <h2>This link is the <span class=conn_mode>invitation from</span> a SimpleX Chat user</h2>
-      <p>
-        If you already installed <a href="https://github.com/simplex-chat/simplex-chat">SimpleX Chat for the terminal</a> v1.0.0+, <br>
-        copy the command below and use it in the chat:
-      </p>
       <div class="conn_req_uri">
-        <p class="content_copy_with_tooltip">
-          <textarea readonly class="content" id="conn_req_uri_text"></textarea>
+        <div class="d-none-992">
+          <p>If you already installed <a class="chat-for-terminal"
+              href="https://github.com/simplex-chat/simplex-chat">SimpleX Chat for the
+              terminal</a> v1.0.0+, copy the command below and use it in the chat:
+          </p>
+
+          <p class="content_copy_with_tooltip">
+            <textarea readonly class="content" id="conn_req_uri_text"></textarea>
+            <span class="tooltip">
+              <span class="tooltiptext" id="copy_conn_req_uri_tooltip">Copy to clipboard</span>
+              <img class="content_copy" id="copy_conn_req_uri" src="../img/icons/content-copy.svg">
+            </span>
+          </p>
+        </div>
+
+        <div class="conn_req__qrcode">
+          <img class="d-none-576" src="../img/mobile.png" alt="">
+          <div>
+            <canvas id="conn_req_uri_qrcode"></canvas>
+            <p>If you have a mobile app - scan QR code or click this button in a mobile browser:</p>
+            <div class="open-in-mobile">
+              <a id="mobile_conn_req_uri" href="" target="_blank">
+                <span class="button">Open in mobile app</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="install_chat">
+    <div class="container">
+      <h2>To install SimpleX Chat</h2>
+      <div class="install__command d-none-576">
+        <p>
+          use this command in the terminal:
+        </p>
+        <p class="content_copy_with_tooltip install">
+        <p class="content">curl -o- https://raw.githubusercontent.com/simplex-chat/simplex-chat/master/install.sh
+          |
+          bash
           <span class="tooltip">
-            <span class="tooltiptext" id="copy_conn_req_uri_tooltip">Copy to clipboard</span>
-            <img class="content_copy" id="copy_conn_req_uri" src="../img/icons/content-copy.svg">
+            <span class="tooltiptext">Copy to clipboard</span>
+            <img class="content_copy" src="../img/icons/content-copy.svg">
           </span>
         </p>
-        <canvas id="conn_req_uri_qrcode"></canvas>
-        <p>If you have a mobile app - scan QR code or click this button in a mobile browser:</p>
-        <p>
-          <a id="mobile_conn_req_uri" href="" target="_blank">
-            <span class="button">Open in mobile app</span></a
-          >
         </p>
       </div>
-    </section>
-    <section id="install_chat">
-      <h2>To install SimpleX Chat</h3>
-      <p>
-        use this command in the terminal:
-      </p>
-      <p class="content_copy_with_tooltip install">
-        <span class="content">curl -o- https://raw.githubusercontent.com/simplex-chat/simplex-chat/master/install.sh | bash</span>
-        <span class="tooltip">
-          <span class="tooltiptext">Copy to clipboard</span>
-          <img class="content_copy" src="../img/icons/content-copy.svg">
-        </span>
-      </p>
-      <p>
-        See SimpleX Chat
-        <a href="https://github.com/simplex-chat/simplex-chat">GitHub repository</a>
-        <a href="https://github.com/simplex-chat/simplex-chat" class="github"><img src="../img/icons/github.svg"></a>
-        for the instructions <br>
-        on how to install it manually or compile from the source code.
-      </p>
-    </section>
-    <div id="simplex">
-      <section id="use-simplex" class="half">
+
+      <div class="github__redirection">
+        <p>
+          See our GitHub repository for the instructions to install it manually or compile it from the source code.
+        </p>
+        <a href="https://github.com/simplex-chat/simplex-chat"><span>GitHub repository</span>
+          <svg version="1.1" width="24" height="24" viewBox="0 0 24 24">
+            <path
+              d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"
+              fill="#062d56" />
+          </svg></a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="simplex">
+    <div class="container">
+      <article id="use-simplex" class="half">
         <h3>Use SimpleX</h3>
         <p>
           SimpleX chat terminal client
-          <a href="https://github.com/simplex-chat/simplex-chat/releases/tag/v1.0.0" target="_blank">v1.0.0</a> is released!<br />
-          It now has two-layer E2E encryption,<br>with double-ratchet algorithm in one of them.<br>
+          <a href="https://github.com/simplex-chat/simplex-chat/releases/tag/v1.0.0" target="_blank">v1.0.0</a> is
+          released!<br />
+          It now has two-layer E2E encryption, with double-ratchet algorithm in one of them.<br>
         </p>
         <p>
           You can use our servers or use 1-click deployment on
           <a href="https://marketplace.digitalocean.com/apps/simplex-server" target="_blank">
-            DigitalOcean marketplace</a
-          >.
+            DigitalOcean marketplace</a>.
         </p>
         <p>
           Sign up to be updated about the new releases.
         </p>
-        <form
-          class="sign-up"
+        <form class="sign-up"
           action="https://chat.us2.list-manage.com/subscribe/post?u=ddd892b258ae36e5438e6d4e1&amp;id=ad6037a2fe"
-          method="post"
-          target="_blank"
-          novalidate
-        >
-          <p>
+          method="post" target="_blank" novalidate>
+          <div>
             <input name="EMAIL" placeholder="Your email" />
             <span style="position: absolute; left: -5000px" aria-hidden="true">
-              <input
-                type="text"
-                name="b_ddd892b258ae36e5438e6d4e1_ad6037a2fe"
-                tabindex="-1"
-                value=""
-              />
+              <input type="text" name="b_ddd892b258ae36e5438e6d4e1_ad6037a2fe" tabindex="-1" value="" />
             </span>
             <button type="submit">Submit</button>
-          </p>
+          </div>
         </form>
-      </section>
-      <section id="join-simplex" class="half">
+      </article>
+
+      <article id="join-simplex" class="half">
         <h3>Join SimpleX</h3>
         <p>
           The project can move faster with your help.<br />
           We develop it in Haskell.
         </p>
         <div id="contacts">
-          <p>
-            <a href="mailto:chat@simplex.chat">
-              <span class="button">Email</span>&nbsp; chat@simplex.chat</a
-            >
-          </p>
-          <p>
-            <a href="https://github.com/simplex-chat/simplex-chat" target="_blank"
-              ><span class="button">Join</span>&nbsp; github.com/simplex-chat</a
-            >
-          </p>
-          <p>
-            <a href="https://opencollective.com/simplex-chat" target="_blank"
-              ><span class="button">Donate</span>&nbsp; opencollective.com/simplex-chat</a
-            >
-          </p>
+          <a href="mailto:chat@simplex.chat" class="card">
+            <h3>Email :</h3>
+            <p>chat@simplex.chat</p>
+          </a>
+
+          <a href="https://github.com/simplex-chat/simplex-chat" target="_blank" class="card">
+            <h3>Join :</h3>
+            <p>github.com/simplex-chat</p>
+          </a>
+
+          <a href="https://opencollective.com/simplex-chat" target="_blank" class="card">
+            <h3>Donate :</h3>
+            <p>opencollective.com/simplex-chat</p>
+          </a>
         </div>
-      </section>
+      </article>
     </div>
-    <footer>
-      <img alt="simplex logo" class="logo" src="../img/simplex.svg" />
-      <p class="copyright">&#169; 2020-21 SimpleX | Open-Source Project |
-        <a href="https://github.com/simplex-chat" target="_blank"><img src="../img/icons/github.svg"></a>
-        <a href="https://www.reddit.com/r/SimpleXChat/" target="_blank"><img src="../img/icons/reddit.svg"></a>
-        <a href="https://twitter.com/simplexchat" target="_blank"><img src="../img/icons/twitter.svg"></a>
-        <a href="https://www.linkedin.com/company/simplex-chat/" target="_blank"><img src="../img/icons/linkedin.svg"></a>
-        <a href="mailto:chat@simplex.chat" target="_blank"><img src="../img/icons/email.svg"></a>
+  </section>
+
+  <footer>
+    <div class="container">
+      <img alt="simplex logo" class="logo d-none-992" src="../img/simplex.svg" />
+      <p class="copyright">&#169; 2020-21 SimpleX | Open-Source Project <span class="d-none-576">|</span>
+        <a class="d-none-576" href="https://github.com/simplex-chat" target="_blank"><img
+            src="../img/icons/github.svg"></a>
+        <a class="d-none-576" href="https://www.reddit.com/r/SimpleXChat/" target="_blank"><img
+            src="../img/icons/reddit.svg"></a>
+        <a class="d-none-576" href="https://twitter.com/simplexchat" target="_blank"><img
+            src="../img/icons/twitter.svg"></a>
+        <a class="d-none-576" href="https://www.linkedin.com/company/simplex-chat/" target="_blank"><img
+            src="../img/icons/linkedin.svg"></a>
+        <a class="d-none-576" href="mailto:chat@simplex.chat" target="_blank"><img src="../img/icons/email.svg"></a>
       </p>
-      <div class="github">
-        <a
-          class="github-button"
-          href="https://github.com/simplex-chat/protocol"
-          data-size="large"
-          data-show-count="true"
-          aria-label="Star simplex-chat on GitHub"
-          >Star</a
-        >
+      <div class="github d-none-992">
+        <a class="github-button" href="https://github.com/simplex-chat/protocol" data-size="large"
+          data-show-count="true" aria-label="Star simplex-chat on GitHub">Star</a>
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
+
 </html>

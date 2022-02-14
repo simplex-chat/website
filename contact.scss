@@ -185,42 +185,15 @@ nav {
     flex-direction: column;
     gap: 1rem;
 
-    @media (max-width: 1050px) {
-      & {
-        flex-direction: row;
-      }
-    }
-
-    @media (max-width: 900px) {
-      & {
-        flex-direction: column;
-      }
+    span.button {
+      width: 100px;
     }
 
     a {
-      display: block;
-    }
-
-    h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 8px;
-      width: 100%;
-      box-shadow: 0 1px 10px 0px rgba(22, 22, 22, 0.12);
-      padding: 1rem 2rem;
-      transition: all 0.4s;
-
-      &:hover {
-        box-shadow: 0 1px 8px rgba(22, 22, 22, 0.25);
-      }
-    }
-
-    .button {
-      padding: 0.2rem 1.5rem;
+      color:$text-color;
+      font-size: 1.1rem;
+      letter-spacing: 0.53px;
+      line-height: 25px;
     }
   }
 }
@@ -279,7 +252,6 @@ nav {
     }
 
     .conn_req__qrcode>div {
-
       p,
       .open-in-mobile {
         padding: 0 2.4rem;
@@ -462,18 +434,16 @@ nav {
   }
 
   a {
-    font-weight: 300;
+    font-weight: 500;
     display: inline-flex;
     align-items: center;
-    gap: 0.7rem;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    padding: 1rem 1.6rem;
-    border-radius: 7px;
-    letter-spacing: 1px;
+    gap: 0.3rem;
+    color: $text-color;
+    letter-spacing: .53px;
+    text-decoration: underline;
 
     svg path {
-      fill: white;
+      fill: $text-color;
     }
   }
 
@@ -583,5 +553,11 @@ footer {
 
   .d-none-576 {
     display: none !important;
+  }
+}
+
+@media (min-width: 992px){
+  .d-none-on-mobile{
+    display: none;
   }
 }

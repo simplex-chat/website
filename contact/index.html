@@ -12,7 +12,7 @@
   <meta name="twitter:card" content="summary" />
   <link href="../css/contact.css" rel="stylesheet" />
   <script src="qrcode.js"></script>
-
+  <script async defer src="index.js"></script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 
@@ -60,7 +60,7 @@
           <img class="d-none-576" src="../img/mobile.png" alt="">
           <div>
             <canvas id="conn_req_uri_qrcode"></canvas>
-            <p>If you have a mobile app - scan QR code or click this button in a mobile browser:</p>
+            <p>If you have a mobile app - scan QR code <span class="d-none-on-mobile">or click this button in a mobile browser:</span></p>
             <div class="open-in-mobile">
               <a id="mobile_conn_req_uri" href="" target="_blank">
                 <span class="button">Open in mobile app</span></a>
@@ -142,21 +142,20 @@
           The project can move faster with your help.<br />
           We develop it in Haskell.
         </p>
+
         <div id="contacts">
-          <a href="mailto:chat@simplex.chat" class="card">
-            <h3>Email :</h3>
-            <p>chat@simplex.chat</p>
-          </a>
-
-          <a href="https://github.com/simplex-chat/simplex-chat" target="_blank" class="card">
-            <h3>Join :</h3>
-            <p>github.com/simplex-chat</p>
-          </a>
-
-          <a href="https://opencollective.com/simplex-chat" target="_blank" class="card">
-            <h3>Donate :</h3>
-            <p>opencollective.com/simplex-chat</p>
-          </a>
+          <p>
+            <a href="mailto:chat@simplex.chat">
+              <span class="button">Email</span>&nbsp; chat@simplex.chat</a>
+          </p>
+          <p>
+            <a href="https://github.com/simplex-chat/simplex-chat" target="_blank"><span
+                class="button">Join</span>&nbsp; github.com/simplex-chat</a>
+          </p>
+          <p>
+            <a href="https://opencollective.com/simplex-chat" target="_blank"><span class="button">Donate</span>&nbsp;
+              opencollective.com/simplex-chat</a>
+          </p>
         </div>
       </article>
     </div>
@@ -182,7 +181,6 @@
       </div>
     </div>
   </footer>
-  <script async defer src="index.js"></script>
 </body>
 
 </html>

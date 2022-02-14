@@ -8,13 +8,8 @@ $links-color: #ff6347;
 $text-color: #062d56;
 $purplish-color: #18132c;
 $btns-bg-color: #07b4b9;
-$main-font-family: Raleway,
-Arial,
-Helvetica,
-sans-serif;
-$code-font: "Courier New",
-Courier,
-monospace;
+$main-font-family: Raleway, Arial, Helvetica, sans-serif;
+$code-font: "Courier New", Courier, monospace;
 
 body {
   font-family: $main-font-family;
@@ -130,7 +125,7 @@ nav {
   background-color: white;
   padding: 5rem 0rem;
 
-  &>div {
+  & > div {
     display: flex;
     justify-content: space-between;
     gap: 8rem;
@@ -190,7 +185,7 @@ nav {
     }
 
     a {
-      color:$text-color;
+      color: $text-color;
       font-size: 1.1rem;
       letter-spacing: 0.53px;
       line-height: 25px;
@@ -209,13 +204,28 @@ nav {
 
   h2 {
     text-align: center;
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
 
     @media (max-width: 576px) {
       & {
         text-align: left;
         margin-bottom: 1rem;
       }
+    }
+  }
+
+  p.testflight {
+    line-height: 32px;
+    margin-bottom: 5rem;
+    text-align: center;
+
+    a {
+      font-weight: 500;
+    }
+
+    img {
+      display: inline;
+      vertical-align: middle;
     }
   }
 
@@ -236,8 +246,8 @@ nav {
       }
     }
 
-    &>div,
-    .conn_req__qrcode>div {
+    & > div,
+    .conn_req__qrcode > div {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -251,7 +261,7 @@ nav {
       }
     }
 
-    .conn_req__qrcode>div {
+    .conn_req__qrcode > div {
       p,
       .open-in-mobile {
         padding: 0 2.4rem;
@@ -267,11 +277,12 @@ nav {
     }
 
     .open-in-mobile {
-      @media (min-width: 992px){
-        &{
+      @media (min-width: 992px) {
+        & {
           display: none;
         }
       }
+
       @media (max-width: 576px) {
         & {
           display: flex;
@@ -280,7 +291,7 @@ nav {
         }
 
         & a span {
-          padding: .8rem 2rem;
+          padding: 0.8rem 2rem;
           font-size: 1.3rem;
           font-weight: 500;
         }
@@ -300,7 +311,7 @@ nav {
         }
       }
 
-      &>div {
+      & > div {
         z-index: 2;
       }
 
@@ -439,7 +450,7 @@ nav {
     align-items: center;
     gap: 0.3rem;
     color: $text-color;
-    letter-spacing: .53px;
+    letter-spacing: 0.53px;
     text-decoration: underline;
 
     svg path {
@@ -447,7 +458,7 @@ nav {
     }
   }
 
-  &>div {
+  & > div {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -462,7 +473,7 @@ footer {
   padding: 1rem 0rem;
   background-color: #f8f8f6;
 
-  &>div {
+  & > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -556,8 +567,8 @@ footer {
   }
 }
 
-@media (min-width: 992px){
-  .d-none-on-mobile{
+@media (min-width: 992px) {
+  .d-none-on-mobile {
     display: none;
   }
 }

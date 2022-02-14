@@ -218,6 +218,7 @@ nav {
     line-height: 32px;
     margin-bottom: 5rem;
     text-align: center;
+    vertical-align: middle;
 
     @media (max-width: 576px) {
       & {
@@ -258,7 +259,6 @@ nav {
       flex-direction: column;
       align-items: flex-start;
       width: 360px;
-      gap: 1.5rem;
 
       @media (max-width: 576px) {
         & {
@@ -268,10 +268,24 @@ nav {
     }
 
     .conn_req__qrcode > div {
-      p,
+      p {
+        padding: 0 2.4rem;
+        width: 360px;
+        margin-top: 40px;
+
+        @media (max-width: 576px) {
+          & {
+            padding: 0;
+            width: 100%;
+            margin-top: 10px;
+          }
+        }
+      }
+
       .open-in-mobile {
         padding: 0 2.4rem;
         width: 360px;
+        margin: 30px 0 20px 0;
 
         @media (max-width: 576px) {
           & {
@@ -324,7 +338,7 @@ nav {
       img {
         position: absolute;
         width: 460px;
-        top: -1rem;
+        top: -3rem;
       }
     }
 
@@ -357,7 +371,7 @@ nav {
     canvas {
       width: 100%;
       height: auto;
-      margin-top: 40px;
+      margin-top: 20px;
 
       @media (max-width: 576px) {
         & {
@@ -435,32 +449,27 @@ nav {
 
 #install_chat {
   background-color: #f8f8f6;
-  padding: 5rem 0rem;
+  padding: 4rem 0rem;
 
   .install__command {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
   }
 
   .github__redirection {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
-  }
 
-  a {
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    color: $text-color;
-    letter-spacing: 0.53px;
-    text-decoration: underline;
+    a {
+      font-weight: 500;
+      color: $text-color;
+      letter-spacing: 0.53px;
+      text-decoration: underline;
 
-    svg path {
-      fill: $text-color;
+      &.github {
+        vertical-align: -5px;
+      }
     }
   }
 
@@ -468,7 +477,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
 }
 

@@ -29,9 +29,11 @@
   function contentCopyWithTooltip(parent) {
     const content = parent.querySelector(".content");
     const tooltip = parent.querySelector(".tooltiptext");
-    const copyButton = parent.querySelector("#install_chat .content_copy");
-    // copyButton.addEventListener("click", copyAddress)
-    // copyButton.addEventListener("mouseout", resetTooltip)
+    console.log(parent.querySelector(".content_copy") ,111)
+    console.log(parent)
+    const copyButton = parent.querySelector(".content_copy");
+    copyButton.addEventListener("click", copyAddress)
+    copyButton.addEventListener("mouseout", resetTooltip)
 
     function copyAddress() {
       navigator.clipboard.writeText(content.innerText || content.value);
@@ -43,12 +45,12 @@
     }  
   }
 
-  // function copyAddress() {
-  //   navigator.clipboard.writeText(connURI);
-  //   tooltipEl.innerHTML = "Copied!";
-  // }
+  function copyAddress() {
+    navigator.clipboard.writeText(connURI);
+    tooltipEl.innerHTML = "Copied!";
+  }
 
-  // function resetTooltip() {
-  //   tooltipEl.innerHTML = "Copy to clipboard";
-  // }
+  function resetTooltip() {
+    tooltipEl.innerHTML = "Copy to clipboard";
+  }
 })();

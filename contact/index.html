@@ -12,7 +12,7 @@
   <meta name="twitter:card" content="summary" />
   <link href="../css/contact.css" rel="stylesheet" />
   <script src="qrcode.js"></script>
-  <script async defer src="index.js"></script>
+
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 
@@ -78,16 +78,16 @@
         <p>
           use this command in the terminal:
         </p>
-        <p class="content_copy_with_tooltip install">
-        <p class="content">curl -o- https://raw.githubusercontent.com/simplex-chat/simplex-chat/master/install.sh
-          |
-          bash
-          <span class="tooltip">
-            <span class="tooltiptext">Copy to clipboard</span>
-            <img class="content_copy" src="../img/icons/content-copy.svg">
-          </span>
-        </p>
-        </p>
+        <div class="content_copy_with_tooltip install">
+          <p class="content">curl -o- https://raw.githubusercontent.com/simplex-chat/simplex-chat/master/install.sh
+            |
+            bash
+            <span class="tooltip">
+              <span class="tooltiptext">Copy to clipboard</span>
+              <img class="content_copy" src="../img/icons/content-copy.svg">
+            </span>
+          </p>
+        </div>
       </div>
 
       <div class="github__redirection">
@@ -182,6 +182,7 @@
       </div>
     </div>
   </footer>
+  <script async defer src="index.js"></script>
 </body>
 
 </html>

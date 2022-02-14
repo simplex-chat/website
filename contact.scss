@@ -135,7 +135,7 @@ nav {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-      align-items: stretch;
+      align-items: center;
       justify-content: space-between;
     }
 
@@ -156,7 +156,7 @@ nav {
       @media (max-width: 576px) {
         & {
           flex-direction: column;
-          align-items: flex-end;
+          align-items: center;
           width: inherit;
           gap: 1rem;
 
@@ -214,10 +214,13 @@ nav {
     }
   }
 
+  h2, p {
+    text-align: center;
+  }
+
   p.testflight {
     line-height: 32px;
     margin-bottom: 5rem;
-    text-align: center;
     vertical-align: middle;
 
     @media (max-width: 576px) {
@@ -257,7 +260,7 @@ nav {
     .conn_req__qrcode > div {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       width: 360px;
 
       @media (max-width: 576px) {
@@ -451,16 +454,13 @@ nav {
   background-color: #f8f8f6;
   padding: 4rem 0rem;
 
-  .install__command {
+  h2, .install__command, .github__redirection {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .github__redirection {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
     a {
       font-weight: 500;
       color: $text-color;

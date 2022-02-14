@@ -116,7 +116,7 @@ nav .logo {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between;
 }
 @media (max-width: 1050px) {
@@ -134,7 +134,7 @@ nav .logo {
 @media (max-width: 576px) {
   #simplex form.sign-up div {
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     width: inherit;
     gap: 1rem;
   }
@@ -176,10 +176,12 @@ nav .logo {
     margin-bottom: 1rem;
   }
 }
+#conn_req h2, #conn_req p {
+  text-align: center;
+}
 #conn_req p.testflight {
   line-height: 32px;
   margin-bottom: 5rem;
-  text-align: center;
   vertical-align: middle;
 }
 @media (max-width: 576px) {
@@ -213,7 +215,7 @@ nav .logo {
 #conn_req .conn_req_uri .conn_req__qrcode > div {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 360px;
 }
 @media (max-width: 576px) {
@@ -374,14 +376,10 @@ nav .logo {
   background-color: #f8f8f6;
   padding: 4rem 0rem;
 }
-#install_chat .install__command {
+#install_chat h2, #install_chat .install__command, #install_chat .github__redirection {
   display: flex;
   flex-direction: column;
-}
-#install_chat .github__redirection {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 #install_chat .github__redirection a {
   font-weight: 500;

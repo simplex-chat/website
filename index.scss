@@ -400,7 +400,22 @@ nav {
   background-image: url(../img/bg.svg), linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   background-size: 800px 800px, auto;
   padding-top: 91px;
-  height: 1000px;
+  height: 1070px;
+
+  p.testflight {
+    line-height: 32px;
+    vertical-align: middle;
+
+    a {
+      font-weight: bold;
+      color: #ff6347;
+    }
+
+    img {
+      display: inline;
+      vertical-align: middle;
+    }
+  }
 
   div.all-users {
     position: relative;

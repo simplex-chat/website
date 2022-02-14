@@ -219,6 +219,12 @@ nav {
     margin-bottom: 5rem;
     text-align: center;
 
+    @media (max-width: 576px) {
+      & {
+        margin-bottom: 1.5rem;
+      }
+    }
+
     a {
       font-weight: 500;
     }

@@ -218,10 +218,21 @@ nav {
     text-align: center;
   }
 
-  p.testflight {
+  div.testflight {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .6rem;
     line-height: 32px;
     margin-bottom: 5rem;
     vertical-align: middle;
+
+    a{
+      display: inline-flex;
+      align-items: center;
+    }
 
     @media (max-width: 576px) {
       & {

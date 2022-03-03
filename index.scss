@@ -402,11 +402,20 @@ nav {
   padding-top: 91px;
   height: 1070px;
 
-  p.testflight {
+  div.testflight {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .6rem;
     line-height: 32px;
     vertical-align: middle;
 
     a {
+      display: inline-flex;
+      align-items: center;
+      margin: 1rem 0;
       font-weight: bold;
       color: #ff6347;
     }

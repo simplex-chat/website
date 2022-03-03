@@ -218,30 +218,33 @@ nav {
     text-align: center;
   }
 
-  div.testflight {
+  div.app__links {
     width: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: .6rem;
+    gap: .8rem;
     line-height: 32px;
     margin-bottom: 5rem;
     vertical-align: middle;
 
     a{
+      color: $text-color;
       display: inline-flex;
+      font-weight: 400;
       align-items: center;
+
+      span{
+        font-weight: 500;
+        color: $links-color;
+      }
     }
 
     @media (max-width: 576px) {
       & {
         margin-bottom: 1.5rem;
       }
-    }
-
-    a {
-      font-weight: 500;
     }
 
     img {

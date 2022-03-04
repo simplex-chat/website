@@ -8,6 +8,7 @@ figure {
 html,
 body {
   overflow-x: hidden;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
 }
 
 nav,
@@ -26,7 +27,6 @@ p,
 a,
 span,
 figure {
-  font-family: Raleway, Arial, Helvetica, sans-serif;
   text-align: center;
   margin: 0 auto;
 }
@@ -339,15 +339,38 @@ nav .donate {
   padding-top: 91px;
   height: 1070px;
 }
-#demo p.testflight {
+#demo div.app__links {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
   line-height: 32px;
   vertical-align: middle;
+  margin-top: 24px;
 }
-#demo p.testflight a {
+#demo div.app__links p {
+  font-size: 19px;
+  padding: 0;
+  width: fit-content;
+}
+#demo div.app__links a {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-weight: bold;
+  text-decoration: none;
+  color: #062d56;
+  letter-spacing: 0.53px;
+  font-weight: 400;
+}
+#demo div.app__links a span {
+  font-weight: 500;
   color: #ff6347;
 }
-#demo p.testflight img {
+#demo div.app__links img {
   display: inline;
   vertical-align: middle;
 }

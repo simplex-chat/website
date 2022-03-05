@@ -268,6 +268,8 @@
   onClick(TRY_IT, tryChatDemo);
 
   async function runChatDemo() {
+    document.querySelectorAll('.all-users div.user').forEach(e => e.classList.remove('d-none'));
+    document.querySelector('.all-users div.simplex_mobile').classList.add('d-none');
     show(RUN_DEMO, false);
     show(RUN_FASTER);
     enable(TRY_IT, false);
@@ -278,6 +280,8 @@
   }
 
   function tryChatDemo() {
+    document.querySelectorAll('.all-users div.user').forEach(e => e.classList.remove('d-none'));
+    document.querySelector('.all-users div.simplex_mobile').classList.add('d-none');
     team.forEach((u) => u.tryDemo());
     alice.demoInput.focus();
   }

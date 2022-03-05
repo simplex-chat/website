@@ -379,6 +379,10 @@ nav .donate {
   height: 612px;
   margin: 50px auto;
 }
+#demo div.all-users .simplex_mobile {
+  right: 0;
+  top: -45px;
+}
 #demo div.all-users .run-demo,
 #demo div.all-users .run-faster,
 #demo div.all-users .try-it {
@@ -1003,6 +1007,9 @@ figure.party.bob {
   font-family: Raleway;
   src: url(./Raleway-Bold.woff2);
   font-weight: bold;
+}
+.d-none {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -448,6 +448,11 @@ nav {
     height: 612px;
     margin: 50px auto;
 
+    .simplex_mobile{
+      right: 0;
+      top: -45px;
+    }
+
     .run-demo,
     .run-faster,
     .try-it {
@@ -1198,4 +1203,8 @@ figure.party {
   font-family: Raleway;
   src: url(./Raleway-Bold.woff2);
   font-weight: bold;
+}
+
+.d-none{
+  display: none;
 }

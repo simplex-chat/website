@@ -549,12 +549,9 @@ nav .donate {
   float: left;
 }
 #connection figure.device {
-  background-image: url(../img/iphone.png);
   width: 185px;
   height: 370px;
-}
-#connection figure.device img {
-  padding-top: 50px;
+  position: relative;
 }
 #connection a {
   color: #f95a2c;

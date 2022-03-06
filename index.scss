@@ -654,13 +654,9 @@ nav {
   }
 
   figure.device {
-    background-image: url(../img/iphone.png);
     width: 185px;
     height: 370px;
-
-    img {
-      padding-top: 50px;
-    }
+    position: relative;
   }
   
   a {

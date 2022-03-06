@@ -629,13 +629,13 @@ nav {
 
 #connection {
   background-color: #f8f8f6;
-  height: 924px;
+  height: 1200px;
   position: relative;
   z-index: 1;
 
   figure.section {
     width: 924px;
-    margin: 90px auto;
+    margin: 60px auto;
 
     .arrow {
       display: block;
@@ -651,6 +651,13 @@ nav {
 
   figure.conn-stage {
     float: left;
+
+    h3{
+      font-weight: 500;
+      color: #07b4b9;
+      padding-top: 0;
+      margin-bottom: .3rem;
+    }
   }
 
   figure.device {
@@ -662,6 +669,16 @@ nav {
   a {
     color: #f95a2c;
     font-weight: 500;
+  }
+
+  .installation_guide{
+    // background-color: #124d86;
+    width: 600px;
+    margin: auto;
+
+    p{
+      text-align: start;
+    }
   }
 }
 

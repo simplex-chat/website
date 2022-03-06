@@ -528,13 +528,13 @@ nav .donate {
 
 #connection {
   background-color: #f8f8f6;
-  height: 924px;
+  height: 1200px;
   position: relative;
   z-index: 1;
 }
 #connection figure.section {
   width: 924px;
-  margin: 90px auto;
+  margin: 60px auto;
 }
 #connection figure.section .arrow {
   display: block;
@@ -548,6 +548,12 @@ nav .donate {
 #connection figure.conn-stage {
   float: left;
 }
+#connection figure.conn-stage h3 {
+  font-weight: 500;
+  color: #07b4b9;
+  padding-top: 0;
+  margin-bottom: 0.3rem;
+}
 #connection figure.device {
   width: 185px;
   height: 370px;
@@ -556,6 +562,13 @@ nav .donate {
 #connection a {
   color: #f95a2c;
   font-weight: 500;
+}
+#connection .installation_guide {
+  width: 600px;
+  margin: auto;
+}
+#connection .installation_guide p {
+  text-align: start;
 }
 
 @media (max-width: 1050px) {

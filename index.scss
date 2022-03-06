@@ -629,19 +629,19 @@ nav {
 
 #connection {
   background-color: #f8f8f6;
-  height: 1200px;
+  height: 1050px;
   position: relative;
   z-index: 1;
 
   figure.section {
     width: 924px;
-    margin: 60px auto;
+    margin: 20px auto;
 
     .arrow {
       display: block;
       float: left;
       width: 50px;
-      margin: 167px 4px;
+      margin: 275px 4px;
     }
 
     .party {
@@ -653,9 +653,14 @@ nav {
     float: left;
 
     h3{
-      font-weight: 500;
-      color: #07b4b9;
+      width: 170px;
+      height: 90px;
+      text-align: left;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: #062d56;
       padding-top: 0;
+      padding: .5rem;
       margin-bottom: .3rem;
     }
   }
@@ -669,16 +674,6 @@ nav {
   a {
     color: #f95a2c;
     font-weight: 500;
-  }
-
-  .installation_guide{
-    // background-color: #124d86;
-    width: 600px;
-    margin: auto;
-
-    p{
-      text-align: start;
-    }
   }
 }
 

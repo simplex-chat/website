@@ -54,7 +54,6 @@ h4 {
   font-size: 21px;
   letter-spacing: 0.4px;
   line-height: 30px;
-  width: 180px;
 }
 
 p {
@@ -176,6 +175,10 @@ nav {
 
   h2 {
     padding-top: 70px;
+  }
+
+  h4 {
+    width: 180px;
   }
 
   p {
@@ -448,6 +451,10 @@ nav {
     height: 612px;
     margin: 50px auto;
 
+    .simplex_mobile{
+      right: 30px;
+    }
+
     .run-demo,
     .run-faster,
     .try-it {
@@ -625,19 +632,19 @@ nav {
 
 #connection {
   background-color: #f8f8f6;
-  height: 924px;
+  height: 1050px;
   position: relative;
   z-index: 1;
 
   figure.section {
     width: 924px;
-    margin: 90px auto;
+    margin: 20px auto;
 
     .arrow {
       display: block;
       float: left;
       width: 50px;
-      margin: 167px 4px;
+      margin: 275px 4px;
     }
 
     .party {
@@ -645,18 +652,31 @@ nav {
     }
   }
 
+  h4 {
+    color: #062d56;
+    font-size: 21px;
+    line-height: 29px;
+    padding-top: 42px;
+  }
+
   figure.conn-stage {
     float: left;
+
+    p {
+      width: 170px;
+      height: 90px;
+      text-align: center;
+      font-size: 15px;
+      color: #062d56;
+      padding: .5rem;
+      margin-bottom: .3rem;
+    }
   }
 
   figure.device {
-    background-image: url(../img/iphone.png);
     width: 185px;
     height: 370px;
-
-    img {
-      padding-top: 50px;
-    }
+    position: relative;
   }
   
   a {
@@ -1198,4 +1218,8 @@ figure.party {
   font-family: Raleway;
   src: url(./Raleway-Bold.woff2);
   font-weight: bold;
+}
+
+.d-none{
+  display: none;
 }

@@ -54,7 +54,6 @@ h4 {
   font-size: 21px;
   letter-spacing: 0.4px;
   line-height: 30px;
-  width: 180px;
 }
 
 p {
@@ -176,6 +175,10 @@ nav {
 
   h2 {
     padding-top: 70px;
+  }
+
+  h4 {
+    width: 180px;
   }
 
   p {
@@ -649,17 +652,22 @@ nav {
     }
   }
 
+  h4 {
+    color: #062d56;
+    font-size: 21px;
+    line-height: 29px;
+    padding-top: 42px;
+  }
+
   figure.conn-stage {
     float: left;
 
-    h3{
+    p {
       width: 170px;
       height: 90px;
-      text-align: left;
-      font-weight: 400;
-      font-size: 1.2rem;
+      text-align: center;
+      font-size: 15px;
       color: #062d56;
-      padding-top: 0;
       padding: .5rem;
       margin-bottom: .3rem;
     }

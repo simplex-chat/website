@@ -50,7 +50,8 @@
       </nav>
     </header>
 
-    <section id="demo" class="d-none">
+    <section id="demo">
+      <div class="container">
       <h1>SimpleX Chat</h1>
       <h3>100% private by design - SimpleX has no access to your connections graph</h3>
       <div class="app__links">
@@ -60,8 +61,8 @@
         <a href="https://testflight.apple.com/join/DWuT2LQu" target="_blank"><img src="./img/testflight.png" width="41" height="41"></a>
         <a href="https://github.com/simplex-chat/website/raw/master/simplex.apk" target="_blank"><img src="./img/apk_icon.png" width="41" height="41"></a>
       </div>
-      <p>You can download terminal chat app from GitHub or using this command:</p>
-      <p class="content_copy_with_tooltip install">
+      <p class="d-none-576">You can download terminal chat app from GitHub or using this command:</p>
+      <p class="content_copy_with_tooltip install d-none-576">
         <span class="content">curl -o- https://raw.githubusercontent.com/simplex-chat/simplex-chat/master/install.sh | bash</span>
         <span class="tooltip">
           <span class="tooltiptext">Copy to clipboard</span>
@@ -85,7 +86,7 @@
             <input type="text" />
           </div>
         </div>
-        <div class="user simplex_mobile">
+        <div class="user simplex_mobile d-none-890">
           <img src="./img/simplex_mobile.png" alt="" width="320">
         </div>
         <div class="user tom d-none">
@@ -96,13 +97,15 @@
             <input type="text" />
           </div>
         </div>
-        <button class="run-demo">Run demo</button>
-        <button class="run-faster">Faster!</button>
-        <button class="try-it">Try it!</button>
+        <button class="run-demo d-none-890">Run demo</button>
+        <button class="run-faster d-none-890">Faster!</button>
+        <button class="try-it d-none-890">Try it!</button>
+      </div>
       </div>
     </section>
 
-    <section id="introduction" class="d-none">
+    <section id="introduction">
+      <div class="container">
       <h2>You control your chat!</h2>
       <h3>SimpleX objective:</h3>
       <p>Give you the <strong>full control</strong> of who can talk to you and your chat data</p>
@@ -129,9 +132,11 @@
           <p>Easy to add contacts and to start talking</p>
         </div>
       </figure>
+      </div>
     </section>
 
-    <section id="problem" class="d-none">
+    <section id="problem" class="d-none-768">
+      <div class="container">
       <h2>Problem: chat security</h2>
       <a id="problem-explained"></a>
       <section class="problem intro">
@@ -170,18 +175,22 @@
         <a class="page intro" href="#problem-intro"></a>
         <a class="page explained" href="#problem-explained"></a>
       </div>
+      </div>
     </section>
 
-    <section id="solution" class="d-none">
+    <section id="solution">
+      <div class="container">
       <h2>What is the solution?</h2>
       <p>
         To create secure encrypted channel you need an existing secure channel
         <br />where you can pass the encryption key (or key fingerprint).
       </p>
       <p>Any alternative solution can be compromised.</p>
+      </div>
     </section>
 
-    <section id="connection" class="d-none">
+    <section id="connection">
+      <div class="container">
       <h2>Make a private connection!</h2>
       <h3>To add contact and to start chat</h3>
       <p>
@@ -222,6 +231,7 @@
           <figure class="party bob small">Bob</figure>
         </figure>
       </figure>
+      </div>
     </section>
 
     <section id="comparison" class="d-none-992">

@@ -117,16 +117,6 @@ nav {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 button,
 span.button {
   display: inline-block;
@@ -141,205 +131,18 @@ span.button {
   }
 }
 
-
 .github-button {
   visibility: hidden;
 }
 
-#introduction {
-  background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
-  height: 838px;
-  position: relative;
-  z-index: 1;
 
-  h2 {
-    padding-top: 70px;
-  }
-
-  h4 {
-    width: 180px;
-  }
-
-  p {
-    padding-top: 3px;
-
-    &:first-of-type {
-      padding-top: 36px;
-    }
-  }
-
-  figure.section {
-    width: 900px;
-    height: 288px;
-    margin: 70px auto;
-
-    .feature {
-      float: left;
-      width: 300px;
-
-      p {
-        width: 80%;
-        padding-top: 12px;
-      }
-
-      h4 {
-        padding-top: 12px;
-      }
-    }
-
-    .doodle {
-      border: 4px solid white;
-      border-radius: 100%;
-      width: 163px;
-      height: 163px;
-      position: relative;
-      margin: 0 auto;
-      background: url(../img/doodle.svg);
-      background-size: 400px 400px;
-      background-clip: content-box;
-
-      &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        border: 7px solid #f8b650;
-        border-radius: 100%;
-      }
-
-      &.control {
-        background-position: 410px 235px;
-      }
-
-      &.privacy {
-        background-position: 185px 350px;
-      }
-
-      &.convenience {
-        background-position: 305px 160px;
-      }
-    }
-  }
-}
-
-#problem {
-  background-color: #f8f8f6;
-  height: 767px;
-  position: relative;
-  z-index: 1;
-
-  .explained {
-    display: none;
-  }
-
-  #problem-explained {
-    display: none;
-
-    &:target {
-      ~ .intro {
-        display: none;
-      }
-
-      ~ .explained {
-        display: block;
-      }
-
-      ~ .pagination .page.intro {
-        background-color: #cdcdcd;
-      }
-
-      ~ .pagination .page.explained {
-        background-color: #3e96fc;
-      }
-    }
-  }
-
-  .pagination {
-    width: 44px;
-    height: 12px;
-    margin: 0 auto;
-
-    .page {
-      display: block;
-      float: left;
-      background-color: #cdcdcd;
-      border-radius: 100%;
-      width: 14px;
-      height: 14px;
-
-      &.intro {
-        margin-right: 16px;
-        background-color: #3e96fc;
-      }
-    }
-  }
-
-  .problem {
-    height: 584px;
-  }
-
-  .communication {
-    width: 645px;
-    height: 148px;
-    margin: 40px auto 15px auto;
-
-    figure {
-      float: left;
-    }
-
-    img {
-      display: block;
-      float: left;
-      margin: 20px -12px;
-      position: relative;
-      z-index: -2;
-    }
-
-    .tom {
-      position: relative;
-      bottom: 48px;
-      right: 3px;
-    }
-  }
-
-  h2 {
-    padding-top: 70px;
-  }
-}
-
-@supports (background-blend-mode: multiply) and (not (-webkit-touch-callout: none)) {
-  #solution {
-    background-image: url(../img/doodle.svg);
-    background-blend-mode: multiply;
-  }
-}
-
-#solution {
-  background-color: #062d56;
-  background-size: 800px 800px;
-  height: 382px;
-
-  h3 {
-    padding-top: 72px;
-  }
-
-  p {
-    color: white;
-    padding-top: 12px;
-
-    &:first-of-type {
-      padding-top: 53px;
-    }
-  }
-}
-
+// --------------------------
+// ------ Section demo ------
+// --------------------------
 @media (max-width: 1050px) {
   #demo {
     div.all-users {
-      width: 874px;
+      width: 100%;
 
       div.user {
         &.bob,
@@ -379,10 +182,30 @@ span.button {
 }
 
 #demo {
+  padding: 2rem 0rem;
   background-image: url(../img/bg.svg), linear-gradient(180deg, #fbd561 0%, #efa647 100%);
   background-size: 800px 800px, auto;
-  padding-top: 91px;
-  height: 1070px;
+  text-align: center;
+
+  h1{
+    font-size: 2.3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  h3{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  a {
+    font-weight: 500;
+  }
+
+  div.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   div.app__links {
     width: 100%;
@@ -393,8 +216,7 @@ span.button {
     gap: 1.2rem;
     line-height: 32px;
     vertical-align: middle;
-
-    margin-top: 24px;
+    margin-bottom: 2rem;
 
     p{
       font-size:  19px;
@@ -428,17 +250,35 @@ span.button {
   div.all-users {
     position: relative;
     height: 612px;
-    margin: 50px auto;
+
+    @media (max-width:890px) {
+      &{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 450px;
+
+        div.user{
+          left: auto;
+        }
+      }
+    }
 
     .simplex_mobile{
       right: 30px;
+
+      @media (max-width:1050px) {
+        &{
+          right: 0;
+        }
+      }
     }
 
     .run-demo,
     .run-faster,
     .try-it {
       position: absolute;
-      width: 120px;
+      width: 140px;
       height: 40px;
       bottom: 70px;
       border-radius: 20px;
@@ -582,6 +422,18 @@ span.button {
       .terminal {
         width: 503px;
         height: 362px;
+
+        @media (max-width:570px) {
+          &{
+            width: 400px;
+          }
+        }
+        
+        @media (max-width:440px) {
+          &{
+            width: 330px;
+          }
+        }
       }
     }
 
@@ -602,72 +454,7 @@ span.button {
       }
     }
   }
-
-  a {
-    color: #f95a2c;
-    font-weight: 500;
-  }
 }
-
-#connection {
-  background-color: #f8f8f6;
-  height: 1050px;
-  position: relative;
-  z-index: 1;
-
-  figure.section {
-    width: 924px;
-    margin: 20px auto;
-
-    .arrow {
-      display: block;
-      float: left;
-      width: 50px;
-      margin: 275px 4px;
-    }
-
-    .party {
-      margin: 60px auto;
-    }
-  }
-
-  h4 {
-    color: #062d56;
-    font-size: 21px;
-    line-height: 29px;
-    padding-top: 42px;
-  }
-
-  figure.conn-stage {
-    float: left;
-
-    p {
-      width: 170px;
-      height: 90px;
-      text-align: center;
-      font-size: 15px;
-      color: #062d56;
-      padding: .5rem;
-      margin-bottom: .3rem;
-    }
-  }
-
-  figure.device {
-    width: 185px;
-    height: 370px;
-    position: relative;
-  }
-  
-  a {
-    color: #f95a2c;
-    font-weight: 500;
-  }
-}
-
-
-
-
-
 
 #demo {
   .content_copy_with_tooltip {
@@ -696,7 +483,8 @@ span.button {
   }
   
   p.install {
-    width: 960px;
+    // width: 960px;
+    padding: .4rem 1.5rem;
   }
 
   a.github {
@@ -852,6 +640,372 @@ figure.party {
 
   &.bob {
     background-image: url(../img/bob.svg);
+  }
+}
+
+// ----------------------------------
+// ------ Section introduction ------
+// ----------------------------------
+
+#introduction {
+  padding: 2rem 0rem;
+  background-image: linear-gradient(180deg, #fbd561 0%, #efa647 100%);
+  
+  div.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    color: $links-color;
+    margin-bottom: 2.5rem;
+  }
+
+  p {
+    text-align: center;
+    padding-top: 3px;
+
+    &:first-of-type {
+      padding-top: 36px;
+    }
+  }
+
+  figure.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    // height: 288px;
+    margin-top: 70px;
+
+    .feature {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      // float: left;
+      width: 300px;
+
+      p {
+        text-align: center;
+        width: 85%;
+        padding-top: 12px;
+      }
+
+      h4 {
+        padding-top: 12px;
+      }
+    }
+
+    .doodle {
+      border: 4px solid white;
+      border-radius: 100%;
+      width: 163px;
+      height: 163px;
+      position: relative;
+      margin: 0 auto;
+      background: url(../img/doodle.svg);
+      background-size: 400px 400px;
+      background-clip: content-box;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        border: 7px solid #f8b650;
+        border-radius: 100%;
+      }
+
+      &.control {
+        background-position: 410px 235px;
+      }
+
+      &.privacy {
+        background-position: 185px 350px;
+      }
+
+      &.convenience {
+        background-position: 305px 160px;
+      }
+    }
+  }
+
+  @media (max-width: 930px) {
+    figure.section{
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+  }
+}
+
+// -----------------------------
+// ------ Section problem ------
+// -----------------------------
+
+#problem {
+  padding: 3rem 0rem;
+  background-color: #f8f8f6;
+  position: relative;
+  z-index: 1;
+
+  .explained {
+    display: none;
+  }
+
+  div.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2{
+    color: $links-color;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  h3{
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  p{
+    text-align: center;
+  }
+
+  #problem-explained {
+    display: none;
+
+    &:target {
+      ~ .intro {
+        display: none;
+      }
+
+      ~ .explained {
+        display: block;
+      }
+
+      ~ .pagination .page.intro {
+        background-color: #cdcdcd;
+      }
+
+      ~ .pagination .page.explained {
+        background-color: #3e96fc;
+      }
+    }
+  }
+
+  .pagination {
+    width: 44px;
+    height: 12px;
+    margin: 0 auto;
+
+    .page {
+      display: block;
+      float: left;
+      background-color: #cdcdcd;
+      border-radius: 100%;
+      width: 14px;
+      height: 14px;
+
+      &.intro {
+        margin-right: 16px;
+        background-color: #3e96fc;
+      }
+    }
+  }
+
+  .communication {
+    width: 645px;
+    height: 148px;
+    margin: 40px auto 15px auto;
+
+    figure {
+      float: left;
+    }
+
+    img {
+      display: block;
+      float: left;
+      margin: 20px -12px;
+      position: relative;
+      z-index: -2;
+    }
+
+    .tom {
+      text-align: center;
+      position: relative;
+      bottom: 48px;
+      right: 3px;
+    }
+  }
+}
+
+// ------------------------------
+// ------ Section solution ------
+// ------------------------------
+
+@supports (background-blend-mode: multiply) and (not (-webkit-touch-callout: none)) {
+  #solution {
+    background-image: url(../img/doodle.svg);
+    background-blend-mode: multiply;
+  }
+}
+
+#solution {
+  padding: 4rem 0rem;
+  background-color: #062d56;
+  background-size: 800px 800px;
+  
+  div.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2{
+    color: $links-color;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    color: white;
+    padding-top: 12px;
+
+    &:first-of-type {
+      padding-top: 53px;
+    }
+  }
+}
+
+// --------------------------------
+// ------ Section connection ------
+// --------------------------------
+
+#connection {
+  padding: 2rem 0rem;
+  background-color: #f8f8f6;
+
+  h2 {
+    color: $links-color;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  h3{
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  h4 {
+    color: #062d56;
+    font-size: 21px;
+    line-height: 29px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  p{
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  a {
+    font-weight: 500;
+  }
+
+  div.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  figure.section {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    .arrow {
+      width: 40px;
+    }
+
+    .party {
+      margin-top: 2rem;
+    }
+  }
+
+  figure.conn-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    p {
+      width: 170px;
+      font-size: 15px;
+      color: #062d56;
+      margin-bottom: .3rem;
+    }
+  }
+
+  figure.device {
+    width: 185px;
+    // height: 370px;
+  }
+
+  @media (max-width: 992px) {
+    figure.section{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      & > *:nth-child(2){
+        margin: auto;
+        width: 50px;
+        // display: none;
+      }
+
+      & > *:nth-child(4){
+        grid-column-start: 3;
+        margin: auto;
+        width: 50px;
+        transform: rotate(90deg);
+        padding: 3.5rem 0;
+      }
+
+      & > *:nth-child(5){
+        grid-column-start: 3;
+      }
+
+      & > *:nth-child(6){
+        grid-column-start: 2;
+        grid-row-start: 3;
+        margin: auto;
+        width: 50px;
+        transform: rotate(180deg);
+      }
+      
+      & > *:nth-child(7){
+        grid-column-start: 1;
+        grid-row-start: 3;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    figure.section{
+      display: flex;
+      flex-direction: column;
+
+      & > *:nth-child(even){
+        transform: rotate(90deg);
+        padding: 1.5rem 0;
+      }
+    }
   }
 }
 
@@ -1316,6 +1470,12 @@ footer {
 
 @media (min-width: 992px) {
   .d-none-on-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 890px) {
+  .d-none-890 {
     display: none;
   }
 }

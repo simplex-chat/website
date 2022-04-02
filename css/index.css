@@ -1121,6 +1121,21 @@ footer a {
   display: flex;
   align-items: center;
 }
+footer .copyright__text_and_links {
+  display: flex;
+}
+footer .copyright__text_and_links div {
+  padding: 0 0.2rem;
+  display: flex;
+  gap: 3px;
+}
+@media (max-width: 576px) {
+  footer .copyright__text_and_links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
 
 @font-face {
   font-family: Raleway;

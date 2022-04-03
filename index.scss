@@ -1015,6 +1015,8 @@ figure.party {
 
 #comparison {
   padding: 2rem 0rem;
+  overflow: auto;
+  position: relative;
 
   div.container{
     display: flex;
@@ -1024,6 +1026,7 @@ figure.party {
 
   h2 {
     color: $links-color;
+    text-align: center;
   }
 
   table,
@@ -1168,7 +1171,7 @@ figure.party {
     }
 
     .table-comments {
-      width: 900px;
+      max-width: 900px;
     }
   }
 }
@@ -1188,7 +1191,7 @@ figure.party {
     }
 
     .table-comments {
-      width: 1050px;
+      max-width: 1050px;
     }
   }
 }

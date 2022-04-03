@@ -824,6 +824,8 @@ figure.party.bob {
 
 #comparison {
   padding: 2rem 0rem;
+  overflow: auto;
+  position: relative;
 }
 #comparison div.container {
   display: flex;
@@ -832,6 +834,7 @@ figure.party.bob {
 }
 #comparison h2 {
   color: #ff6347;
+  text-align: center;
 }
 #comparison table,
 #comparison ol,
@@ -947,7 +950,7 @@ figure.party.bob {
     width: 140px;
   }
   #comparison .table-comments {
-    width: 900px;
+    max-width: 900px;
   }
 }
 @media (min-width: 1050px) {
@@ -961,7 +964,7 @@ figure.party.bob {
     width: 155px;
   }
   #comparison .table-comments {
-    width: 1050px;
+    max-width: 1050px;
   }
 }
 #messaging {

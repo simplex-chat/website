@@ -620,6 +620,10 @@ figure.party.bob {
   position: relative;
   z-index: 1;
 }
+#problem .problem-section {
+  align-self: start;
+  overflow: auto;
+}
 #problem .explained {
   display: none;
 }

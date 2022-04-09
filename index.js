@@ -377,5 +377,6 @@
   const computedStyle = getComputedStyle(element);
   const screenWidth = element.clientWidth - (parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight));
   document.querySelector('.table-holder').style.width = `${screenWidth}px`;
+  Array.from(document.querySelectorAll('.problem-section')).forEach(ele => ele.style.width = `${screenWidth}px`);
 
 })();

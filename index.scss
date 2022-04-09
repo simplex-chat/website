@@ -753,6 +753,11 @@ figure.party {
   position: relative;
   z-index: 1;
 
+  .problem-section{
+    align-self: start;
+    overflow: auto;
+  }
+
   .explained {
     display: none;
   }

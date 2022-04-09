@@ -135,41 +135,49 @@
       </div>
     </section>
 
-    <section id="problem" class="d-none-768">
+    <section id="problem">
       <div class="container">
       <h2>Problem: chat security</h2>
       <a id="problem-explained"></a>
       <section class="problem intro">
         <h3>End-to-end encryption?</h3>
         <p>Alice sends the key to Bob (e.g. via p2p network or via chat server)</p>
+        <div class="problem-section">
         <figure class="communication">
           <figure class="party alice">Alice</figure>
           <img alt="Alice sends the key to Bob" src="./img/problem11.svg" />
           <figure class="party bob">Bob</figure>
         </figure>
+        </div>
         <p>Now Bob can send encrypted messages to Alice - he believes it is secure!</p>
+        <div class="problem-section">
         <figure class="communication">
           <figure class="party alice">Alice</figure>
           <img alt="They believe it is secure" src="./img/problem12.svg" />
           <figure class="party bob">Bob</figure>
         </figure>
+        </div>
       </section>
       <section class="problem explained">
         <h3>Man-in-the-middle attack!</h3>
         <p>But the key can be intercepted and substituted by Tom (the attacker)</p>
+        <div class="problem-section">
         <figure class="communication">
           <figure class="party alice">Alice</figure>
           <img alt="key is intercepted" src="./img/problem21.svg" />
           <figure class="party bob">Bob</figure>
           <div class="tom">Tom</div>
         </figure>
+        </div> 
         <p>Now the attacker can can read the messages without Alice or Bob knowing</p>
+        <div class="problem-section">
         <figure class="communication">
           <figure class="party alice">Alice</figure>
           <img alt="attacker can read messages" src="./img/problem22.svg" />
           <figure class="party bob">Bob</figure>
           <div class="tom">Tom</div>
         </figure>
+        </div>
       </section>
       <div class="pagination">
         <a class="page intro" href="#problem-intro"></a>

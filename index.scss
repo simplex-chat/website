@@ -1016,8 +1016,13 @@ figure.party {
 
 #comparison {
   padding: 2rem 0rem;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
+
+  .table-holder{
+    align-self: start;
+    overflow: auto;
+  }
 
   div.container{
     display: flex;
@@ -1038,6 +1043,7 @@ figure.party {
   }
 
   table {
+    // overflow: auto;
     border-collapse: separate;
     border-spacing: 10px;
     margin: 59px auto 0 auto;

@@ -825,8 +825,12 @@ figure.party.bob {
 
 #comparison {
   padding: 2rem 0rem;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
+}
+#comparison .table-holder {
+  align-self: start;
+  overflow: auto;
 }
 #comparison div.container {
   display: flex;

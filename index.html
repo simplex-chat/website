@@ -237,54 +237,56 @@
     <section id="comparison">
       <div class="container">
       <h2>Comparison with other protocols</h2>
-      <table class="systems">
-        <thead>
-          <tr>
-            <th></th>
-            <th class="simplex"><img alt="simplex logo" src="img/icon.svg" /> SimpleX chat</th>
-            <th>Signal, big platforms</th>
-            <th>XMPP, Matrix</th>
-            <th>P2P protocols</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Requires global identity</td>
-            <td class="highlight good">No - private</td>
-            <td class="highlight bad">Yes <sup>1</sup></td>
-            <td class="highlight bad">Yes <sup>2</sup></td>
-            <td class="highlight bad">Yes <sup>3</sup></td>
-          </tr>
-          <tr>
-            <td>Possibility of MITM</td>
-            <td class="highlight good">No - secure</td>
-            <td class="highlight bad">Yes <sup>4</sup></td>
-            <td class="highlight bad">Yes</td>
-            <td class="highlight bad">Yes</td>
-          </tr>
-          <tr>
-            <td>Dependence on DNS</td>
-            <td class="highlight good">No - resilient</td>
-            <td class="highlight bad">Yes</td>
-            <td class="highlight bad">Yes</td>
-            <td class="highlight good">No</td>
-          </tr>
-          <tr>
-            <td>Single or centralized network</td>
-            <td class="highlight good">No - decentralized</td>
-            <td class="highlight bad">Yes</td>
-            <td class="highlight good">No - federated <sup>5</sup></td>
-            <td class="highlight bad">Yes <sup>6</sup></td>
-          </tr>
-          <tr>
-            <td>Central component or other network-wide attack</td>
-            <td class="highlight good">No - resilient</td>
-            <td class="highlight bad">Yes</td>
-            <td class="highlight bad">Yes <sup>2</sup></td>
-            <td class="highlight bad">Yes <sup>7</sup></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-holder">
+        <table class="systems">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="simplex"><img alt="simplex logo" src="img/icon.svg" /> SimpleX chat</th>
+              <th>Signal, big platforms</th>
+              <th>XMPP, Matrix</th>
+              <th>P2P protocols</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Requires global identity</td>
+              <td class="highlight good">No - private</td>
+              <td class="highlight bad">Yes <sup>1</sup></td>
+              <td class="highlight bad">Yes <sup>2</sup></td>
+              <td class="highlight bad">Yes <sup>3</sup></td>
+            </tr>
+            <tr>
+              <td>Possibility of MITM</td>
+              <td class="highlight good">No - secure</td>
+              <td class="highlight bad">Yes <sup>4</sup></td>
+              <td class="highlight bad">Yes</td>
+              <td class="highlight bad">Yes</td>
+            </tr>
+            <tr>
+              <td>Dependence on DNS</td>
+              <td class="highlight good">No - resilient</td>
+              <td class="highlight bad">Yes</td>
+              <td class="highlight bad">Yes</td>
+              <td class="highlight good">No</td>
+            </tr>
+            <tr>
+              <td>Single or centralized network</td>
+              <td class="highlight good">No - decentralized</td>
+              <td class="highlight bad">Yes</td>
+              <td class="highlight good">No - federated <sup>5</sup></td>
+              <td class="highlight bad">Yes <sup>6</sup></td>
+            </tr>
+            <tr>
+              <td>Central component or other network-wide attack</td>
+              <td class="highlight good">No - resilient</td>
+              <td class="highlight bad">Yes</td>
+              <td class="highlight bad">Yes <sup>2</sup></td>
+              <td class="highlight bad">Yes <sup>7</sup></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <div class="table-comments">
         <ul class="legend">

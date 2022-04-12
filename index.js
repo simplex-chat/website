@@ -95,7 +95,7 @@
       if (!this.demoInput) return;
       let editMode = false;
 
-      on("keypress", this.demoInput, async ({key}) => {
+      on("keypress", this.demoInput, async ({ key }) => {
         if (key === "Enter") {
           const edit = editMode;
           editMode = false;
@@ -366,9 +366,17 @@
       navigator.clipboard.writeText(content.innerText || content.value);
       tooltip.innerHTML = "Copied!";
     }
-  
+
     function resetTooltip() {
       tooltip.innerHTML = "Copy to clipboard";
-    }  
+    }
   }
+
+  // Setting width for scrollable sections
+  const element = document.querySelector('.container');
+  const computedStyle = getComputedStyle(element);
+  const screenWidth = element.clientWidth - (parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight));
+  document.querySelector('.table-holder').style.width = `${screenWidth}px`;
+  Array.from(document.querySelectorAll('.problem-section')).forEach(ele => ele.style.width = `${screenWidth}px`);
+
 })();

@@ -73,12 +73,20 @@
         <div class="conn_req__qrcode">
           <img class="d-none-576" src="../img/mobile.png" alt="">
           <div>
-            <p>Scan QR code from mobile app<span class="d-none-on-mobile"><br>or click this button after you<br><strong>install and open the app</strong>:</span></p>
+            <p class="d-none-576">Scan QR code from mobile app</p>
+            <p class="d-none-on-mobile">
+              To make a connection:
+            </p>
+            <ol class="d-none-on-mobile">
+              <li>install SimpleX app</li>
+              <li>tap the button below</li>
+              <li>tap <strong>Connect</strong> button in the app</li>
+            </ol>
             <div class="open-in-mobile">
               <a id="mobile_conn_req_uri" href="" target="_blank">
-                <span class="button">Open in mobile app</span></a>
+                <span class="button">Connect in SimpleX app</span></a>
             </div>
-            <canvas id="conn_req_uri_qrcode"></canvas>
+            <canvas id="conn_req_uri_qrcode" class="d-none-576"></canvas>
           </div>
         </div>
       </div>

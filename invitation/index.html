@@ -73,12 +73,20 @@
         <div class="conn_req__qrcode">
           <img class="d-none-576" src="../img/mobile.png" alt="">
           <div>
-            <p>Scan QR code from mobile app<span class="d-none-on-mobile"><br>or click this button after you<br><strong>install and open the app</strong>:</span></p>
+            <p class="d-none-576">Scan QR code from mobile app</p>
+            <p class="d-none-on-mobile">
+              To make a connection:
+            </p>
+            <ol class="d-none-on-mobile">
+              <li>install SimpleX app</li>
+              <li>tap the button below</li>
+              <li>tap <strong>Connect</strong> button in the app</li>
+            </ol>
             <div class="open-in-mobile">
               <a id="mobile_conn_req_uri" href="" target="_blank">
-                <span class="button">Open in mobile app</span></a>
+                <span class="button">Connect in SimpleX app</span></a>
             </div>
-            <canvas id="conn_req_uri_qrcode"></canvas>
+            <canvas id="conn_req_uri_qrcode" class="d-none-576"></canvas>
           </div>
         </div>
       </div>
@@ -122,14 +130,16 @@
         <h3>Use SimpleX</h3>
         <p>
           SimpleX chat terminal client
-          <a href="https://github.com/simplex-chat/simplex-chat/releases/tag/v1.0.0" target="_blank">v1.0.0</a> is
+          <a href="https://github.com/simplex-chat/simplex-chat/releases/tag/v2.0.0" target="_blank">v2.0.0</a> is
           released!<br />
-          It now has two-layer E2E encryption, with double-ratchet algorithm in one of them.<br>
+          – groups and files<br />
+          – two-layer E2E encryption, with double-ratchet algorithm<br />
+          – protocol is compatible with mobile apps<br />
         </p>
         <p>
-          You can use our servers or use 1-click deployment on
-          <a href="https://marketplace.digitalocean.com/apps/simplex-server" target="_blank">
-            DigitalOcean marketplace</a>.
+          You can use our servers or deploy your own, e.g. using 
+          <a href="https://github.com/simplex-chat/simplexmq#deploy-smp-server-on-linode" target="_blank">
+            StackScript on Linode</a>.
         </p>
         <p>
           Sign up to be updated about the new releases.
@@ -165,7 +175,7 @@
           </p>
           <p>
             <a href="https://opencollective.com/simplex-chat" target="_blank"><span class="button">Donate</span>&nbsp;
-              opencollective.com/simplex-chat</a>
+              opencollective.com/simplex-chat</a> <strong>(now accepts crypto)</strong>
           </p>
         </div>
       </article>

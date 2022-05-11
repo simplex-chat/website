@@ -17,7 +17,8 @@ body {
 
 h2,
 h3,
-p {
+p,
+ol {
   color: $text-color;
 }
 
@@ -39,7 +40,7 @@ h3 {
   }
 }
 
-p {
+p, ol {
   font-size: 1.1rem;
   letter-spacing: 0.6px;
   line-height: 30px;
@@ -593,11 +594,13 @@ footer {
 
   .d-none-576 {
     display: none !important;
+    visibility: hidden !important;
   }
 }
 
 @media (min-width: 992px) {
   .d-none-on-mobile {
-    display: none;
+    display: none  !important;
+    visibility: hidden !important;
   }
 }

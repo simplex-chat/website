@@ -17,7 +17,7 @@
   "author": "SimpleX Chat",
   "license": "MIT",
   "devDependencies": {
-    "@simplex-chat/webrtc": "^0.0.1",
+    "@simplex-chat/webrtc": "^0.0.2",
     "qrcode": "^1.5.0",
     "sass": "^1.43.5"
   }

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cp ./node_modules/@simplex-chat/webrtc/dist/call.js          ./call/call.js
+cp ./node_modules/@simplex-chat/webrtc/dist/call.js.map      ./call/call.js.map
+cp ./node_modules/@simplex-chat/webrtc/dist/ui.js            ./call/ui.js
+cp ./node_modules/@simplex-chat/webrtc/dist/style.css        ./call/style.css
+cp ./node_modules/@simplex-chat/webrtc/dist/webcall.html     ./call/index.html
+cp ./node_modules/@simplex-chat/webrtc/dist/lz-string.min.js ./call/lz-string.min.js

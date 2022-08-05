@@ -7,7 +7,7 @@
 $links-color: #ff6347;
 $text-color: #062d56;
 $purplish-color: #18132c;
-$btns-bg-color: #07b4b9;
+$btns-bg-color: #02C0FF;
 $main-font-family: Raleway, Arial, Helvetica, sans-serif;
 $code-font: "Courier New", Courier, monospace;
 
@@ -121,7 +121,7 @@ nav {
 button,
 span.button {
   display: inline-block;
-  background-color: #07b4b9;
+  background-color: #02C0FF;
   color: white;
   font-family: Raleway;
   text-align: center;
@@ -1104,7 +1104,7 @@ figure.party {
       }
 
       &.good {
-        background-color: #07b4b9;
+        background-color: #02C0FF;
       }
     }
   }
@@ -1141,7 +1141,7 @@ figure.party {
         }
 
         &.good::before {
-          background-color: #07b4b9;
+          background-color: #02C0FF;
         }
 
         &::before {

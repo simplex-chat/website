@@ -4,45 +4,45 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "202020e924ba3c0a947c6a94065dc141",
-"index.html": "4968954a23c35ee7382e7e92c3a8c3dd",
-"/": "4968954a23c35ee7382e7e92c3a8c3dd",
-"main.dart.js": "bf71ad781369175bf31d5fc8c08a2d23",
-"favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
-"icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"manifest.json": "a95d8e3628c586f0aa3b075e0eeb29af",
-"assets/AssetManifest.json": "9d2472896666e9a6b726af332dea76b1",
-"assets/NOTICES": "2ea428042a87a9694413efe0bcfd1b4d",
-"assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"assets/assets/code.png": "8bb3665ccacbfe67dbe932e25d999997",
-"assets/assets/x.png": "efacea4302a9fd121576ee3170afd167",
-"assets/assets/dp.png": "5405d77c51fb46a0cbf26cb96fe4da4d",
-"assets/assets/simpleX.svg": "859824f577dac35e2633890ef37f5694",
-"assets/assets/simpleX.png": "6593986343ab4d658e269f78f73f9527",
-"assets/assets/logo.svg": "91d652fee241a04156ff28f8b4415a58",
-"assets/assets/menu.svg": "60cf9626b8c57dd7728fcbb4b8641649"
+  "index.html": "4968954a23c35ee7382e7e92c3a8c3dd",
+  "/": "4968954a23c35ee7382e7e92c3a8c3dd",
+  "main.dart.js": "bf71ad781369175bf31d5fc8c08a2d23",
+  "favicon.png": "5dcef449791fa27946b3d35ad8803796",
+  "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
+  "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
+  "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
+  "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
+  "manifest.json": "a95d8e3628c586f0aa3b075e0eeb29af",
+  "assets/AssetManifest.json": "9d2472896666e9a6b726af332dea76b1",
+  "assets/NOTICES": "2ea428042a87a9694413efe0bcfd1b4d",
+  "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
+  "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+  "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
+  "assets/assets/code.png": "8bb3665ccacbfe67dbe932e25d999997",
+  "assets/assets/x.png": "efacea4302a9fd121576ee3170afd167",
+  "assets/assets/dp.png": "5405d77c51fb46a0cbf26cb96fe4da4d",
+  "assets/assets/simpleX.svg": "859824f577dac35e2633890ef37f5694",
+  "assets/assets/simpleX.png": "6593986343ab4d658e269f78f73f9527",
+  "assets/assets/logo.svg": "91d652fee241a04156ff28f8b4415a58",
+  "assets/assets/menu.svg": "60cf9626b8c57dd7728fcbb4b8641649"
 };
 
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = [
   "/",
-"main.dart.js",
-"index.html",
-"assets/NOTICES",
-"assets/AssetManifest.json",
-"assets/FontManifest.json"];
+  "main.dart.js",
+  "index.html",
+  "assets/NOTICES",
+  "assets/AssetManifest.json",
+  "assets/FontManifest.json"];
 // During install, the TEMP cache is populated with the application shell files.
 self.addEventListener("install", (event) => {
   self.skipWaiting();
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value, {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, { 'cache': 'reload' })));
     })
   );
 });
@@ -50,8 +50,8 @@ self.addEventListener("install", (event) => {
 // During activate, the cache is populated with the temp files downloaded in
 // install. If this service worker is upgrading from one with a saved
 // MANIFEST, then use this to retain unchanged resource files.
-self.addEventListener("activate", function(event) {
-  return event.waitUntil(async function() {
+self.addEventListener("activate", function (event) {
+  return event.waitUntil(async function () {
     try {
       var contentCache = await caches.open(CACHE_NAME);
       var tempCache = await caches.open(TEMP);
@@ -129,7 +129,7 @@ self.addEventListener("fetch", (event) => {
     return onlineFirst(event);
   }
   event.respondWith(caches.open(CACHE_NAME)
-    .then((cache) =>  {
+    .then((cache) => {
       return cache.match(event.request).then((response) => {
         // Either respond with the cached resource, or perform a fetch and
         // lazily populate the cache.

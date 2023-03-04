@@ -1,0 +1,45 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+		"johnpapa.angular2",
+		"formulahendry.auto-rename-tag",
+		"dsznajder.es7-react-js-snippets",
+		"vincaslt.highlight-matching-tag",
+		"ecmel.vscode-html-css",
+		"abusaidm.html-snippets",
+		"wix.vscode-import-cost",
+		"xabikos.javascriptsnippets",
+		"donjayamanne.jquerysnippets",
+		"ritwickdey.liveserver",
+		"mrmlnc.vscode-scss",
+		"stylelint.vscode-stylelint",
+		"msjsdiag.debugger-for-chrome",
+		"firefox-devtools.vscode-firefox-debug",
+		"glenn2223.live-sass",
+		"mechatroner.rainbow-csv",
+		"pranaygp.vscode-css-peek",
+		"kamikillerto.vscode-colorize",
+		"formulahendry.auto-close-tag",
+		"dbaeumer.vscode-eslint",
+		"eg2.vscode-npm-script",
+		"gamunu.vscode-yarn",
+		"tomi.xajssnippets",
+		"msjsdiag.debugger-for-edge",
+		"vue.volar",
+		"anteprimorac.html-end-tag-labels",
+		"bradlc.vscode-tailwindcss",
+		"jock.svg",
+		"mjmlio.vscode-mjml",
+		"denoland.vscode-deno",
+		"zenclabs.previewjs",
+		"janne252.fontawesome-autocomplete",
+		"lukas-tr.materialdesignicons-intellisense"
+	],
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": [
+		
+	]
+}
